@@ -1,13 +1,11 @@
 
 import './App.css';
 import React from 'react'
-import Hello from './headerW';
+import FuckYou from './Header';
 function App() {
   return (
-    <div>
-      <Hello />
-    </div >);
-
+    <h1><FuckYou /></h1>
+  )
 }
 
 export default App;
