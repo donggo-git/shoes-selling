@@ -1,11 +1,24 @@
 
 import './App.css';
 import React from 'react'
-import FuckYou from './Header';
-function App() {
-  return (
-    <h1><FuckYou /></h1>
-  )
+import Header from './Header'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    // add product to cart
+
+
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
 }
+
 
 export default App;
