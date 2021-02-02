@@ -1,5 +1,6 @@
 
 import './App.css';
+import './header.css'
 import React from 'react'
 import Header from './Header'
 

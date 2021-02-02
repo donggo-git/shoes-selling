@@ -1,0 +1,44 @@
+header{
+    width: 100%;
+}
+nav{
+    width: 100%;
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    font-size: 1rem;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+   
+}
+nav a{
+    color: #000000;
+}
+nav li{
+    margin: 0 10px;
+}
+.search-input{
+    display: flex;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 10rem;
+    background-color: #e5e5e5;
+    width: 10rem;
+}
+
+.search-input input{
+    font-size: 1rem;
+    border: none;
+    margin: 0 10px;
+    background: none;
+    width: 8rem;
+}
+.search-input input:focus{
+    outline: none;
+}
