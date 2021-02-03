@@ -1,12 +1,55 @@
 header{
+    width: 80%;
+    margin: 5rem auto;
+    position: relative;
+    height: auto;
+}
+header img{
+    display: block;
+    height: 25rem;
+}
+.headerSlide-list{
+    display: flex;
     width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    
+}
+.slice-btn{
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    height: 4rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.slice-btn:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.next-btn{
+    right: 5px;
+}
+.previous-btn{
+    left: 5px;
 }
 nav{
+    top: 0;
     width: 100%;
     display: flex;
     padding: 1rem 0;
     align-items: center;
     font-size: 1rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
+    position: fixed;
+    background-color: #ffffff;
+    z-index: 10;
 }
 nav ul{
     display: flex;
@@ -26,19 +69,28 @@ nav li{
     font-size: 1.2rem;
     margin-right: 2rem;
     font-size: 1rem;
-    padding: 5px;
+    padding: 5px 0.8rem;
     border-radius: 10rem;
     background-color: #e5e5e5;
     width: 10rem;
+    transition: all 0.2s;
 }
-
+.search-input:hover{
+    background-color: #bebebe;
+}
 .search-input input{
     font-size: 1rem;
     border: none;
-    margin: 0 10px;
+    margin: 0 0 0 15px;
     background: none;
     width: 8rem;
+    
 }
+.search-btn{
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
 .search-input input:focus{
     outline: none;
 }
