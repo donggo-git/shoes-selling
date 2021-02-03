@@ -15,7 +15,7 @@ header img{
     margin: 0 auto;
     
 }
-.slice-btn{
+.slide-btn{
     position: absolute;
     top: 50%;
     transform:translateY(-50%);
@@ -26,17 +26,18 @@ header img{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     transition: all 0.4s;
     cursor: pointer;
+    
 }
-.slice-btn:hover{
+.slide-btn:hover{
     background-color: rgba(255, 255, 255, 0.8);
 }
-.next-btn{
+.previous-btn{
     right: 5px;
 }
-.previous-btn{
+.next-btn{
     left: 5px;
 }
 nav{

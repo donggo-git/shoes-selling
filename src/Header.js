@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import './header.css'
 import { BsSearch } from 'react-icons/bs';
 import { GrFormPrevious } from 'react-icons/gr'
 import { GrFormNext } from 'react-icons/gr'
-function Header() {
 
+function Header() {
+    const [styles, setStyles] = useState('')
+    let styleBackground = { backgroundColor: 'rgba(255, 255, 255, 0.3)' }
+    const nextSlice = () => {
+        console.log('hello');
+
+    }
+    const previousSlice = () => {
+
+    }
     return (
         <div className='header'>
             <nav>
@@ -24,10 +33,8 @@ function Header() {
                 </div>
             </nav>
             <header>
-                <div className='next-btn slice-btn'><GrFormNext className='slice-icon' /></div>
-                <div className='previous-btn slice-btn'>
-                    <GrFormPrevious className='slice-icon' />
-                </div>
+                <div className='previous-btn slide-btn' onClick={() => previousSlice()}><GrFormNext className='slice-icon' /></div>
+                <div className='next-btn slide-btn' onClick={() => nextSlice()}><GrFormPrevious className='slice-icon' /></div>
                 <div className='headerSlide-list'>
                     <img src='https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png' width='100%' />
                     <img src='https://www.converse.com/on/demandware.static/-/Library-Sites-SharedLibrary/default/dw99b0143b/firstspirit/media/homepage_1/2021_spring/01_1/D-Converse-SP21-1-2021-Elevation-P1-3.jpg' width='100%' />
