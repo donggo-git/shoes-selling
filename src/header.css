@@ -4,10 +4,7 @@ header{
     position: relative;
     height: auto;
 }
-header img{
-    display: block;
-    height: 25rem;
-}
+
 .headerSlide-container{
     width: 100%;
     overflow: hidden;
@@ -18,14 +15,25 @@ header img{
     display: flex;
     width: auto;
     flex-direction: row;
-    transition: all 0.6s;
 }
 .slide-item{
+    display: inline;
     height: 25rem;
-    width: 100%;
-    margin: 0 5px;
+    min-width: 100%;
     box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffffff;
     
+}
+#first-slide-item{
+    background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png');
+}
+#second-slide-item{
+background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7EPeanuts%7E21SS_ECOM_MF_SP_SELECT_Peanuts_HotSpotHero_Desktop_1440x500_1.jpg/fmt/jpg/fmt/png');
+}
+#third-slide-item{
+background-image: url('https://th.bing.com/th/id/OIP.ZBN-HKochUAO-NCiYHM1YAHaEo?w=290&h=181&c=7&o=5&dpr=1.5&pid=1.7');
 }
 .slide-btn{
     position: absolute;
