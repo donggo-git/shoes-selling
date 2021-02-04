@@ -8,11 +8,23 @@ header img{
     display: block;
     height: 25rem;
 }
-.headerSlide-list{
-    display: flex;
+.headerSlide-container{
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
+    
+}
+.headerSlide-list{
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    transition: all 0.6s;
+}
+.slide-item{
+    height: 25rem;
+    width: 100%;
+    margin: 0 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
     
 }
 .slide-btn{
@@ -35,10 +47,10 @@ header img{
     background-color: rgba(255, 255, 255, 0.8);
 }
 .previous-btn{
-    right: 5px;
+    left: 5px;
 }
 .next-btn{
-    left: 5px;
+    right: 5px;
 }
 nav{
     top: 0;
