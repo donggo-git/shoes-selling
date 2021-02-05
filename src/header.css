@@ -24,7 +24,7 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
-    
+    position: relative;
 }
 #first-slide-item{
     background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png');
@@ -34,6 +34,30 @@ background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440
 }
 #third-slide-item{
 background-image: url('https://th.bing.com/th/id/OIP.ZBN-HKochUAO-NCiYHM1YAHaEo?w=290&h=181&c=7&o=5&dpr=1.5&pid=1.7');
+}
+.first-item-slide-content{
+    position: absolute;
+    bottom: 8rem;
+    left: 5rem;
+    line-height: 0.5;
+    font-size: 1.6rem;
+    font-weight: bold;
+   color: #e6e6e6;
+}
+.first-item-slide-content button{
+    font-size: 1.1rem;
+    border: none;
+    font-weight: 200;
+    padding: 10px 20px;
+    border-radius: 10rem;
+    font-family: 'Lora', serif;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.first-item-slide-content button:hover{
+    transform:translateY(-3px);
+    opacity: 0.9;
+    
 }
 .slide-btn{
     position: absolute;

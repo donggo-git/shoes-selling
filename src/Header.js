@@ -57,15 +57,20 @@ function Header() {
                     <div className='headerSlide-list' style={tranSlate} onTransitionEnd={TransitionSlide}>
                         <div className='slide-item last-slide-item-clone' id='third-slide-item'></div>
                         <div className='slide-item' id='first-slide-item'>
-                            <div>
-                                <h2>News Style from Puma</h2>
+
+                            <div className='first-item-slide-content'>
+                                <h2 className='first-item-slide-title'>News Style from Puma</h2>
+                                <p>New style,new energy</p>
+                                <button>Check out</button>
                             </div>
                         </div>
                         <div className='slide-item' id='second-slide-item'></div>
                         <div className='slide-item' id='third-slide-item'></div>
                         <div className='slide-item first-slide-item-clone' id='first-slide-item'>
-                            <div>
-                                <h2>News Style from Puma</h2>
+                            <div className='first-item-slide-content'>
+                                <h2 className='first-item-slide-title'>News Style from Puma</h2>
+                                <p>New style,new energy</p>
+                                <button>Check out</button>
                             </div>
                         </div>
                     </div>
