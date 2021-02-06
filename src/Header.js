@@ -64,7 +64,13 @@ function Header() {
                                 <button>Check out</button>
                             </div>
                         </div>
-                        <div className='slide-item' id='second-slide-item'></div>
+                        <div className='slide-item' id='second-slide-item'>
+                            <div className='second-item-slide-content'>
+                                <h2>TREAT YOUR TRAINING</h2>
+                                <p>Feel comfortable with this style for your training</p>
+                                <button>Check out</button>
+                            </div>
+                        </div>
                         <div className='slide-item' id='third-slide-item'></div>
                         <div className='slide-item first-slide-item-clone' id='first-slide-item'>
                             <div className='first-item-slide-content'>
