@@ -55,7 +55,12 @@ function Header() {
                 <div className='next-btn slide-btn' onClick={() => nextSlice()}><GrFormNext className='slice-icon' /></div>
                 <div className='headerSlide-container'>
                     <div className='headerSlide-list' style={tranSlate} onTransitionEnd={TransitionSlide}>
-                        <div className='slide-item last-slide-item-clone' id='third-slide-item'></div>
+                        <div className='slide-item last-slide-item-clone' id='third-slide-item'>
+                            <div className='third-item-slide-content'>
+                                <h2 className='first-item-slide-title'>Coming soon: Nike Basket 4</h2>
+                                <button>learn more</button>
+                            </div>
+                        </div>
                         <div className='slide-item' id='first-slide-item'>
 
                             <div className='first-item-slide-content'>
@@ -71,7 +76,12 @@ function Header() {
                                 <button>Check out</button>
                             </div>
                         </div>
-                        <div className='slide-item' id='third-slide-item'></div>
+                        <div className='slide-item' id='third-slide-item'>
+                            <div className='third-item-slide-content'>
+                                <h2 className='first-item-slide-title'>Coming soon: Nike Basket 4</h2>
+                                <button>learn more</button>
+                            </div>
+                        </div>
                         <div className='slide-item first-slide-item-clone' id='first-slide-item'>
                             <div className='first-item-slide-content'>
                                 <h2 className='first-item-slide-title'>News Style from Puma</h2>
