@@ -13,18 +13,19 @@ header{
 }
 .headerSlide-list{
     display: flex;
-    width: auto;
+    width: 507%;
     flex-direction: row;
 }
 .slide-item{
-    display: inline;
+    display: block;
     height: 25rem;
-    min-width: 100%;
+    width: 100%;
     box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
     position: relative;
+    margin: 0;
 }
 #first-slide-item{
     background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png');
@@ -34,7 +35,6 @@ background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440
 }
 #third-slide-item{
 background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),url('https://th.bing.com/th/id/OIP.ZBN-HKochUAO-NCiYHM1YAHaEo?w=290&h=181&c=7&o=5&dpr=1.5&pid=1.7');
-
 }
 .first-item-slide-content{
     position: absolute;
@@ -204,4 +204,9 @@ nav li{
 
 .search-input input:focus{
     outline: none;
+}
+@media screen and (max-width: 1000px) {
+    .headerSlide-list{
+        width: 500%;
+    }
 }
