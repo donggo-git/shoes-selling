@@ -1,9 +1,10 @@
 import React from 'react';
 import { logo } from './source'
+import './logo-list-style.css'
 function Brand() {
     return (
 
-        <div >
+        <div className='logo-list'>
             {
                 logo.map((logoItem, index) => (
                     < div className='brand-item' key={index}>

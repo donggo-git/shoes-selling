@@ -1,0 +1,26 @@
+.logo-list{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+.brand-item{
+    height: 10rem;
+    width: 10rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3rem;
+    padding: 5px;
+}
+.brand-item:hover{
+    box-shadow: 0 0 6px rgba(0,0,0,0.2), 0 0 2px rgb(0,0,0,0.2);
+}
+.brand-item img{
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
