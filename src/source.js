@@ -46,7 +46,7 @@ let logo = [
     },
     {
         name: "Puma",
-        img: "https://sportswearbrandstrategy.files.wordpress.com/2013/10/puma-logo-wallpaper-5298-hd-wallpapers.jpg"
+        img: "https://logorealm.com/wp-content/uploads/2017/03/puma-square.jpg"
     },
     {
         name: "adidas",
@@ -54,7 +54,7 @@ let logo = [
     },
     {
         name: "converse",
-        img: "https://heatherwoodhousebcu.files.wordpress.com/2014/10/logo-wallpapers-converse-logo-wallpaper-32444.jpg"
+        img: "https://th.bing.com/th/id/OIP.MZKXKtx_ZwnLovVZ3PBiYAHaFS?pid=Api&rs=1"
     }
 ]
 export { source, logo }

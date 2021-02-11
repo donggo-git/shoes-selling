@@ -7,13 +7,14 @@
 }
 .brand-item{
     height: 10rem;
-    width: 10rem;
+    width: 12rem;
     
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 3rem;
-    padding: 5px;
+    padding: 1rem;
+    transition: all 0.4s;
 }
 .brand-item:hover{
     box-shadow: 0 0 6px rgba(0,0,0,0.2), 0 0 2px rgb(0,0,0,0.2);
