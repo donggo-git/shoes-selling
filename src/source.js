@@ -54,6 +54,16 @@ let source = [
         detail: 'The Nike Air Zoom Winflo 7 helps keep you running with an updated mesh design and increased foam. Made with everyday runs in mind, its cushioned feel helps you stay focused on the path ahead.'
     },
     {
+        name: 'FUSE Training Shoes',
+        price: 90,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/02/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/03/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/04/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes'],
+        color: ['linear-gradient(#15007b,#9f6e2f)', '#fff', 'linear-gradient(#333,#fff,##f6583e)'],
+        detail: "Product runs in men’s sizes only. Women should order 1.5 sizes down from their usual size."
+    },
+    {
         name: 'Nike Free TR8',
         price: 100,
         brand: "Nike",
@@ -62,6 +72,35 @@ let source = [
         color: ['linear-gradient(#fff,#333)', '#333'],
         detail: "The Women's Gym/ HIIT / Cross Training Shoe has a stronger heel than ever before, plus extra cushioning that hugs and contains your foot.The sole is still unbelievably flexible, offering a natural, lightweight feel and lateral support through every rep."
     },
+    {
+        name: 'Clyde All-Pro Basketball Shoes',
+        price: 130,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194039/01/sv01/fnd/PNA/fmt/png/Clyde-All-Pro-Basketball-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194039/02/sv01/fnd/PNA/fmt/png/Clyde-All-Pro-Basketball-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194039/03/sv01/fnd/PNA/fmt/png/Clyde-All-Pro-Basketball-Shoes'],
+        color: ['linear-gradient(#fff,#55a8ff,#fa7e7e)', 'linear-gradient(#333,#ff0083)', 'linear-gradient(#fff,#ff0083)'],
+        detail: "The legendary Clyde franchise is taking style and performance to a new level with the Clyde All-Pro. We’re soaring into this season with this lightweight pair of kicks that ar... "
+    },
+    {
+        name: 'Speedcat OG+ Sparco Motorsport Shoes',
+        price: 100,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306725/04/sv01/fnd/PNA/fmt/png/Speedcat-OG+-Sparco-Motorsport-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306725/02/sv01/fnd/PNA/fmt/png/Speedcat-OG+-Sparco-Motorsport-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306725/01/sv01/fnd/PNA/fmt/png/Speedcat-OG+-Sparco-Motorsport-Shoes'],
+        color: ['#fffb01', '#0086e9', 'linear-gradient(#fff,#333)'],
+        detail: "Born for speed. Raised in style. The Speedcat returns 20 years later for its second season, backed by motorsport legends Sparco. In 1999, PUMA partnered with Sparco to bring t..."
+    },
+    {
+        name: 'ULTRA 1.2 FG/AG ',
+        price: 200,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/106299/02/sv01/fnd/PNA/fmt/png/ULTRA-1.2-FG/AG-Soccer-Cleats',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/106299/01/sv01/fnd/PNA/fmt/png/ULTRA-1.2-FG/AG-Soccer-Cleats'],
+        color: ['linear-gradient(#ff1313,#fffb13)', '#33a3f5'],
+        detail: "Classic innovation. We gave our latest speed demon, the lightweight ULTRA 1.2, a very classic PUMA touch. The PUMA ULTRA 1.2 features next level craftsmanship with a lightweig..."
+    }
 ]
 let logo = [
     {
@@ -74,7 +113,7 @@ let logo = [
     },
     {
         name: "adidas",
-        img: "https://th.bing.com/th/id/R257a46fbac80c94e55f0eaba653d5586?rik=67bIs9jVb0Insw&riu=http%3a%2f%2fwilliamsonsource.com%2fwp-content%2fuploads%2f2016%2f01%2fadidas-logo.png&ehk=0CbDijl8P3P3QCpglLcXoUMSpAMjNg9XTxj%2fRa6Vdps%3d&risl=&pid=ImgRaw"
+        img: "https://pngimg.com/uploads/adidas/adidas_PNG18.png"
     },
     {
         name: "converse",

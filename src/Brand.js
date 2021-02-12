@@ -1,7 +1,10 @@
 import React from 'react';
 import { logo } from './source'
 import './logo-list-style.css'
+import { source } from './source'
 function Brand() {
+    console.log(source.length)
+    console.log(logo)
     return (
 
         <div className='logo-list'>

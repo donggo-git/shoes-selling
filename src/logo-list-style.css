@@ -6,14 +6,14 @@
     justify-content: center;
 }
 .brand-item{
-    height: 10rem;
-    width: 12rem;
+    height: 9rem;
+    width: 15rem;
     
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3rem;
-    padding: 1rem;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
     transition: all 0.4s;
 }
 .brand-item:hover{
@@ -22,6 +22,6 @@
 .brand-item img{
     display: block;
     margin: 0 auto;
-    height: 80%;
+    height: 100%;
     width: 100%;
 }
