@@ -100,6 +100,33 @@ let source = [
             'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/106299/01/sv01/fnd/PNA/fmt/png/ULTRA-1.2-FG/AG-Soccer-Cleats'],
         color: ['linear-gradient(#ff1313,#fffb13)', '#33a3f5'],
         detail: "Classic innovation. We gave our latest speed demon, the lightweight ULTRA 1.2, a very classic PUMA touch. The PUMA ULTRA 1.2 features next level craftsmanship with a lightweig..."
+    },
+    {
+        name: 'Climacool Vento HEAT.RDY Shoes',
+        price: 140,
+        brand: "Adidas",
+        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/49be886fa3c249dfb268ac800093390f_9366/Climacool_Vento_HEAT.RDY_Shoes_Yellow_FZ1717_01_standard.jpg'],
+        color: ['#a9f600'],
+        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
+    },
+    {
+        name: 'Kaptir Super Shoes',
+        price: 81,
+        brand: "Adidas",
+        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/b91744ddda684786830cac55009b55be_9366/Kaptir_Super_Shoes_Blue_FZ2861_01_standard.jpg',
+            'https://assets.adidas.com/images/w_600,f_auto,q_auto/3bd42a723c014fd1aa49ac21012dec59_9366/Kaptir_Super_Shoes_Black_FZ2869_01_standard.jpg',
+            'https://assets.adidas.com/images/w_600,f_auto,q_auto/69fe2d00c647458fa5a0ac640104ea68_9366/Kaptir_Super_Shoes_Grey_FZ2868_01_standard.jpg'],
+        color: ['linear-gradient(#a9f600,#333)', 'linear-gradient(#ff4e09,#333)', 'linear-gradient(#bababa,#0097e0)'],
+        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
+    },
+    {
+        name: 'NMD_R1 Shoes',
+        price: 126,
+        brand: "Adidas",
+        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/872299528a554356909cac4400f4ef29_9366/NMD_R1_Shoes_Grey_FY5730_01_standard.jpg',
+            'https://assets.adidas.com/images/w_320,f_auto,q_auto:sensitive,fl_lossy/178b0dce25ad4f26a04bac0200ac3b99_9366/NMD_R1_Shoes_Black_FY5727_01_standard.jpg'],
+        color: ['linear-gradient(#b8b8b8,#ff6c01)', 'linear-gradient(#333,#ff6c01)'],
+        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
     }
 ]
 let logo = [
