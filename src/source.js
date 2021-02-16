@@ -10,7 +10,6 @@ let source = [
             'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/ea3bae84-bf2a-41a4-b63a-d1e9080c90d6/air-zoom-speed-little-big-kids-running-shoe-bW4W4n.jpg'],
         color: ['#00fff3', 'linear-gradient(#030303,#9e9e9e)', 'linear-gradient(#030303,#f00)', '#fff'],
         detail: 'Look fast and feel faster in the Nike Air Zoom Speed. Our iconic Zoom Air pods are made just right for kids. So lightweight all around and cushioned where needed, you’ll be zooming around the neighborhood and track in no time.'
-
     },
     {
         name: 'Nike Air Max',
@@ -123,9 +122,36 @@ let source = [
         price: 180,
         brand: "Adidas",
         img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/72c6639cdf0941abade4ac6b011dd053_9366/NMD_R1_Primeknit_Shoes_Black_G57941_01_standard.jpg',
-            'https://assets.adidas.com/images/w_600,f_auto,q_auto/3ae212fd39474d459222ac6b011d8a42_9366/NMD_R1_Primeknit_Shoes_Grey_G57939_01_standard.jpg'],
+            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ff2df471f395411cb192acb500d05976_9366/Nano_X1_Grit_Men's_Training_Shoes_Black_S42565_01_standard.jpg"],
         color: ['linear-gradient(#333,#5d5d5d)', 'linear-gradient(#69e900,#fe50db)'],
         detail: "The NMD series turns five, and in true NMD fashion, we're celebrating by making some major noise. Visually, that is. Volume and location is all you. These adidas shoes combine inspiration from the most iconic NMDs and create a bold statement with standout graphics. Continue the legacy with signature NMD plugs and a flexible sock-like upper. Energy-returning cushioning keeps you comfortable all day. The party is already off to a solid start with these ones."
+    },
+    {
+        name: "Nano X1 Grit Men's Training Shoes",
+        price: 130,
+        brand: "Rebook",
+        img: ["https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/5faab3ff4faa4336b251ac9f017bcb24_9366/Nano_X1_Grit_Men's_Training_Shoes_Grey_S42564_01_standard.jpg",
+            'https://assets.adidas.com/images/w_600,f_auto,q_auto/3ae212fd39474d459222ac6b011d8a42_9366/NMD_R1_Primeknit_Shoes_Grey_G57939_01_standard.jpg'],
+        color: ['linear-gradient(#949494,#ff7800)', '#333'],
+        detail: "When you enter the box, you put your game face on. You're gunning for the leaderboard and nothing's gonna stop you. These men's Reebok training shoes are built for your most demanding workouts. A woven Flexweave® upper is lightweight but able to take a beating. Floatride Energy Foam cushioning in the forefoot provides a responsive feel for running or double unders. A heel clip adds stability for quick lateral moves."
+    },
+    {
+        name: "Nano X1 Men's Training Shoes Les Mills",
+        price: 130,
+        brand: "Rebook",
+        img: ["https://assets.reebok.com/images/w_600,f_auto,q_auto/aba35c9a73504f8ea5f9ac940053f418_9366/Nano_X1_Men's_Training_Shoes_Black_GX2801_01_standard.jpg",
+            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/45262f1acec740d7a4d8ac7700c90390_9366/Nano_X1_Men's_Training_Shoes_Les_Mills(r)_White_FZ4298_01_standard.jpg"],
+        color: ['linear-gradient(#333,#addd00,#00baf3)', '#333'],
+        detail: "When you enter the box, you put your game face on. You're gunning for the leaderboard and nothing's gonna stop you. These men's Reebok training shoes are built for your most demanding workouts. A woven Flexweave® upper is lightweight but able to take a beating. Floatride Energy Foam cushioning in the forefoot provides a responsive feel for running or double unders. A heel clip adds stability for quick lateral moves."
+    },
+    {
+        name: "ZigWild Trail 6 Men's Shoes",
+        price: 100,
+        brand: "Rebook",
+        img: ["https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/865b9ed11e8e4024b09eac6f01752e18_9366/ZigWild_Trail_6_Men's_Shoes_Blue_S42596_01_standard.jpg",
+            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/3cbb815d126742d28e1bab52011d64ef_9366/ZigWild_Trail_6_Men's_Shoes_Grey_FX1434_01_standard.jpg"],
+        color: ['linear-gradient(#02566a,#49e9ad)', 'linear-gradient(#899b94,#ee6e3c)'],
+        detail: "Wherever your run takes you, channel the feeling of mountain vistas and quiet, tree-canopied trails. These men's running shoes were inspired by '90s trail runners. A mix of suede, leather, textile and synthetic gives the upper a layered look with an outdoor vibe. The innovative outsole disperses energy for a comfortable feel from heel-strike to toe-off."
     }
 ]
 let logo = [
@@ -140,6 +166,10 @@ let logo = [
     {
         name: "Adidas",
         img: "https://pngimg.com/uploads/adidas/adidas_PNG18.png"
+    },
+    {
+        name: "Rebook",
+        img: "https://th.bing.com/th/id/R2f1460641fbc86f00aa4c0eef0225565?rik=dhypM4L1AXm3UA&riu=http%3a%2f%2fmasses.com.my%2fwp-content%2fuploads%2f2019%2f11%2freebok-logo-2.jpg&ehk=%2feU2pk2RES8ts4CsUTo4qGgFRZD51zAGXKS8kXeHESQ%3d&risl=&pid=ImgRaw"
     },
 
 ]

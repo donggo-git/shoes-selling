@@ -24,7 +24,14 @@
 .product-detail{
     margin-left: 1rem;
     font-size: 1rem;
-    line-height: 0.8;
+    line-height: 1.2;
+}
+.product-detail h3, .product-detail p{
+    margin: 0.5rem 0;
+}
+.brand{
+    font-size: 0.9rem;
+    color: rgb(105, 105, 105);
 }
 @media screen and (max-width: 1000px) {
     .product-list{
