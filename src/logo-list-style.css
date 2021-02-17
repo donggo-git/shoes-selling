@@ -14,11 +14,10 @@
     align-items: center;
     margin: 0 1rem;
     padding: 0.5rem 1rem;
-    transition: all 0.4s;
+    transition: box-shadow 0.4s, border 0.2s;
+    cursor: pointer;
 }
-.brand-item:hover{
-    box-shadow: 0 0 6px rgba(0,0,0,0.2), 0 0 2px rgb(0,0,0,0.2);
-}
+
 .brand-item img{
     display: block;
     margin: 0 auto;

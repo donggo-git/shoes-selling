@@ -5,7 +5,7 @@ import './product.css'
 function ProductList() {
     return (
         <div className='product-list'>
-            {source.filter((product) => product.brand == 'Nike').map((product, index) => (
+            {source.filter((product) => product.brand === 'Nike').map((product, index) => (
                 <div key={index} className='product-item'>
                     <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
                     <div className='product-detail'>
