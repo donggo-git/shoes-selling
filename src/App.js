@@ -9,17 +9,21 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      styleBrand: [{ border: '1px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }]
+      styleBrand: [{ border: '1px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }],
+      brand: 'Nike'
     }
   }
 
   render() {
 
 
-    const handleBrandClick = (index) => {
+    const handleBrandClick = (index, logoItem) => {
       let newBrandStyle = [{ border: 'none' }, { border: 'none' }, { border: 'none' }, { border: 'none' }];
       newBrandStyle[index] = { border: '1px solid #333' }
-      this.setState({ styleBrand: newBrandStyle })
+      this.setState({
+        styleBrand: newBrandStyle,
+        brand: logoItem.name
+      })
 
     }
 
@@ -28,7 +32,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Brand styleBrand={this.state.styleBrand} handleBrandClick={handleBrandClick} />
-        <ProductList />
+        <ProductList brand={this.state.brand} />
       </div>
     );
   }
