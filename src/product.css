@@ -1,10 +1,18 @@
+.product-list-container{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: hidden;
+    justify-content: flex-start;
+}
 .product-list{
     display: grid;
-    width: 70%;
+    width: 100%;
     margin: 2rem auto;
     grid-template-columns: auto auto auto;
     justify-content: center;
     align-items: center;
+    margin-left: 2rem;
 }
 .product-item{
     margin: 1rem;
@@ -28,6 +36,18 @@
 }
 .product-detail h3, .product-detail p{
     margin: 0.5rem 0;
+}
+.nextProduct-page{
+    margin: 2rem 5rem;
+    transition: all 0.4s;
+    z-index: 10;
+    background-color: #fff;
+    
+}
+@keyframes nextPageStyle{
+    100%{
+        transform: translateX(-100%);
+    }
 }
 .brand{
     font-size: 0.9rem;

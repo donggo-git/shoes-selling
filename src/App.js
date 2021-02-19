@@ -1,7 +1,7 @@
 
 import './App.css';
 import './header.css'
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './Header'
 import Brand from './Brand'
 import ProductList from './productList';
@@ -10,7 +10,10 @@ class App extends React.Component {
     super(props)
     this.state = {
       styleBrand: [{ border: '1px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }],
-      brand: 'Nike'
+      brand: 'Nike',
+      nextPageStyle: {
+        animationName: 'none',
+      }
     }
   }
 
@@ -22,8 +25,19 @@ class App extends React.Component {
       newBrandStyle[index] = { border: '1px solid #333' }
       this.setState({
         styleBrand: newBrandStyle,
-        brand: logoItem.name
+        nextPageStyle: {
+          animationName: 'nextPageStyle',
+          animationDuration: '1s',
+          margin: '2rem 0'
+        }
       })
+      setTimeout(() => this.setState({
+        brand: logoItem.name,
+        nextPageStyle: {
+          animationName: 'none',
+          margin: '2rem 5rem'
+        }
+      }), 1000)
 
     }
 
@@ -32,7 +46,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Brand styleBrand={this.state.styleBrand} handleBrandClick={handleBrandClick} />
-        <ProductList brand={this.state.brand} />
+        <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} />
       </div>
     );
   }

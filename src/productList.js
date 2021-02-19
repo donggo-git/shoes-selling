@@ -1,11 +1,12 @@
 
 import React from 'react'
 import { source } from './source'
+import NextPageofproduct from './nextPageofproduct'
 import './product.css'
 function ProductList(props) {
     let filterProduct = source.filter((product) => product.brand === props.brand)
     return (
-        <div>
+        <div className='product-list-container'>
             <div className='product-list'>
                 {filterProduct.map((product, index) => (
                     <div key={index} className='product-item'>
@@ -17,8 +18,9 @@ function ProductList(props) {
                         </div>
                     </div>
                 ))}
-            </div>
 
+            </div>
+            <NextPageofproduct filterProduct={filterProduct} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
         </div>
     )
 }
