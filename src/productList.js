@@ -5,6 +5,7 @@ import NextPageofproduct from './nextPageofproduct'
 import './product.css'
 function ProductList(props) {
     let filterProduct = source.filter((product) => product.brand === props.brand)
+    let nextPageFilter = source.filter((product) => product.brand === props.nextPageBrand)
     return (
         <div className='product-list-container'>
             <div className='product-list'>
@@ -20,7 +21,7 @@ function ProductList(props) {
                 ))}
 
             </div>
-            <NextPageofproduct filterProduct={filterProduct} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
+            <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
         </div>
     )
 }

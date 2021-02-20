@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       styleBrand: [{ border: '1px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }],
       brand: 'Nike',
+      nextPageBrand: 'Nike',
       nextPageStyle: {
         animationName: 'none',
       }
@@ -25,6 +26,7 @@ class App extends React.Component {
       newBrandStyle[index] = { border: '1px solid #333' }
       this.setState({
         styleBrand: newBrandStyle,
+        nextPageBrand: logoItem.name,
         nextPageStyle: {
           animationName: 'nextPageStyle',
           animationDuration: '1s',
@@ -46,7 +48,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Brand styleBrand={this.state.styleBrand} handleBrandClick={handleBrandClick} />
-        <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} />
+        <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} nextPageBrand={this.state.nextPageBrand} />
       </div>
     );
   }

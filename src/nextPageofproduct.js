@@ -2,7 +2,7 @@ import React from 'react'
 function nextPageProduct(props) {
     return (
         <div className='product-list nextProduct-page' style={props.nextPageStyle}>
-            {props.filterProduct.map((product, index) => (
+            {props.nextPageFilter.map((product, index) => (
                 <div key={index} className='product-item'>
                     <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
                     <div className='product-detail'>
