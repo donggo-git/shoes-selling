@@ -28,14 +28,14 @@ class App extends React.Component {
         nextPageStyle: {
           animationName: 'nextPageStyle',
           animationDuration: '1s',
-          margin: '2rem 0'
+          margin: '2rem'
         }
       })
       setTimeout(() => this.setState({
         brand: logoItem.name,
         nextPageStyle: {
           animationName: 'none',
-          margin: '2rem 5rem'
+
         }
       }), 1000)
 

@@ -38,7 +38,8 @@
     margin: 0.5rem 0;
 }
 .nextProduct-page{
-    margin: 2rem 5rem;
+    margin: 2rem;
+    padding: 0 2rem;
     transition: all 0.4s;
     z-index: 10;
     background-color: #fff;
