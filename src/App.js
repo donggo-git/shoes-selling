@@ -5,6 +5,8 @@ import React from 'react'
 import Header from './Header'
 import Brand from './Brand'
 import ProductList from './productList';
+import Product_detail from './product-detail'
+import { source } from './source'
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -49,6 +51,7 @@ class App extends React.Component {
         <Header />
         <Brand styleBrand={this.state.styleBrand} handleBrandClick={handleBrandClick} />
         <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} nextPageBrand={this.state.nextPageBrand} />
+        <Product_detail product={source[0]} />
       </div>
     );
   }

@@ -1,16 +1,17 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
+import './detailPage.css'
 function Product_detail(props) {
     return (
-        <div>
+        <div className='detail-container'>
             <AiOutlineClose />
-            <div>
-                <img src={props.img} />
+            <div className='detail'>
+                <img src={props.product.img[0]} />
                 <div>
-                    <h2>{props.name}</h2>
-                    <p>{props.brand}</p>
-                    <p>{props.price}</p>
-                    <p>{props.detail}</p>
+                    <h2>{props.product.name}</h2>
+                    <p>{props.product.brand}</p>
+                    <p>{props.product.price}</p>
+                    <p>{props.product.detail}</p>
                 </div>
             </div>
         </div>
