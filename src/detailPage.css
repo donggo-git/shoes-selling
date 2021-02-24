@@ -13,12 +13,36 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 80vh;
-    width: 35%;
+    height: auto;
+    width: 60%;
     padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .detail img{
     display: block;
-    height: 50%;
-    width: 100%;
+    width: 48%;
+}
+.detail-content{
+    width: 48%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}   
+.detail-content p{
+    margin: 0.5rem 0;
+}
+.detail-content h2{
+    margin: 0;
+    margin-top: 5rem;
+}
+.close-btn{
+    position: absolute;
+    font-size: 1.5rem;
+    color: #333;
+    top: -0.5rem;
+    right: -0.5rem;
+    cursor: pointer;
 }
