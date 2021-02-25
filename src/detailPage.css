@@ -4,13 +4,17 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    z-index: 11; 
+    z-index: 11;
+    overflow: hidden;
+    display: flex;
 }
 .detail-container{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    min-width: 100%;
+    display: inline;
 }
+
+
 .detail{
     background-color: #fff;
     position: absolute;
@@ -55,7 +59,7 @@
     z-index: 100;
 }
 .color-item{
-    border: solid 1px black;
+    border: solid 1px rgb(148, 148, 148);
     margin: 5px;
     height: 15px;
     width: 15px;
