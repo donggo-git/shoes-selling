@@ -48,8 +48,28 @@ function ProductList(props) {
     const DetailAnimation = () => {
         let updateDetail = { ...detailStyle };
         updateDetail.animationName = 'detailShowUp';
-        updateDetail.display = 'fixed'
+
         setDetailStyle({ ...updateDetail })
+
+        setTimeout(() => {
+            let anotherUpdate = { ...detailStyle };
+            anotherUpdate.clipPath = 'circle(100%)';
+            anotherUpdate.animationName = 'none'
+            setDetailStyle({ ...anotherUpdate })
+
+        }, 800)
+    }
+    const closeDetail = () => {
+        let updateDetail = { ...detailStyle };
+        updateDetail.animationName = 'detailEnd';
+        setDetailStyle({ ...updateDetail })
+        setTimeout(() => {
+            let anotherUpdate = { ...detailStyle };
+            anotherUpdate.clipPath = 'circle(0%)';
+            anotherUpdate.animationName = 'none'
+            setDetailStyle({ ...anotherUpdate })
+            console.log(detailStyle)
+        }, 800)
     }
     //animation when change the color in detail color
     const handleColorClick = (color) => {
@@ -86,7 +106,8 @@ function ProductList(props) {
             <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
             <Product_detail
                 product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}
-                containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick} />
+                containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick}
+                closeDetail={closeDetail} />
         </div>
     )
 }

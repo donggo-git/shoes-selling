@@ -13,6 +13,9 @@
 @keyframes detailShowUp{
     100%{clip-path: circle(100%);}
 }
+@keyframes detailEnd{
+    100%{clip-path: circle(0%);}
+}
 .detail-container{
     height: 100vh;
     min-width: 100%;
@@ -69,6 +72,10 @@
     height: 15px;
     width: 15px;
     border-radius: 50%;
+}
+.close-btn-container{
+    background: none;
+    border: none;
 }
 .close-btn{
     position: absolute;

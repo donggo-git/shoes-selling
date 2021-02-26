@@ -18,7 +18,7 @@ function Product_detail(props) {
                     </div>
                 </div>
                 <div className='detail-content'>
-                    <AiOutlineClose className='close-btn' />
+                    <button className='close-btn-container' onClick={() => props.closeDetail()}><AiOutlineClose className='close-btn' /></button>
                     <h2>{props.product.name}</h2>
                     <p>{props.product.brand}</p>
                     <p>{props.product.price}</p>
