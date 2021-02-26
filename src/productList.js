@@ -14,6 +14,7 @@ function ProductList(props) {
     let [detailShowUp, setDetailShowUp] = useState({
         product: { color: [], img: [] },
     });
+
     //state to change animation when showing the detail
     let [detailStyle, setDetailStyle] = useState({
 
@@ -83,8 +84,9 @@ function ProductList(props) {
 
             </div>
             <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
-            <Product_detail product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource} containerStyle={containerStyle} nextContainerStyle={nextContainerStyle}
-                handleColorClick={handleColorClick} />
+            <Product_detail
+                product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}
+                containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick} />
         </div>
     )
 }
