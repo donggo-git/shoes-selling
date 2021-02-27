@@ -18,7 +18,7 @@ let source = [
         img: ['https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/mu1gbwho6hi6yxrm0hed/air-max-270-mens-shoe-qVk0Vw.jpg',
             'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/awjogtdnqxniqqk0wpgf/air-max-270-mens-shoe-qVk0Vw.jpg',
             'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-max-270-mens-shoe-qVk0Vw.jpg'],
-        color: ['#ff1010', '#333', '#fff'],
+        color: ['#ff1010', '#fff', '#333'],
         detail: 'This Nike Air Max 270 boasts red all over while still delivering everything that makes this shoe famous. The huge Max Air unit and sock-like fit bring modern comfort to a shoe inspired by the 91 Air Max 180.'
     },
     {
@@ -49,7 +49,7 @@ let source = [
         img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/02/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes',
             'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/03/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes',
             'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194419/04/sv01/fnd/PNA/fmt/png/FUSE-Training-Shoes'],
-        color: ['linear-gradient(#15007b,#9f6e2f)', '#fff', 'linear-gradient(#333,#fff,##f6583e)'],
+        color: ['linear-gradient(#15007b,#9f6e2f)', '#fff', 'linear-gradient(#fff,#ff9a9a,#333)'],
         detail: "Product runs in men’s sizes only. Women should order 1.5 sizes down from their usual size."
     },
     {
@@ -114,7 +114,7 @@ let source = [
         brand: "Adidas",
         img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/872299528a554356909cac4400f4ef29_9366/NMD_R1_Shoes_Grey_FY5730_01_standard.jpg',
             'https://assets.adidas.com/images/w_320,f_auto,q_auto:sensitive,fl_lossy/178b0dce25ad4f26a04bac0200ac3b99_9366/NMD_R1_Shoes_Black_FY5727_01_standard.jpg'],
-        color: ['linear-gradient(#b8b8b8,#ff6c01)', 'linear-gradient(#333,#ff6c01)'],
+        color: ['linear-gradient(#b8b8b8,#ff6c01)', 'linear-gradient(#333,#ff6c01,#3396ff)'],
         detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
     },
     {
@@ -123,7 +123,7 @@ let source = [
         brand: "Adidas",
         img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/72c6639cdf0941abade4ac6b011dd053_9366/NMD_R1_Primeknit_Shoes_Black_G57941_01_standard.jpg',
             "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ff2df471f395411cb192acb500d05976_9366/Nano_X1_Grit_Men's_Training_Shoes_Black_S42565_01_standard.jpg"],
-        color: ['linear-gradient(#333,#5d5d5d)', 'linear-gradient(#69e900,#fe50db)'],
+        color: ['linear-gradient(#69e900,#fe50db,#333)', 'linear-gradient(#333,#5d5d5d)'],
         detail: "The NMD series turns five, and in true NMD fashion, we're celebrating by making some major noise. Visually, that is. Volume and location is all you. These adidas shoes combine inspiration from the most iconic NMDs and create a bold statement with standout graphics. Continue the legacy with signature NMD plugs and a flexible sock-like upper. Energy-returning cushioning keeps you comfortable all day. The party is already off to a solid start with these ones."
     },
     {
@@ -132,7 +132,7 @@ let source = [
         brand: "Rebook",
         img: ["https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/5faab3ff4faa4336b251ac9f017bcb24_9366/Nano_X1_Grit_Men's_Training_Shoes_Grey_S42564_01_standard.jpg",
             'https://assets.adidas.com/images/w_600,f_auto,q_auto/3ae212fd39474d459222ac6b011d8a42_9366/NMD_R1_Primeknit_Shoes_Grey_G57939_01_standard.jpg'],
-        color: ['linear-gradient(#949494,#ff7800)', '#333'],
+        color: ['linear-gradient(#949494,#ff7800)', 'linear-gradient(#96f296, #f0afba,rgb(152, 152, 152))'],
         detail: "When you enter the box, you put your game face on. You're gunning for the leaderboard and nothing's gonna stop you. These men's Reebok training shoes are built for your most demanding workouts. A woven Flexweave® upper is lightweight but able to take a beating. Floatride Energy Foam cushioning in the forefoot provides a responsive feel for running or double unders. A heel clip adds stability for quick lateral moves."
     },
     {

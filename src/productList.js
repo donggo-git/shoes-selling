@@ -86,7 +86,7 @@ function ProductList(props) {
             setNextContainerStyle({ background: colorList[colorList.indexOf(color)] })
         ), 900)
         //finally change the color of detail page
-        setTimeout(() => setShoesSource(imgList[colorList.indexOf(color)]), 450)
+        setTimeout(() => setShoesSource(imgList[colorList.indexOf(color)]), 300)
     }
     return (
         <div className='product-list-container'>
