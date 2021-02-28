@@ -120,6 +120,53 @@ let source = [
         detail: "Born for speed. Raised in style. The Speedcat returns 20 years later for its second season, backed by motorsport legends Sparco. In 1999, PUMA partnered with Sparco to bring t..."
     },
     {
+        name: 'Double DISC Basketball Shoes',
+        price: 175,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194277/03/sv01/fnd/PNA/fmt/png/Double-DISC-Basketball-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194277/01/sv01/fnd/PNA/fmt/png/Double-DISC-Basketball-Shoes',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194277/02/sv01/fnd/PNA/fmt/png/Double-DISC-Basketball-Shoes'],
+        color: ['linear-gradient(#d3ff00,#ff0bc2,#333)', 'linear-gradient(#fff,#ffad93,#a160c6)', 'linear-gradient(#fff,#333)'],
+        detail: "In 1991, PUMA went wireless. Ditching laces with the DISC system was groundbreaking, and for PUMA Hoop’s resurgence back into basketball, we’re bringing DISC back. Two of ‘em, in fact. The Double DISC showcases the archive heel DISC and modern forefoot DISC for serious lockdown and stability. Coupled with a ProFoam midsole and a high abrasion outsole, it’s a shoe with game and style. Double DISC gives a nod to the original and makes a statement for PUMA Hoops. Double the discs, double the fun."
+    },
+    {
+        name: "Porsche Legacy RS-Fast Men's Sneakers",
+        price: 120,
+        brand: "Puma",
+        img: ["https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306773/01/sv01/fnd/PNA/fmt/png/Porsche-Legacy-RS-Fast-Men's - Sneakers",
+            "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306773/02/sv01/fnd/PNA/fmt/png/Porsche-Legacy-RS-Fast-Men's-Sneakers"],
+        color: ['linear-gradient(#e4eb00,#eb7900,#333)', 'linear-gradient(#fff,#00e0eb,#cb0000)'],
+        detail: "Meet the icons of fast. Faster and fresher than any of our RS kicks yet, RS-Fast from PUMA and Porsche Legacy combines early 2000s design with sleek motorsport elements, including a special edition keychain that pays tribute to the legacy of the 911 Turbo."
+    },
+    {
+        name: "evoSPEED Electric 10 Men's Track Spikes",
+        price: 120,
+        brand: "Puma",
+        img: ["https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194475/01/sv01/fnd/PNA/fmt/png/evoSPEED-Electric-10-Men's-Track-Spikes",
+            "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/194475/02/sv01/fnd/PNA/fmt/png/evoSPEED-Electric-10-Men's-Track-Spikes"],
+        color: ['#fff', '#ff9c6c'],
+        detail: "Move faster than the speed of light in the all-new evoSPEED Electric 10, featuring a full-length RAPIDAGILITY soleplate for extreme power return and an aerodynamic upper for a lightweight and dynamic fit."
+    },
+    {
+        name: 'RS-Fast Tech',
+        price: 110,
+        brand: "Puma",
+        img: ['https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/380191/02/sv01/fnd/PNA/fmt/png/RS-Fast-Tech-Sneakers',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/380191/01/sv01/fnd/PNA/fmt/png/RS-Fast-Tech-Sneakers',
+            'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/380191/03/sv01/fnd/PNA/fmt/png/RS-Fast-Tech-Sneakers'],
+        color: ['linear-gradient(#ff342a,#333)', 'linear-gradient(#bf0,#0104bb)', 'linear-gradient(#fff,#00eeab)'],
+        detail: "Faster and fresher than any of our RS kicks yet. The RS-Fast is reinventing street style with a progressive design that combines early 2000s cues and futuristic vibes. This version is tech-inspired with bright pops of color and high shine elements."
+    },
+    {
+        name: "Red Bull Racing Style Rider Men's Sneakers",
+        price: 110,
+        brand: "Puma",
+        img: ["https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306784/01/sv01/fnd/PNA/fmt/png/Red-Bull-Racing-Style-Rider-Men's-Sneakers",
+            "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306784/02/sv01/fnd/PNA/fmt/png/Red-Bull-Racing-Style-Rider-Men's - Sneakers"],
+        color: ['linear-gradient(#f32f2f,#333)', 'linear-gradient(#fff,#f32f2f)'],
+        detail: "The iconic PUMA Rider from the '80s is revamped with fresh additions from Red Bull Racing to create this track and street ready Style Rider. Featuring a slim outsole design, ultra-comfortable Rider Foam, and bold Red Bull Racing team colors, you'll hit the streets in casual racing style."
+    },
+    {
         name: 'ULTRA 1.2 FG/AG ',
         price: 200,
         brand: "Puma",
