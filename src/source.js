@@ -1,5 +1,43 @@
 let source = [
-
+    {
+        name: 'Nike React Infinity Run Flyknit 2',
+        price: 160,
+        brand: "Nike",
+        img: ['https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d7a05207-a1a1-4c53-a31b-2b2b8883cc35/react-infinity-run-flyknit-2-mens-running-shoe-8XGSrl.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/96cf9fbd-2b60-4ba2-833d-9a6254d02582/react-infinity-run-flyknit-2-mens-running-shoe-8XGSrl.jpg',
+            'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/5326bc4d-4362-468b-a79d-15a615595e09/react-infinity-run-flyknit-2-mens-running-shoe-8XGSrl.jpg'],
+        color: ['linear-gradient(rgb(175, 141, 141),#333,rgb(226, 0, 0))', 'linear-gradient(rgb(226, 84, 84),#333)', 'linear-gradient(rgb(148, 251, 23),#333)'],
+        detail: "The Nike React Infinity Run Flyknit 2 continues to help keep you running. A refreshed upper uses Flywire technology that combines with Flyknit for support and breathability where you need it. The high foam heights provide soft responsiveness and long-lasting comfort. It's still one of our most tested shoes, designed to help you feel the potential when your foot hits the pavement."
+    },
+    {
+        name: 'Nike Pegasus Trail 2',
+        price: 130,
+        brand: "Nike",
+        img: ['https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/2c3547fc-6691-48e6-b1f6-84e388688ae7/pegasus-trail-2-mens-trail-running-shoe-JKj6Bj.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/e040d880-76a3-42d1-af22-889810e87bcf/pegasus-trail-2-mens-trail-running-shoe-JKj6Bj.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/f68146ca-5c3f-4745-a898-a1e957d576cf/pegasus-trail-2-mens-trail-running-shoe-JKj6Bj.jpg'],
+        color: ['rgb(243, 62, 7)', 'linear-gradient(rgb(0, 132, 153),rgb(32, 245, 1))', 'linear-gradient(rgb(251, 130, 159),rgb(251, 147, 72),rgb(25, 200, 0))'],
+        detail: "Find your wings on the path less traveled. The Nike Pegasus Trail 2 delivers durability and responsiveness to runners, trail athletes and outdoor enthusiasts. Versatile enough for your everyday miles, it features an ideal fit with plush cushioning and tough traction."
+    },
+    {
+        name: 'Nike Pegasus Trail 2 GORE-TEX',
+        price: 160,
+        brand: "Nike",
+        img: ['https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d6539dd8-51cd-4b0d-8db0-5f2cfce5e4d0/pegasus-trail-2-gore-tex-mens-trail-running-shoe-0vmbg9.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/159e82ab-9877-4e08-8a79-c283388f17ca/pegasus-trail-2-gore-tex-trail-running-shoe-0vmbg9.jpg'],
+        color: ['linear-gradient(rgb(255, 143, 25),rgb(47, 105, 243),rgb(136, 27, 2))', 'linear-gradient(rgb(247, 197, 0),rgb(251, 59, 0))'],
+        detail: "Keep moving in wet conditions. The Nike Pegasus Trail 2 GORE-TEX provides waterproof protection for runners, trail athletes and outdoor enthusiasts. Versatile enough for everyday training, it features an ideal fit and optimal traction for your miles."
+    },
+    {
+        name: 'Kyrie 7 "Samurai Ky"',
+        price: 130,
+        brand: "Nike",
+        img: ['https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/c80912ee-71f6-4012-9e61-ec721147a1f5/kyrie-7-samurai-ky-basketball-shoe-5Kj9Lr.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4253255a-52d4-4a14-815d-d963912bbb0a/kyrie-7-rayguns-basketball-shoe-5Kj9Lr.jpg',
+            'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/cf7184c5-d8b3-44b4-bc79-26340d600884/kyrie-7-sisterhood-basketball-shoe-5Kj9Lr.jpg'],
+        color: ['linear-gradient(rgb(0, 245, 4),rgb(1, 3, 113))', 'linear-gradient(rgb(255, 227, 0),rgb(109, 15, 0))', 'linear-gradient(rgb(255, 209, 102),rgb(0, 100, 255))'],
+        detail: "Kyrie made headlines with his generous, outspoken support of female ballers. Nike is joining him with the special “Sisterhood” colorway of the Kyrie 7, which aims to empower and unify the support of women athletes everywhere. The eye-grabbing aesthetic is highlighted by a detailed floral graphic underneath the pop of its yellow-outlined Swoosh logo. On or off the court, show your support for women athletes in style."
+    },
     {
         name: 'Nike renew run',
         price: 72.97,
