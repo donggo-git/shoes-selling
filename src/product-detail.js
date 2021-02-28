@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import './detailPage.css';
 import './product.css'
+import { BsHeart } from 'react-icons/bs'
 function Product_detail(props) {
     return (
         <div className='modal' style={props.styles}>
@@ -21,8 +22,10 @@ function Product_detail(props) {
                     <button className='close-btn-container' onClick={() => props.closeDetail()}><AiOutlineClose className='close-btn' /></button>
                     <h2>{props.product.name}</h2>
                     <p>{props.product.brand}</p>
-                    <p>{props.product.price}</p>
+                    <p>${props.product.price}</p>
                     <p>{props.product.detail}</p>
+                    <button className='detail-btn add-to-cart'>Add to cart</button>
+                    <button className='detail-btn favorite'>Favorite <BsHeart className='heart' /></button>
                 </div>
             </div>
         </div>
