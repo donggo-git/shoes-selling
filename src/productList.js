@@ -107,7 +107,7 @@ function ProductList(props) {
             <Product_detail
                 product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}
                 containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick}
-                closeDetail={closeDetail} />
+                closeDetail={closeDetail} addToCart={props.addToCart} />
         </div>
     )
 }

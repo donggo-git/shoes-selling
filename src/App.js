@@ -16,7 +16,8 @@ class App extends React.Component {
       nextPageBrand: 'Nike',
       nextPageStyle: {
         animationName: 'none',
-      }
+      },
+      cart: []
     }
   }
 
@@ -44,12 +45,21 @@ class App extends React.Component {
       }), 1000)
 
     }
-
+    const addToCart = (product) => {
+      let updateCart = [...this.state.cart]
+      updateCart.push(product)
+      this.setState({
+        cart: updateCart
+      })
+      console.log(this.state.cart)
+    }
     return (
       <div>
         <Header />
         <Brand styleBrand={this.state.styleBrand} handleBrandClick={handleBrandClick} />
-        <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} nextPageBrand={this.state.nextPageBrand} />
+        <ProductList brand={this.state.brand} nextPageStyle={this.state.nextPageStyle} nextPageBrand={this.state.nextPageBrand}
+          addToCart={addToCart}
+        />
 
       </div>
     );

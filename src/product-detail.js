@@ -24,7 +24,7 @@ function Product_detail(props) {
                     <p>{props.product.brand}</p>
                     <p>${props.product.price}</p>
                     <p>{props.product.detail}</p>
-                    <button className='detail-btn add-to-cart'>Add to cart</button>
+                    <button className='detail-btn add-to-cart' onClick={() => props.addToCart(props.product)}>Add to cart</button>
                     <button className='detail-btn favorite'>Favorite <BsHeart className='heart' /></button>
                 </div>
             </div>
