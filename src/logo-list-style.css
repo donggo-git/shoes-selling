@@ -24,3 +24,16 @@
     height: 100%;
     width: 100%;
 }
+@media screen and (max-width: 1000px) {
+    .logo-list{
+        width: auto;
+    }
+    .brand-item{
+        
+        padding: 0.2rem 0.5rem;
+        border-bottom:  2px solid #333;
+    }
+    .brand-item img{
+        height: 80%;
+    }
+}

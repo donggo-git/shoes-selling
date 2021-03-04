@@ -26,7 +26,7 @@ class App extends React.Component {
 
     const handleBrandClick = (index, logoItem) => {
       let newBrandStyle = [{ border: 'none' }, { border: 'none' }, { border: 'none' }, { border: 'none' }];
-      newBrandStyle[index] = { border: '1px solid #333' }
+      newBrandStyle[index] = { border: '2px solid #333' }
       this.setState({
         styleBrand: newBrandStyle,
         nextPageBrand: logoItem.name,
