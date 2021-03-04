@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      styleBrand: [{ border: '1px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }],
+      styleBrand: [{ border: '2px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }],
       brand: 'Nike',
       nextPageBrand: 'Nike',
       nextPageStyle: {
