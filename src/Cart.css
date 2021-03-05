@@ -1,0 +1,18 @@
+.cart-page{
+    display: flex ;
+    width: 100%;
+    justify-content: center;
+}
+.cart-item{
+    display: flex;
+    width: 55rem;
+    height: auto;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+.cart-item img{
+    display: block;
+    height: 10rem;
+    width: 10rem;
+    margin-right: 2rem;
+}

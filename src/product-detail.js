@@ -6,9 +6,11 @@ import { BsHeart } from 'react-icons/bs'
 function Product_detail(props) {
     return (
         <div className='modal' style={props.styles}>
+
             <div className='detail-container' style={props.containerStyle} />
             <div className='detail-container next-detail-container' style={props.nextContainerStyle} />
             <div className='detail' >
+                <button className='close-btn-container' onClick={() => props.closeDetail()}><AiOutlineClose className='close-btn' /></button>
                 <div className='detail-img'>
                     <img src={props.shoesSource} alt={props.product.name} />
                     <div className='color-list'>
@@ -19,7 +21,7 @@ function Product_detail(props) {
                     </div>
                 </div>
                 <div className='detail-content'>
-                    <button className='close-btn-container' onClick={() => props.closeDetail()}><AiOutlineClose className='close-btn' /></button>
+
                     <h2>{props.product.name}</h2>
                     <p>{props.product.brand}</p>
                     <p>${props.product.price}</p>

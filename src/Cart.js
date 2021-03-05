@@ -1,27 +1,29 @@
 import React from 'react'
+import { source } from './source'
+import './Cart.css'
 function Cart(props) {
     return (
         <div className='cart-page'>
             <div className='cart'>
-                {props.product.map((item) => (
-                    <div className='cart-item'>
-                        <img src={item.img} />
+                {source.slice(0, 2).map((item) => (
+                    <div className='cart-item' key={item.name}>
+                        <img src={item.img[0]} />
                         <div>
                             <div className='cart-item-detail'>
                                 <h4>{item.name}</h4>
                                 <label for='size'>Size</label>
                                 <select name='size'>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
+                                    <option value='11'>8</option>
+                                    <option value='11'>9</option>
+                                    <option value='11'>10</option>
+                                    <option value='11'>11</option>
                                 </select>
                                 <label for='quantity'>Quantity</label>
                                 <select name='size'>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
-                                    <option value='11'></option>
+                                    <option value='11'>1</option>
+                                    <option value='11'>2</option>
+                                    <option value='11'>3</option>
+                                    <option value='11'>4</option>
                                 </select>
                                 <p className='price'>{item.price}</p>
                             </div>
@@ -31,7 +33,9 @@ function Cart(props) {
                     </div>
                 ))}
             </div>
-            <div className='summary-cart'></div>
+            <div className='summary-cart'>
+                <h2>Summary</h2>
+            </div>
         </div >
     )
 }
