@@ -8,7 +8,7 @@ function Cart(props) {
                 {source.slice(0, 2).map((item) => (
                     <div className='cart-item' key={item.name}>
                         <img src={item.img[0]} />
-                        <div>
+                        <div className='cart-item-detail-container'>
                             <div className='cart-item-detail'>
                                 <h4>{item.name}</h4>
                                 <label for='size'>Size</label>
@@ -25,7 +25,7 @@ function Cart(props) {
                                     <option value='11'>3</option>
                                     <option value='11'>4</option>
                                 </select>
-                                <p className='price'>{item.price}</p>
+                                <p className='price'>${item.price}</p>
                             </div>
                             <button>Move to Favorite</button>
                             <button>Remove</button>
