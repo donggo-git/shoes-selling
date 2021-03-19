@@ -7,3 +7,6 @@ a{
 body{
   font-family: 'Poppins', sans-serif;
 }
+input,button:focus{
+outline: none;
+}

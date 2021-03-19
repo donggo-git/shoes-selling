@@ -1,0 +1,35 @@
+.Summary{
+    color: black;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.Summary h2{
+    margin: 0;
+}
+.summary__discountCode{
+    
+}
+.summary__discountCode>p{
+    width: 12.8rem;
+    border-bottom: 1px solid rgb(104, 104, 104);
+}
+.summary__discountCode__enterCode{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.summary__discountCode__enterCode input{
+    border: 1px solid rgb(146, 145, 145);
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 60%;
+    padding: 8px 16px;
+}
+.summary__discountCode__enterCode button{
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    border: 1px solid rgb(146, 145, 145);
+    background-color: white;
+    color:rgb(104, 104, 104);
+}

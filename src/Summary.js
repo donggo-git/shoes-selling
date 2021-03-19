@@ -1,13 +1,16 @@
 import React from 'react'
-
+import './Summary.css'
 function Summary() {
+
     return (
-        <div>
+        <div className='Summary'>
             <h2>Summary</h2>
-            <div className='discount_code'>
+            <div className='summary__discountCode'>
                 <p>Do you have  discount code</p>
-                <input type='text' />
-                <button>Apply</button>
+                <div className='summary__discountCode__enterCode'>
+                    <input type='text' />
+                    <button>Apply</button>
+                </div>
             </div>
             <div className='summary__textLine'>
                 <p>Subtotal</p>
