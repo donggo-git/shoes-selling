@@ -1,6 +1,7 @@
 import React from 'react'
 import { source } from './source'
 import './Cart.css'
+import Summary from './Summary'
 function Cart(props) {
     return (
         <div className='cart-page'>
@@ -34,7 +35,7 @@ function Cart(props) {
                 ))}
             </div>
             <div className='summary-cart'>
-                <h2>Summary</h2>
+                <Summary />
             </div>
         </div >
     )
