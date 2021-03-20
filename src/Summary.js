@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Summary.css'
 function Summary() {
 
@@ -12,6 +12,9 @@ function Summary() {
                     <button>Apply</button>
                 </div>
             </div>
+
+
+
             <div className='summary__textLine'>
                 <p>Subtotal</p>
                 <p>$130.00</p>
@@ -28,8 +31,9 @@ function Summary() {
                 <p>Total</p>
                 <p>$138.00</p>
             </div>
-            <button>Checkout</button>
-            <button>Paypal</button>
+            <div></div>
+            <button className='Checkout-btn'>Checkout</button>
+            <button className='Paypal-btn'>Paypal</button>
         </div >
     )
 }

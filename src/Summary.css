@@ -2,21 +2,22 @@
     color: black;
     font-weight: bold;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 .Summary h2{
     margin: 0;
 }
-.summary__discountCode{
-    
-}
 .summary__discountCode>p{
-    width: 12.8rem;
-    border-bottom: 1px solid rgb(104, 104, 104);
+    position: relative;
+    background-color: white;
 }
 .summary__discountCode__enterCode{
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    
+
 }
 .summary__discountCode__enterCode input{
     border: 1px solid rgb(146, 145, 145);
@@ -31,5 +32,39 @@
     font-size: 0.9rem;
     border: 1px solid rgb(146, 145, 145);
     background-color: white;
-    color:rgb(104, 104, 104);
+    
+}
+.summary__textLine{
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 5px 0;
+}
+.total{
+    border-top: 1px solid rgb(146, 145, 145);
+    border-bottom: 1px solid rgb(146, 145, 145);
+    margin-bottom: 1rem;
+}
+.Summary>button{
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin: 5px 0;
+    border-radius: 10rem;
+    
+    cursor: pointer;
+}
+.Checkout-btn{
+    color: #fff;
+    background-color:rgb(0,0,0);
+    border: none;
+}
+.Checkout-btn:hover{
+    background-color: rgb(63, 63, 63);
+}
+.Paypal-btn{
+    color: rgb(4, 4, 146);
+    border: 1px solid rgb(146, 145, 145);
+}
+.Paypal-btn:hover{
+    background-color: #fff;
 }
