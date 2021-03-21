@@ -33,21 +33,7 @@ function Header() {
     }
     return (
         <div className='header'>
-            <nav>
-                <ul>
-                    <a href='#'><li>New Releases</li></a>
-                    <a href='#'><li>Men</li></a>
-                    <a href='#'><li>Women</li></a>
-                    <a href='#'><li>Kids</li></a>
-                    <a href='#'><li>Customize</li></a>
-                    <a href='#'><li>Sale</li></a>
-                </ul>
-                <div className='search-input'>
-                    <BsSearch className='search-btn' />
-                    <input type='text' placeholder='Search' />
 
-                </div>
-            </nav>
             <header>
                 <div className='previous-btn slide-btn' onClick={() => previousSlice()}><GrFormPrevious className='slice-icon' /></div>
                 <div className='next-btn slide-btn' onClick={() => nextSlice()}><GrFormNext className='slice-icon' /></div>
