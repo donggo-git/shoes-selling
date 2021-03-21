@@ -5,12 +5,13 @@ import React from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      page: 'product',
+      page: 'cart',
       cart: []
     }
   }
@@ -43,12 +44,12 @@ class App extends React.Component {
 
           </div>
         </nav>
-        {this.state.page == 'product' && <ProductPage addToCart={addToCart} />
-        }
-        {
-          this.state.page == 'cart' && <CartPage product={this.state.cart} />
-        }
-
+        <Router>
+          <Switch>
+            <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
+            <Route path='/cart' component={CartPage} />
+          </Switch>
+        </Router>
       </div>
     );
   }
