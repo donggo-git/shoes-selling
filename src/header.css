@@ -173,7 +173,7 @@ nav ul{
 nav a{
     color: #000000;
 }
-nav li{
+nav li,.nav__homePage{
     margin: 0 10px;
 }
 .search-input{

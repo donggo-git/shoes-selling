@@ -5,7 +5,7 @@ import React from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -26,13 +26,13 @@ class App extends React.Component {
       this.setState({
         cart: updateCart
       })
-      console.log(this.state.cart)
     }
     return (
       <div>
         <Router>
           <nav>
             <ul>
+              <Link to='/' className='nav__homePage'>Home</Link>
               <a href='#'><li>New Releases</li></a>
               <a href='#'><li>Men</li></a>
               <a href='#'><li>Women</li></a>
@@ -52,7 +52,7 @@ class App extends React.Component {
 
           <Switch>
             <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
-            <Route path='/cart' component={CartPage} />
+            <Route path='/cart' component={() => <CartPage cart={this.state.cart} />} />
           </Switch>
 
         </Router>

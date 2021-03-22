@@ -6,7 +6,7 @@ function Cart(props) {
     return (
         <div className='cart-page'>
             <div className='cart'>
-                {source.slice(0, 2).map((item) => (
+                {props.cart.map((item) => (
                     <div className='cart-item' key={item.name}>
                         <img src={item.img[0]} />
                         <div className='cart-item-detail-container'>
