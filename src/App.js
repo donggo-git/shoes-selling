@@ -7,6 +7,7 @@ import ProductPage from './productPage'
 import CartPage from './Cart'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -29,27 +30,33 @@ class App extends React.Component {
     }
     return (
       <div>
-        <nav>
-          <ul>
-            <a href='#'><li>New Releases</li></a>
-            <a href='#'><li>Men</li></a>
-            <a href='#'><li>Women</li></a>
-            <a href='#'><li>Kids</li></a>
-            <a href='#'><li>Customize</li></a>
-            <a href='#'><li>Sale</li></a>
-          </ul>
-          <div className='search-input'>
-            <BsSearch className='search-btn' />
-            <input type='text' placeholder='Search' />
-
-          </div>
-        </nav>
         <Router>
+          <nav>
+            <ul>
+              <a href='#'><li>New Releases</li></a>
+              <a href='#'><li>Men</li></a>
+              <a href='#'><li>Women</li></a>
+              <a href='#'><li>Kids</li></a>
+              <a href='#'><li>Customize</li></a>
+              <a href='#'><li>Sale</li></a>
+
+            </ul>
+
+            <div className='search-input'>
+              <BsSearch className='search-btn' />
+              <input type='text' placeholder='Search' />
+
+            </div>
+
+          </nav>
+
           <Switch>
             <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
             <Route path='/cart' component={CartPage} />
           </Switch>
+
         </Router>
+
       </div>
     );
   }

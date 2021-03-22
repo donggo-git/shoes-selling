@@ -10,3 +10,9 @@ body{
 input,button:focus{
 outline: none;
 }
+.cart_icon{
+  margin-top: 3px;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
+}

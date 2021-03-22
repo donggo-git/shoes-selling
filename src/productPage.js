@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import ProductList from './productList'
 import Brand from './Brand'
 import Header from './Header'
+import { IoCartOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 
 function ProductPage(props) {
     let [styleBrand, setStyleBrand] = useState([{ border: '2px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }])
@@ -35,7 +37,9 @@ function ProductPage(props) {
             <ProductList brand={brand} nextPageStyle={nextPageStyle} nextPageBrand={nextPageBrand}
                 addToCart={props.addToCart}
             />
-
+            <Link to='/cart'>
+                <IoCartOutline className='cart_icon' />
+            </Link>
         </div>
     )
 }
