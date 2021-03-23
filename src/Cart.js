@@ -7,7 +7,7 @@ function Cart(props) {
         <div className='cart-page'>
             <div className='cart'>
                 {props.cart.map((item) => (
-                    <div className='cart-item' key={item.name}>
+                    <div className='cart-item' key={item.id}>
                         <img src={item.img[0]} />
                         <div className='cart-item-detail-container'>
                             <div className='cart-item-detail'>
@@ -29,7 +29,7 @@ function Cart(props) {
                                 <p className='price'>${item.price}</p>
                             </div>
                             <button>Move to Favorite</button>
-                            <button>Remove</button>
+                            <button onClick={() => props.removeCart(item.id)}>Remove</button>
                         </div>
                     </div>
                 ))}

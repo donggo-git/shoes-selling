@@ -91,8 +91,8 @@ function ProductList(props) {
     return (
         <div className='product-list-container'>
             <div className='product-list'>
-                {filterProduct.map((product, index) => (
-                    <div key={index} className='product-item' onClick={() => handleDetailShow(product)}>
+                {filterProduct.map((product) => (
+                    <div key={product.id} className='product-item' onClick={() => handleDetailShow(product)}>
                         <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
                         <div className='product-detail'>
                             <h3>{product.name}</h3>

@@ -10,13 +10,22 @@ import { IoCartOutline } from 'react-icons/io5'
 
 function App() {
 
-  let [cart, setCart] = useState([])
+  const [cart, setCart] = useState([])
 
   // add to cart method
   const addToCart = (product) => {
     let updateCart = [...cart]
     updateCart.push(product)
     setCart(updateCart)
+  }
+  const removeCart = (productID) => {
+    if (cart.length > 0) {
+      let updateCart = [...cart];
+      updateCart = updateCart.filter(item => item.id != productID)
+      console.log(productID)
+      setCart(updateCart)
+    }
+    else return;
   }
   return (
     <div>
@@ -48,7 +57,7 @@ function App() {
 
         <Switch>
           <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
-          <Route path='/cart' component={() => <CartPage cart={cart} />} />
+          <Route path='/cart' component={() => <CartPage cart={cart} removeCart={removeCart} />} />
         </Switch>
 
       </Router>
