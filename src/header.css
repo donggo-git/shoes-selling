@@ -176,10 +176,12 @@ nav a{
 nav li,.nav__homePage{
     margin: 0 10px;
 }
+.nav__homePage:focus{
+    outline: none;
+}
 .search-input{
     display: flex;
     font-size: 1.2rem;
-    margin-right: 2rem;
     font-size: 1rem;
     padding: 5px 0.8rem;
     border-radius: 10rem;
@@ -210,4 +212,30 @@ nav li,.nav__homePage{
     .headerSlide-list{
         width: 500%;
     }
+}
+.nav__cart{
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    font-size: 1.2rem;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+}
+.nav__cart>a:focus{
+    outline: none;
+}
+.nav__cart__amount{
+    position: absolute;
+    top: -60%;
+    right: -80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
 }

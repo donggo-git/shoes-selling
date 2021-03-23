@@ -37,9 +37,7 @@ function ProductPage(props) {
             <ProductList brand={brand} nextPageStyle={nextPageStyle} nextPageBrand={nextPageBrand}
                 addToCart={props.addToCart}
             />
-            <Link to='/cart'>
-                <IoCartOutline className='cart_icon' />
-            </Link>
+
         </div>
     )
 }

@@ -37,6 +37,7 @@ function Cart(props) {
             <div className='summary-cart'>
                 <Summary />
             </div>
+
         </div >
     )
 }

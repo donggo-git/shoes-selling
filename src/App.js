@@ -1,65 +1,61 @@
 
 import './App.css';
 import './header.css'
-import React from 'react'
+import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { IoCartOutline } from 'react-icons/io5'
 
+function App() {
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      page: 'cart',
-      cart: []
-    }
+  let [cart, setCart] = useState([])
+
+  // add to cart method
+  const addToCart = (product) => {
+    let updateCart = [...cart]
+    updateCart.push(product)
+    setCart(updateCart)
   }
+  return (
+    <div>
+      <Router>
+        <nav>
+          <ul>
+            <Link to='/' className='nav__homePage'>Home</Link>
+            <a href='#'><li>New Releases</li></a>
+            <a href='#'><li>Men</li></a>
+            <a href='#'><li>Women</li></a>
+            <a href='#'><li>Kids</li></a>
+            <a href='#'><li>Customize</li></a>
+            <a href='#'><li>Sale</li></a>
 
-  render() {
+          </ul>
 
-    // add to cart method
-    const addToCart = (product) => {
-      let updateCart = [...this.state.cart]
-      updateCart.push(product)
-      this.setState({
-        cart: updateCart
-      })
-    }
-    return (
-      <div>
-        <Router>
-          <nav>
-            <ul>
-              <Link to='/' className='nav__homePage'>Home</Link>
-              <a href='#'><li>New Releases</li></a>
-              <a href='#'><li>Men</li></a>
-              <a href='#'><li>Women</li></a>
-              <a href='#'><li>Kids</li></a>
-              <a href='#'><li>Customize</li></a>
-              <a href='#'><li>Sale</li></a>
+          <div className='search-input'>
+            <BsSearch className='search-btn' />
+            <input type='text' placeholder='Search' />
 
-            </ul>
-
-            <div className='search-input'>
-              <BsSearch className='search-btn' />
-              <input type='text' placeholder='Search' />
-
+          </div>
+          <Link to='/cart'>
+            <div className='nav__cart '>
+              <IoCartOutline className='cart_icon' />
+              <div className='nav__cart__amount'>{cart.length}</div>
             </div>
+          </Link>
+        </nav>
 
-          </nav>
+        <Switch>
+          <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
+          <Route path='/cart' component={() => <CartPage cart={cart} />} />
+        </Switch>
 
-          <Switch>
-            <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
-            <Route path='/cart' component={() => <CartPage cart={this.state.cart} />} />
-          </Switch>
+      </Router>
 
-        </Router>
+    </div>
+  );
 
-      </div>
-    );
-  }
 }
 
 
