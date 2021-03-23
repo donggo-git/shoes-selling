@@ -29,7 +29,7 @@ function Cart(props) {
                                 <p className='price'>${item.price}</p>
                             </div>
                             <button>Move to Favorite</button>
-                            <button onClick={() => props.removeCart(item.id)}>Remove</button>
+                            <button onClick={() => props.removeItem(item.id)}>Remove</button>
                         </div>
                     </div>
                 ))}
