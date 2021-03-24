@@ -1,8 +1,8 @@
 import React from 'react'
-import { source } from './source'
 import './Cart.css'
 import Summary from './Summary'
 function Cart(props) {
+    let subtotal = props.cart.map(item => item.price).reduce((a, b) => a + b, 0);
     return (
         <div className='cart-page'>
             <div className='cart'>
@@ -35,7 +35,7 @@ function Cart(props) {
                 ))}
             </div>
             <div className='summary-cart'>
-                <Summary />
+                <Summary subtotal={subtotal} />
             </div>
 
         </div >

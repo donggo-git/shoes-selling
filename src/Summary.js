@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Summary.css'
-function Summary() {
-
+function Summary(props) {
+    let tax = Math.round((props.subtotal * 10.1 / 100) * 100) / 100;
+    let total = props.subtotal + tax + 8
     return (
         <div className='Summary'>
             <h2>Summary</h2>
@@ -17,7 +18,7 @@ function Summary() {
 
             <div className='summary__textLine'>
                 <p>Subtotal</p>
-                <p>$130.00</p>
+                <p>${props.subtotal}.00</p>
             </div>
             <div className='summary__textLine'>
                 <p>Estimated Shipping & Handling</p>
@@ -25,11 +26,11 @@ function Summary() {
             </div>
             <div className='summary__textLine'>
                 <p>Estimated tax</p>
-                <p>__</p>
+                <p>{tax}</p>
             </div>
             <div className='summary__textLine total'>
                 <p>Total</p>
-                <p>$138.00</p>
+                <p>${total}</p>
             </div>
             <div></div>
             <button className='Checkout-btn'>Checkout</button>

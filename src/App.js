@@ -57,7 +57,7 @@ function App() {
         </nav>
         <Route render={({ location }) => (
           <TransitionGroup>
-            <CSSTransition timeout={300} classNames='fade' key={location.key}>
+            <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
                 <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
                 <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
