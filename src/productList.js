@@ -5,6 +5,7 @@ import NextPageofproduct from './nextPageofproduct'
 import './product.css'
 import './detailPage.css'
 import Product_detail from './product-detail'
+import FilterProduct from './FilterProuct'
 function ProductList(props) {
     //filter product by brand
     let filterProduct = source.filter((product) => product.brand === props.brand)
@@ -90,6 +91,7 @@ function ProductList(props) {
     }
     return (
         <div className='product-list-container'>
+            <FilterProduct />
             <div className='product-list'>
                 {filterProduct.map((product) => (
                     <div key={product.id} className='product-item' onClick={() => handleDetailShow(product)}>
@@ -103,6 +105,7 @@ function ProductList(props) {
                 ))}
 
             </div>
+
             <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
             <Product_detail
                 product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}

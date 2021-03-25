@@ -1,0 +1,6 @@
+.filter{
+    z-index: 5;
+    position: fixed;
+    margin-right: 5rem;
+    width: 100pc;
+}
