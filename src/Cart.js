@@ -1,4 +1,5 @@
 import React from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Cart.css'
 import Summary from './Summary'
 function Cart(props) {
@@ -6,33 +7,35 @@ function Cart(props) {
     return (
         <div className='cart-page'>
             <div className='cart'>
-                {props.cart.map((item) => (
-                    <div className='cart-item' key={item.id}>
-                        <img src={item.img[0]} />
-                        <div className='cart-item-detail-container'>
-                            <div className='cart-item-detail'>
-                                <h4>{item.name}</h4>
-                                <label for='size'>Size</label>
-                                <select name='size'>
-                                    <option value='11'>8</option>
-                                    <option value='11'>9</option>
-                                    <option value='11'>10</option>
-                                    <option value='11'>11</option>
-                                </select>
-                                <label for='quantity'>Quantity</label>
-                                <select name='size'>
-                                    <option value='11'>1</option>
-                                    <option value='11'>2</option>
-                                    <option value='11'>3</option>
-                                    <option value='11'>4</option>
-                                </select>
-                                <p className='price'>${item.price}</p>
+                <TransitionGroup>
+                    {props.cart.map((item) => (
+                        <div className='cart-item' key={item.id}>
+                            <img src={item.img[0]} />
+                            <div className='cart-item-detail-container'>
+                                <div className='cart-item-detail'>
+                                    <h4>{item.name}</h4>
+                                    <label for='size'>Size</label>
+                                    <select name='size'>
+                                        <option value='11'>8</option>
+                                        <option value='11'>9</option>
+                                        <option value='11'>10</option>
+                                        <option value='11'>11</option>
+                                    </select>
+                                    <label for='quantity'>Quantity</label>
+                                    <select name='size'>
+                                        <option value='11'>1</option>
+                                        <option value='11'>2</option>
+                                        <option value='11'>3</option>
+                                        <option value='11'>4</option>
+                                    </select>
+                                    <p className='price'>${item.price}</p>
+                                </div>
+                                <button>Move to Favorite</button>
+                                <button onClick={() => props.removeItem(item.id)}>Remove</button>
                             </div>
-                            <button>Move to Favorite</button>
-                            <button onClick={() => props.removeItem(item.id)}>Remove</button>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </TransitionGroup>
             </div>
             <div className='summary-cart'>
                 <Summary subtotal={subtotal} />

@@ -25,6 +25,7 @@
     font-size: 1rem;
     width: 60%;
     padding: 8px 16px;
+    color: rgb(122, 122, 122);
 }
 .summary__discountCode__enterCode button{
     padding: 8px 16px;
@@ -32,13 +33,20 @@
     font-size: 0.9rem;
     border: 1px solid rgb(146, 145, 145);
     background-color: white;
-    
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.summary__discountCode__enterCode button:hover{
+    background-color: rgb(194, 192, 192);
 }
 .summary__textLine{
     display: flex;
     justify-content: space-between;
     
     padding: 5px 0;
+}
+.summary__textLine__discount p{
+    margin-left: auto;
 }
 .total{
     border-top: 1px solid rgb(146, 145, 145);
