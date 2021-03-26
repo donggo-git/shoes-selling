@@ -92,25 +92,28 @@ function ProductList(props) {
     return (
         <div className='product-list-container'>
             <FilterProduct />
-            <div className='product-list'>
-                {filterProduct.map((product) => (
-                    <div key={product.id} className='product-item' onClick={() => handleDetailShow(product)}>
-                        <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
-                        <div className='product-detail'>
-                            <h3>{product.name}</h3>
-                            <p className='brand'>{product.brand}</p>
-                            <p>${product.price}</p>
+            <div className='product-list-show'>
+
+                <div className='product-list'>
+                    {filterProduct.map((product) => (
+                        <div key={product.id} className='product-item' onClick={() => handleDetailShow(product)}>
+                            <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
+                            <div className='product-detail'>
+                                <h3>{product.name}</h3>
+                                <p className='brand'>{product.brand}</p>
+                                <p>${product.price}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
 
+                </div>
+
+                <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
+                <Product_detail
+                    product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}
+                    containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick}
+                    closeDetail={closeDetail} addToCart={props.addToCart} />
             </div>
-
-            <NextPageofproduct nextPageFilter={nextPageFilter} className='nextProduct-page' nextPageStyle={props.nextPageStyle} />
-            <Product_detail
-                product={detailShowUp.product} styles={detailStyle} shoesSource={shoesSource}
-                containerStyle={containerStyle} nextContainerStyle={nextContainerStyle} handleColorClick={handleColorClick}
-                closeDetail={closeDetail} addToCart={props.addToCart} />
         </div>
     )
 }

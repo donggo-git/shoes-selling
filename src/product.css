@@ -1,10 +1,16 @@
 .product-list-container{
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+.product-list-show{
     width: 70%;
     margin: 0 auto;
     display: flex;
     overflow-x: hidden;
     justify-content: flex-start;
     z-index: 5;
+   margin-left: 1rem;
 }
 .product-list{
     display: grid;
@@ -57,7 +63,7 @@
     color: rgb(105, 105, 105);
 }
 @media screen and (max-width: 1000px) {
-    .product-list-container{
+    .product-list-show{
         width: 70%;
     }
     .product-item{

@@ -1,6 +1,26 @@
 .filter{
     z-index: 5;
-    position: fixed;
-    margin-right: 5rem;
-    width: 100pc;
+    position: sticky;   
+    top: 0;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    width: 11rem;
+    display: block;
+}
+.filter__line{
+    display: flex;
+    flex-direction: column;
+}
+.filter__line>p{
+    font-weight: bolder;
+    margin: 0.8rem 0;
+}
+.category{
+    width: 10rem;
+    margin-top: 0.8rem;
+    flex-direction: row;
+}
+.category>div{
+    display: inline-block;
+    padding: 5px 1rem;
 }
