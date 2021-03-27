@@ -18,9 +18,15 @@
 .category{
     width: 10rem;
     margin-top: 0.8rem;
-    flex-direction: row;
+    flex-direction: column;
+    font-weight: bold;
+    
 }
 .category>div{
     display: inline-block;
-    padding: 5px 1rem;
+    padding: 5px 0;
+    cursor: pointer;
+}
+.category>div:hover{
+    color: rgb(102, 102, 102);
 }

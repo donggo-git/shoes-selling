@@ -5,13 +5,13 @@ import NextPageofproduct from './nextPageofproduct'
 import './product.css'
 import './detailPage.css'
 import Product_detail from './product-detail'
-import FilterProduct from './FilterProuct'
+import FilteForm from './FilterProuct'
 function ProductList(props) {
     //filter product by brand
     let filterProduct = source.filter((product) => product.brand === props.brand)
     //next page when filter other brand
     let nextPageFilter = source.filter((product) => product.brand === props.nextPageBrand)
-    //can be call main state, contain the detail of product when click
+    //can be called main state, contain the detail of product when click
     let [detailShowUp, setDetailShowUp] = useState({
         product: { color: [], img: [] },
     });
@@ -89,9 +89,13 @@ function ProductList(props) {
         //finally change the color of detail page
         setTimeout(() => setShoesSource(imgList[colorList.indexOf(color)]), 300)
     }
+    // filter product by the filter form 
+    const FilterProduct = () => {
+
+    }
     return (
         <div className='product-list-container'>
-            <FilterProduct />
+            <FilteForm />
             <div className='product-list-show'>
 
                 <div className='product-list'>
