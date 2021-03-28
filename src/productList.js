@@ -32,6 +32,11 @@ function ProductList(props) {
     let [containerStyle, setContainerStyle] = useState({ background: detailShowUp.product.color[0] })
     //shoes  source for detail page
     let [shoesSource, setShoesSource] = useState(detailShowUp.product.img[0])
+    //
+    let [filter, setFilter] = useState({
+        Gender: ["Men", "Women", "Unisex"],
+        PriceFilter: [0, 10000],
+    })
     //method to show the detail when click
     const handleDetailShow = (product) => {
 
@@ -90,12 +95,18 @@ function ProductList(props) {
         setTimeout(() => setShoesSource(imgList[colorList.indexOf(color)]), 300)
     }
     // filter product by the filter form 
-    const FilterProduct = () => {
+    const FilterProduct = (e) => {
+        let updateFilter = Object.create(filter)
+        console.log(updateFilter)
+        if (e.target.type == 'checkbox') {
+            updateFilter[e.target.name] = updateFilter[e.target.name].filter(ItemFilter => ItemFilter == e.target.value)
+            setFilter(updateFilter)
 
+        }
     }
     return (
         <div className='product-list-container'>
-            <FilteForm />
+            <FilteForm FilterProduct={FilterProduct} />
             <div className='product-list-show'>
 
                 <div className='product-list'>
