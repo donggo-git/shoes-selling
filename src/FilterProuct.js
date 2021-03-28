@@ -11,45 +11,45 @@ function FilterProuct(props) {
             <div className='filter__line'>
                 <p>Gender</p>
                 <div>
-                    <input type='checkbox' value='Men' name='Gender' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value='Men' name='Gender' onChange={(e) => props.TrackFilterForm(e)} />
                     <label>Men</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Women' name='Gender' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value='Women' name='Gender' onChange={(e) => props.TrackFilterForm(e)} />
                     <label>Women</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Unisex' name='Gender' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value='Unisex' name='Gender' onChange={(e) => props.TrackFilterForm(e)} />
                     <label>Unisex</label>
                 </div>
             </div>
             <div className='filter__line'>
                 <p>Shop by Price</p>
                 <div>
-                    <input type='checkbox' value={[0, 25]} name='PriceFilter' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value={[0, 25]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='0-25'>$0-$25</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[25, 50]} name='PriceFilter' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value={[25, 50]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='25-50'>$25-$50</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[25, 100]} name='PriceFilter' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value={[25, 100]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='50-100'>$50-$100</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[100, 150]} name='PriceFilter' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value={[100, 150]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='100-150'>$100-$150</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[150, 10000]} name='PriceFilter' onChange={(e) => props.FilterProduct(e)} />
+                    <input type='checkbox' value={[150, 10000]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='150-10000'>Over $150</label>
                 </div>
             </div>
             <div className='filter__line category'>
                 {categories.map((category) => (
                     <div className='category__label'>
-                        <input type='radio' value={category} name='categories' onChange={(e) => handleFilter(e)} />
+                        <input type='radio' value={category} name='categories' onChange={(e) => props.TrackFilterForm(e)} />
                         <label>{category}</label>
                     </div>
                 ))}

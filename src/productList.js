@@ -33,8 +33,12 @@ function ProductList(props) {
     //shoes  source for detail page
     let [shoesSource, setShoesSource] = useState(detailShowUp.product.img[0])
     //
-    let [filter, setFilter] = useState({
-        Gender: ["Men", "Women", "Unisex"],
+    let [Trackfilter, setTrackFilter] = useState({
+        Gender: {
+            Men: false,
+            Women: false,
+            Unisex: false
+        },
         PriceFilter: [0, 10000],
     })
     //method to show the detail when click
@@ -95,18 +99,24 @@ function ProductList(props) {
         setTimeout(() => setShoesSource(imgList[colorList.indexOf(color)]), 300)
     }
     // filter product by the filter form 
-    const FilterProduct = (e) => {
-        let updateFilter = Object.create(filter)
-        console.log(updateFilter)
-        if (e.target.type == 'checkbox') {
-            updateFilter[e.target.name] = updateFilter[e.target.name].filter(ItemFilter => ItemFilter == e.target.value)
-            setFilter(updateFilter)
-
+    const TrackFilterForm = (e) => {
+        let target = e.target
+        let updateFilter = Trackfilter
+        //track filter by gender
+        if (target.name == 'gender') {
+            for (let gender in updateFilter[target.name]) {
+                if (gender === target.value) {
+                    updateFilter[target.name][gender] = target.checked
+                }
+            }
         }
+        setTrackFilter(updateFilter)
+        console.log(Trackfilter)
+
     }
     return (
         <div className='product-list-container'>
-            <FilteForm FilterProduct={FilterProduct} />
+            <FilteForm TrackFilterForm={TrackFilterForm} />
             <div className='product-list-show'>
 
                 <div className='product-list'>
