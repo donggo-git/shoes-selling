@@ -39,7 +39,7 @@ function ProductList(props) {
             Women: false,
             Unisex: false
         },
-        PriceFilter: [0, 10000],
+        PriceFilter: [],
     })
     //method to show the detail when click
     const handleDetailShow = (product) => {
@@ -110,8 +110,24 @@ function ProductList(props) {
                 }
             }
         }
+        //track filter by price
+        if (target.name == 'PriceFilter') {
+            let targetPrice = target.value.split(',').map(price => Number(price))
+            if (target.checked) {
+
+                updateFilter.PriceFilter.push(...targetPrice)
+                //remove all duplicates number, and sort them from lowest to highest
+                updateFilter.PriceFilter = [...new Set(updateFilter.PriceFilter)].sort((a, b) => a - b)
+            }
+            else {
+
+                updateFilter.PriceFilter = updateFilter.PriceFilter.filter(e => targetPrice.indexOf(e) == -1)
+
+            }
+        }
+        console.log(updateFilter)
         setTrackFilter(updateFilter)
-        console.log(Trackfilter)
+
 
     }
     return (

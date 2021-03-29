@@ -34,7 +34,7 @@ function FilterProuct(props) {
                     <label for='25-50'>$25-$50</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[25, 100]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[50, 100]} name='PriceFilter' onChange={(e) => props.TrackFilterForm(e)} />
                     <label for='50-100'>$50-$100</label>
                 </div>
                 <div>
