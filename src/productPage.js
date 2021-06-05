@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import ProductList from './productList'
 import Brand from './Brand'
-import Header from './Header'
+import P from './ProductHeader'
+import ProductHeader from './ProductHeader'
 
 function ProductPage(props) {
     let [styleBrand, setStyleBrand] = useState([{ border: '2px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }])
@@ -30,12 +31,12 @@ function ProductPage(props) {
 
     return (
         <div>
-            <Header />
-            <Brand styleBrand={styleBrand} handleBrandClick={handleBrandClick} />
+            <ProductHeader />
+            {/*<Brand styleBrand={styleBrand} handleBrandClick={handleBrandClick} />
             <ProductList brand={brand} nextPageStyle={nextPageStyle} nextPageBrand={nextPageBrand}
                 addToCart={props.addToCart}
             />
-
+    */}
         </div>
     )
 }

@@ -5,45 +5,25 @@ header{
     height: auto;
     margin-bottom: 0;
 }
-.header{
-    width: 100%;
-    position: relative;
-    z-index: 6;
-    background-color: #ffffff;
-    padding-bottom: 5rem;
+button{
+    cursor:pointer;
+    border: none;
 }
-.headerSlide-container{
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-    
-}
-.headerSlide-list{
-    display: flex;
-    width: 507%;
-    flex-direction: row;
-}
+
 .slide-item{
+    margin: 0 auto;
     display: block;
-    height: 25rem;
+    height: 28rem;
     width: 100%;
     box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
     position: relative;
-    margin: 0;
+    transform: translateX(-15px);
 }
-#first-slide-item{
-    background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png');
-}
-#second-slide-item{
-background-image: url('https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7EPeanuts%7E21SS_ECOM_MF_SP_SELECT_Peanuts_HotSpotHero_Desktop_1440x500_1.jpg/fmt/jpg/fmt/png');
-}
-#third-slide-item{
-background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),url('https://th.bing.com/th/id/OIP.ZBN-HKochUAO-NCiYHM1YAHaEo?w=290&h=181&c=7&o=5&dpr=1.5&pid=1.7');
-}
-.first-item-slide-content{
+
+.item-slide1-content{
     position: absolute;
     bottom: 8rem;
     left: 5rem;
@@ -52,22 +32,20 @@ background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),u
     font-weight: bold;
    color: #e6e6e6;
 }
-.first-item-slide-content button{
+.item-slide1-content button{
     font-size: 1.1rem;
-    border: none;
     font-weight: 200;
     padding: 10px 20px;
     border-radius: 10rem;
     font-family: 'Lora', serif;
     transition: all 0.4s;
-    cursor: pointer;
 }
-.first-item-slide-content button:hover{
+.item-slide1-content button:hover{
     transform:translateY(-3px);
     opacity: 0.9;
     
 }
-.second-item-slide-content{
+.item-slide2-content{
     transform: translateY(-0.1rem);
     font-size: 1rem;
     background-color: rgba(51, 51, 51,0.9);
@@ -81,21 +59,20 @@ background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),u
    padding: 0 3rem;
    transition: all 0.6s;
 }
-.second-item-slide-content h2{
+.item-slide2-content h2{
     font-weight: bolder;
 }
-.second-item-slide-content button{
+.item-slide2-content button{
     margin-bottom: 2rem;
     font-size: 1rem;
     width: 8rem;
     padding: 1rem 0;
-    border: none;
     color: #333;
 }
-.second-item-slide-content button:hover{
+.item-slide2-content button:hover{
     background-color: #bbbbbb;
 }
-.third-item-slide-content{
+.item-slide3-content{
     position: absolute;
     top: 50%;
     right: 5rem;
@@ -107,13 +84,13 @@ background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),u
    transform: translateY(-50%);
    
 }
-.third-item-slide-content h2{
+.item-slide3-content h2{
     height: auto;
     background: linear-gradient(to right, #ffffff, #ffbf00); 
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
 }
-.third-item-slide-content button{
+.item-slide3-content button{
     font-size: 1.1rem;
     border: none;
     font-weight: 200;
@@ -125,12 +102,11 @@ background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4)),u
     transform: translateX(20px);
     background: #ffbf00;
     color: #ffffff;
-    border: 3px solid #ffbf00;
+    
 }
-.third-item-slide-content button:hover{
+.item-slide3-content button:hover{
     background: #ffffff;
     color: #ffbf00;
-    border: 3px solid #ffbf00;
 }
 .slide-btn{
     position: absolute;

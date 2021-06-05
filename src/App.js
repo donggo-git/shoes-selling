@@ -1,6 +1,5 @@
 
 import './App.css';
-import './header.css'
 import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
