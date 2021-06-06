@@ -35,7 +35,7 @@ function ProductSlide() {
         }
     ]
     let headerBackground = {
-        backgroundImage: `url(${headerImg[random]})`
+        backgroundImage: `url(${headerImg[0]})`
     }
     console.log(random)
     return (
@@ -43,10 +43,14 @@ function ProductSlide() {
 
             <header>
                 {
-                    <div style={headerBackground} className={`slide-item item-slide${random + 1}`}>
-                        <div className={`item-slide${random + 1}-content`}>
-                            <h2>{headerContent[random].title}</h2>
-                            <p>{headerContent[random].quote}</p>
+                    <div style={headerBackground} className={`slide-item item-slide${1}`}>
+                        <div className={`item-slide${1}-content`}>
+                            <div className={`line${1}`}>
+                                <h2>{headerContent[0].title}</h2>
+                            </div>
+                            <div className={`line${1}`}>
+                                <p>{headerContent[0].quote}</p>
+                            </div>
                             <button>Check out</button>
                         </div>
                     </div>

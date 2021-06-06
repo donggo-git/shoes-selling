@@ -10,6 +10,94 @@ body{
 input,button:focus{
 outline: none;
 }
+nav{
+  top: 0;
+  width: 100%;
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+  font-size: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 0 0 rgba(0, 0, 0, 0.5);
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 15;
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+ 
+}
+nav a{
+  color: #000000;
+}
+nav li,.nav__homePage{
+  margin: 0 10px;
+}
+.nav__homePage:focus{
+  outline: none;
+}
+.search-input{
+  display: flex;
+  font-size: 1.2rem;
+  font-size: 1rem;
+  padding: 5px 0.8rem;
+  border-radius: 10rem;
+  background-color: #e5e5e5;
+  width: 10rem;
+  transition: all 0.2s;
+}
+.search-input:hover{
+  background-color: #bebebe;
+}
+.search-input input{
+  font-size: 1rem;
+  border: none;
+  margin: 0 0 0 15px;
+  background: none;
+  width: 8rem;
+  
+}
+.search-btn{
+  font-size: 2rem;
+  border-radius: 50%;
+}
+
+.search-input input:focus{
+  outline: none;
+}
+@media screen and (max-width: 1000px) {
+  .headerSlide-list{
+      width: 500%;
+  }
+}
+.nav__cart{
+  margin-top: 0.2rem;
+  margin-left: 1rem;
+  margin-right: 3rem;
+  font-size: 1.2rem;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+.nav__cart>a:focus{
+  outline: none;
+}
+.nav__cart__amount{
+  position: absolute;
+  top: -60%;
+  right: -80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  background-color: #2e2e2e;
+  color: #ffffff;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
 .cart_icon{
   margin-top: 3px;
   margin-right: 2rem;
