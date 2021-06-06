@@ -122,6 +122,17 @@ button{
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
 }
+.item-slide3-content h2,.item-slide3-content p,.item-slide3-content button{
+    opacity: 0;
+    transform: translateX(-50%);
+    animation: animation3 0.8s ease forwards;
+}
+@keyframes animation3 {
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .item-slide3-content button{
     font-size: 1.1rem;
     border: none;
@@ -131,7 +142,6 @@ button{
     font-family: 'Lora', serif;
     transition: all 0.4s;
     cursor: pointer;
-    transform: translateX(20px);
     background: #ffbf00;
     color: #ffffff;
     
