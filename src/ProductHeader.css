@@ -21,7 +21,7 @@ button{
     background-repeat: no-repeat;
     color: #ffffff;
     position: relative;
-    transform: translateX(-15px);
+    
 }
 
 .item-slide1-content{
@@ -174,4 +174,23 @@ button{
 }
 .next-btn{
     right: 5px;
+}
+@media screen and (max-width:1000px) {
+    header{
+        width: 100%;
+        margin: 0;
+    }
+    .slide-item{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .slide-item h2{
+        font-size: 2rem;
+    }
+    .slide-item p{
+        font-size: 1.5rem;
+    }
+    .line2{
+        height: 7rem;
+    }
 }
