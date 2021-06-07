@@ -1,14 +1,18 @@
 
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { db } from './firebase'
 
 function App() {
+
+  const [products, setProducts] = useState([]);
+
 
   const [cart, setCart] = useState([])
 
@@ -27,6 +31,24 @@ function App() {
     }
     else return;
   }
+
+  const getProduct = () => {
+
+    db.collection('product').onSnapshot((snapshot) => {
+      let tempData = [];
+      tempData = snapshot.docs.map((doc) => (
+        {
+          id: doc.id,
+          product: doc.data()
+        }
+
+      ));
+      setProducts(tempData)
+    })
+  }
+  useEffect(() => {
+    getProduct()
+  }, [])
   return (
     <div>
       <Router>
