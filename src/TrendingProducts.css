@@ -1,0 +1,21 @@
+.title{
+    margin-top: 20px;
+    margin-left: 4rem;
+}
+.Trending_slide_container{
+    width: 90%;
+    height: auto;
+    overflow-x: scroll;
+    margin: 0 auto;
+}
+.Trending_slide{
+    display: flex;
+}
+.Trending_slide_product{
+    height: 25rem;
+    margin-right:12px;
+}
+.Trending_slide_product>img{
+    height: 70%;
+    width: 15rem;
+}

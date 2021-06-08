@@ -42,6 +42,7 @@ let source = [
         color: ['linear-gradient(rgb(0, 245, 4),rgb(1, 3, 113))', 'linear-gradient(rgb(255, 227, 0),rgb(109, 15, 0))', 'linear-gradient(rgb(255, 209, 102),rgb(0, 100, 255))'],
         detail: "Kyrie made headlines with his generous, outspoken support of female ballers. Nike is joining him with the special “Sisterhood” colorway of the Kyrie 7, which aims to empower and unify the support of women athletes everywhere. The eye-grabbing aesthetic is highlighted by a detailed floral graphic underneath the pop of its yellow-outlined Swoosh logo. On or off the court, show your support for women athletes in style."
     },
+    //
     {
         id: 'E',
         name: 'Nike renew run',

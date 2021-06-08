@@ -49,7 +49,6 @@ function App() {
   useEffect(() => {
     getProduct()
   }, [])
-  console.log(products)
   return (
     <div>
       <Router>
@@ -81,7 +80,7 @@ function App() {
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
-                <Route path='/' exact component={() => <ProductPage addToCart={addToCart} />} />
+                <Route path='/' exact component={() => <ProductPage addToCart={addToCart} products={products} />} />
                 <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
               </Switch>
             </CSSTransition>

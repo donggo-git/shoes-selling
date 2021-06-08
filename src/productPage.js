@@ -3,6 +3,7 @@ import ProductList from './productList'
 import Brand from './Brand'
 import P from './ProductHeader'
 import ProductHeader from './ProductHeader'
+import TrendingProducts from './TrendingProducts'
 
 function ProductPage(props) {
     let [styleBrand, setStyleBrand] = useState([{ border: '2px solid #333' }, { border: 'none' }, { border: 'none' }, { border: 'none' }])
@@ -32,6 +33,7 @@ function ProductPage(props) {
     return (
         <div>
             <ProductHeader />
+            <TrendingProducts products={props.products} />
             {/*<Brand styleBrand={styleBrand} handleBrandClick={handleBrandClick} />
             <ProductList brand={brand} nextPageStyle={nextPageStyle} nextPageBrand={nextPageBrand}
                 addToCart={props.addToCart}
