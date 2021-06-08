@@ -34,7 +34,7 @@ function App() {
 
   const getProduct = () => {
 
-    db.collection('product').onSnapshot((snapshot) => {
+    db.collection('products').onSnapshot((snapshot) => {
       let tempData = [];
       tempData = snapshot.docs.map((doc) => (
         {
@@ -49,6 +49,7 @@ function App() {
   useEffect(() => {
     getProduct()
   }, [])
+  console.log(products)
   return (
     <div>
       <Router>
