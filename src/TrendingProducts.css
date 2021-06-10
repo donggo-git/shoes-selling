@@ -7,7 +7,11 @@
     height: auto;
     overflow-x: scroll;
     margin: 0 auto;
+    scrollbar-width: none;
 }
+.Trending_slide_container::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
 .Trending_slide{
     display: flex;
 }
