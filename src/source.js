@@ -42,7 +42,7 @@ let source = [
         color: ['linear-gradient(rgb(0, 245, 4),rgb(1, 3, 113))', 'linear-gradient(rgb(255, 227, 0),rgb(109, 15, 0))', 'linear-gradient(rgb(255, 209, 102),rgb(0, 100, 255))'],
         detail: "Kyrie made headlines with his generous, outspoken support of female ballers. Nike is joining him with the special “Sisterhood” colorway of the Kyrie 7, which aims to empower and unify the support of women athletes everywhere. The eye-grabbing aesthetic is highlighted by a detailed floral graphic underneath the pop of its yellow-outlined Swoosh logo. On or off the court, show your support for women athletes in style."
     },
-    //
+
     {
         id: 'E',
         name: 'Nike renew run',
@@ -55,6 +55,7 @@ let source = [
         color: ['#00fff3', 'linear-gradient(#030303,#9e9e9e)', 'linear-gradient(#030303,#f00)', '#fff'],
         detail: 'Look fast and feel faster in the Nike Air Zoom Speed. Our iconic Zoom Air pods are made just right for kids. So lightweight all around and cushioned where needed, you’ll be zooming around the neighborhood and track in no time.'
     },
+    //
     {
         id: 'F',
         name: 'Nike Air Max',

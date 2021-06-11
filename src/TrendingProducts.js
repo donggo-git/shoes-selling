@@ -1,5 +1,7 @@
 import React from 'react'
 import "./TrendingProducts.css"
+import { AiOutlineRight } from 'react-icons/ai'
+import { AiOutlineLeft } from 'react-icons/ai'
 
 function TrendingProducts({ products }) {
     console.log(products);
@@ -7,8 +9,8 @@ function TrendingProducts({ products }) {
         <div>
             <h2 className="title">Trending</h2>
             <div className='Trending_slide_container'>
-                <div className="previousBtn_container"></div>
-                <div className="nextBtn_container"></div>
+                <div className="previousBtn_container"><AiOutlineLeft /></div>
+                <div className="nextBtn_container"><AiOutlineRight /></div>
                 <div className="Trending_slide">
                     {
                         products

@@ -47,7 +47,7 @@ function App() {
     })
   }
   useEffect(() => {
-    getProduct()
+    setTimeout(getProduct(), 3000);
   }, [])
   return (
     <div>
