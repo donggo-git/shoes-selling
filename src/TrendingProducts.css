@@ -8,12 +8,29 @@
     overflow-x: scroll;
     margin: 0 auto;
     scrollbar-width: none;
+    position: relative;
 }
 .Trending_slide_container::-webkit-scrollbar {
     width: 5px;               /* width of the entire scrollbar */
   }
 .Trending_slide{
     display: flex;
+}
+.Trending_btn{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding: 10px;
+    top: 8.75rem;
+    
+    border-radius: 50%;
+    background: rgb(253, 253, 253);
+}
+.previousBtn_container{
+    left: 10px;
+}
+.nextBtn_container{
+    right:10px;
 }
 .Trending_slide_product{
     height: 25rem;
