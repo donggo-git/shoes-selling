@@ -55,7 +55,6 @@ let source = [
         color: ['#00fff3', 'linear-gradient(#030303,#9e9e9e)', 'linear-gradient(#030303,#f00)', '#fff'],
         detail: 'Look fast and feel faster in the Nike Air Zoom Speed. Our iconic Zoom Air pods are made just right for kids. So lightweight all around and cushioned where needed, you’ll be zooming around the neighborhood and track in no time.'
     },
-    //
     {
         id: 'F',
         name: 'Nike Air Max',
@@ -111,6 +110,7 @@ let source = [
         color: ['linear-gradient(#fff,#333)', '#333'],
         detail: "The Women's Gym/ HIIT / Cross Training Shoe has a stronger heel than ever before, plus extra cushioning that hugs and contains your foot.The sole is still unbelievably flexible, offering a natural, lightweight feel and lateral support through every rep."
     },
+    //
     {
         id: 'K',
         name: 'Clyde All-Pro Basketball Shoes',

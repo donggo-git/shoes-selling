@@ -6,11 +6,12 @@ import { AiOutlineLeft } from 'react-icons/ai'
 function TrendingProducts({ products }) {
     console.log(products);
     return (
-        <div>
+        <div className="Trending_container">
             <h2 className="title">Trending</h2>
+            <div className="Trending_btn previousBtn_container"><AiOutlineLeft /></div>
+            <div className="Trending_btn nextBtn_container"><AiOutlineRight /></div>
             <div className='Trending_slide_container'>
-                <div className="Trending_btn previousBtn_container"><AiOutlineLeft /></div>
-                <div className="Trending_btn nextBtn_container"><AiOutlineRight /></div>
+
                 <div className="Trending_slide">
                     {
                         products

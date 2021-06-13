@@ -1,3 +1,6 @@
+.Trending_container{
+    position: relative;
+}
 .title{
     margin-top: 20px;
     margin-left: 4rem;
@@ -21,16 +24,17 @@
     align-items: center;
     position: absolute;
     padding: 10px;
-    top: 8.75rem;
-    
+    top: 50%;
+    transform: translateY(-50%);
     border-radius: 50%;
     background: rgb(253, 253, 253);
+    z-index: 2;
 }
 .previousBtn_container{
-    left: 10px;
+    left: 100px;
 }
 .nextBtn_container{
-    right:10px;
+    right:100px;
 }
 .Trending_slide_product{
     height: 25rem;
