@@ -5,6 +5,7 @@ import { AiOutlineLeft } from 'react-icons/ai'
 
 function TrendingProducts({ products }) {
     console.log(products);
+    const handleScrollTrending = () => { }
     return (
         <div className="Trending_container">
             <h2 className="title">Trending</h2>
