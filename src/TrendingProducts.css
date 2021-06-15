@@ -18,6 +18,8 @@
   }
 .Trending_slide{
     display: flex;
+    width: auto;
+    transition: all 0.5s;
 }
 .Trending_btn{
     display: flex;
@@ -39,6 +41,14 @@
 .Trending_slide_product{
     height: 25rem;
     margin-right:12px;
+    cursor: pointer;
+    transition: box-shadow 0.4s;
+}
+.Trending_slide_product:hover{
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.Trending_slide_product>p{
+    margin-left: 10px;
 }
 .Trending_slide_product>img{
     height: 70%;
