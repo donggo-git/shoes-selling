@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import './detailPage.css';
-import './product.css'
+import './productList.css'
 import { BsHeart } from 'react-icons/bs'
 function Product_detail(props) {
     return (
