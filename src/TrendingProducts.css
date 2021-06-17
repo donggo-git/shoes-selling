@@ -54,3 +54,15 @@
     height: 70%;
     width: 15rem;
 }
+@media screen and (max-width: 1000px) {
+    .Trending_slide_container{
+        width: 95%;
+    }
+    .Trending_slide_product{
+        height: 30rem;
+        font-size: 1.2rem;
+    }
+    .Trending_btn{
+        display: none;
+    }
+}
