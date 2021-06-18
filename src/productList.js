@@ -11,7 +11,7 @@ function ProductList({ products }) {
     // filter product by the filter form 
 
     // list of product after filter
-    const [filterProduct, setFilterProduct] = useState([...products])
+    const [Products, setProducts] = useState([...products])
     const [filterCheckBox, setFilterCheckBox] = useState({
         Gender: {
             Men: false,
@@ -27,19 +27,43 @@ function ProductList({ products }) {
         }
     })
     const filterHandle = (filterEvent) => {
-        if (filterEvent.name == "Gender") {
-
+        let newFilterCheckBox = { ...filterCheckBox }
+        let targetName = filterEvent.target.name;
+        let targetValue = filterEvent.target.value
+        if (filterEvent.name != "Price") {
+            newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
+            setFilterCheckBox(newFilterCheckBox)
         }
-    }
-    const filterByGender = (gender) => {
+        filterProduct()
 
+    }
+    const filterProduct = () => {
+        //filter by Gender
+        let updateProducts = [];
+        console.log(!Object.values(filterCheckBox["Gender"]).every(value => value == true)
+            && !Object.values(filterCheckBox["Gender"]).every(value => value == false)
+        )
+        //check if not all gender is true or false 
+        if (
+            !Object.values(filterCheckBox["Gender"]).every(value => value == true)
+            && !Object.values(filterCheckBox["Gender"]).every(value => value == false)) {
+            updateProducts = [...Products]
+            updateProducts = updateProducts.filter(product => product.product.trending == true)
+        }
+        else {
+            updateProducts = [...Products]
+        }
+        //filter by Brand
+
+        setProducts(updateProducts);
+        console.log(updateProducts);
     }
 
     return (
         <div>
             <h2 className="title">Product</h2>
             <div className='product-list-container'>
-                <FilterForm filterByGender={filterByGender} />
+                <FilterForm filterHandle={filterHandle} />
                 <div className='product-list-show'>
 
                     <div className='product-list'>

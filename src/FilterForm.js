@@ -11,34 +11,34 @@ function FilterForm(props) {
             <div className='filter__line'>
                 <p>Gender</p>
                 <div>
-                    <input type='checkbox' value='Men' name='Gender' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Men' name='Gender' onChange={(e) => props.filterHandle(e)} />
                     <label>Men</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Women' name='Gender' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Women' name='Gender' onChange={(e) => props.filterHandle(e)} />
                     <label>Women</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Unisex' name='Gender' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Unisex' name='Gender' onChange={(e) => props.filterHandle(e)} />
                     <label>Unisex</label>
                 </div>
             </div>
             <div className='filter__line'>
                 <p>Brand</p>
                 <div>
-                    <input type='checkbox' value='Nike' name='Brand' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Nike' name='Brand' onChange={(e) => props.filterHandle(e)} />
                     <label>Nike</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Puma' name='Brand' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Puma' name='Brand' onChange={(e) => props.filterHandle(e)} />
                     <label>Puma</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Adidas' name='Brand' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Adidas' name='Brand' onChange={(e) => props.filterHandle(e)} />
                     <label>Adidas</label>
                 </div>
                 <div>
-                    <input type='checkbox' value='Rebook' name='Brand' onChange={(e) => props.filterByGender(e)} />
+                    <input type='checkbox' value='Rebook' name='Brand' onChange={(e) => props.filterHandle(e)} />
                     <label>Rebook</label>
                 </div>
             </div>

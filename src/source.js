@@ -110,7 +110,6 @@ let source = [
         color: ['linear-gradient(#fff,#333)', '#333'],
         detail: "The Women's Gym/ HIIT / Cross Training Shoe has a stronger heel than ever before, plus extra cushioning that hugs and contains your foot.The sole is still unbelievably flexible, offering a natural, lightweight feel and lateral support through every rep."
     },
-    //
     {
         id: 'K',
         name: 'Clyde All-Pro Basketball Shoes',
@@ -133,6 +132,7 @@ let source = [
         color: ['#fffb01', '#0086e9', 'linear-gradient(#fff,#333)'],
         detail: "Born for speed. Raised in style. The Speedcat returns 20 years later for its second season, backed by motorsport legends Sparco. In 1999, PUMA partnered with Sparco to bring t..."
     },
+    //
     {
         id: 'M',
         name: 'Double DISC Basketball Shoes',
