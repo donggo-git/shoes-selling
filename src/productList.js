@@ -40,23 +40,40 @@ function ProductList({ products }) {
     const filterProduct = () => {
         //filter by Gender
         let updateProducts = [];
-        console.log(!Object.values(filterCheckBox["Gender"]).every(value => value == true)
-            && !Object.values(filterCheckBox["Gender"]).every(value => value == false)
-        )
         //check if not all gender is true or false 
         if (
             !Object.values(filterCheckBox["Gender"]).every(value => value == true)
             && !Object.values(filterCheckBox["Gender"]).every(value => value == false)) {
-            updateProducts = [...Products]
+            updateProducts = [...products]
             updateProducts = updateProducts.filter(product => product.product.trending == true)
         }
         else {
             updateProducts = [...Products]
         }
         //filter by Brand
+        if (
+            !Object.values(filterCheckBox["Brand"]).every(value => value == true)
+            && !Object.values(filterCheckBox['Brand']).every(value => value == false)
+        ) {
+            updateProducts = [...Products]
 
+        }
+        else {
+
+            updateProducts = [...Products]
+        }
         setProducts(updateProducts);
-        console.log(updateProducts);
+
+    }
+    // method return array of all keys of filterCheckBox which is true
+    const takeAllCheckBoxTrue = (section) => {
+        let arrTrue = [];
+        for (const key in filterCheckBox[section]) {
+            if (filterCheckBox[section][key]) {
+                arrTrue.push(key)
+            }
+        }
+        return arrTrue;
     }
 
     return (
