@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { source } from './source'
-
+import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
 import Product_detail from './product-detail'
@@ -13,13 +13,13 @@ function ProductList({ products }) {
     // list of product after filter
     const [Products, setProducts] = useState([...products])
     const [filterCheckBox, setFilterCheckBox] = useState({
-        Gender: {
+        gender: {
             Men: false,
             Women: false,
             Unisex: false
         },
-        Price: [0, 10000],
-        Brand: {
+        price: [0, 10000],
+        brand: {
             Nike: false,
             Puma: false,
             Adidas: false,
@@ -30,7 +30,7 @@ function ProductList({ products }) {
         let newFilterCheckBox = { ...filterCheckBox }
         let targetName = filterEvent.target.name;
         let targetValue = filterEvent.target.value
-        if (filterEvent.name != "Price") {
+        if (filterEvent.name != "price") {
             newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
             setFilterCheckBox(newFilterCheckBox)
         }
@@ -42,8 +42,8 @@ function ProductList({ products }) {
         let updateProducts = [];
         //check if not all gender is true or false 
         if (
-            !Object.values(filterCheckBox["Gender"]).every(value => value == true)
-            && !Object.values(filterCheckBox["Gender"]).every(value => value == false)) {
+            !Object.values(filterCheckBox["gender"]).every(value => value == true)
+            && !Object.values(filterCheckBox["gender"]).every(value => value == false)) {
             updateProducts = [...products]
             updateProducts = updateProducts.filter(product => product.product.trending == true)
         }
@@ -51,30 +51,27 @@ function ProductList({ products }) {
             updateProducts = [...Products]
         }
         //filter by Brand
-        if (
-            !Object.values(filterCheckBox["Brand"]).every(value => value == true)
-            && !Object.values(filterCheckBox['Brand']).every(value => value == false)
-        ) {
-            updateProducts = [...Products]
-
-        }
-        else {
-
-            updateProducts = [...Products]
-        }
+        updateProducts = filterBySection('brand', updateProducts)
+        console.log(updateProducts)
         setProducts(updateProducts);
 
     }
-    // method return array of all keys of filterCheckBox which is true
-    const takeAllCheckBoxTrue = (section) => {
-        let arrTrue = [];
-        for (const key in filterCheckBox[section]) {
-            if (filterCheckBox[section][key]) {
-                arrTrue.push(key)
-            }
+    //method filter by section
+    const filterBySection = (section, updateProducts) => {
+        if (
+            !Object.values(filterCheckBox[section]).every(value => value == true)
+            && !Object.values(filterCheckBox[section]).every(value => value == false)
+        ) {
+            updateProducts = [...products].filter(products => (
+                takeAllCheckBoxTrue(section, filterCheckBox).indexOf(products.product[section]) >= 0
+            ))
         }
-        return arrTrue;
+        else {
+            updateProducts = [...products]
+        }
+        return updateProducts
     }
+
 
     return (
         <div>
