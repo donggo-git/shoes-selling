@@ -34,45 +34,39 @@ function ProductList({ products }) {
             newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
             setFilterCheckBox(newFilterCheckBox)
         }
-        filterProduct()
+
+        filterProduct(filterEvent.target.name)
 
     }
-    const filterProduct = () => {
+    const filterProduct = (section) => {
         //filter by Gender
-        let updateProducts = [];
-        //check if not all gender is true or false 
-        if (
-            !Object.values(filterCheckBox["gender"]).every(value => value == true)
-            && !Object.values(filterCheckBox["gender"]).every(value => value == false)) {
-            updateProducts = [...products]
-            updateProducts = updateProducts.filter(product => product.product.trending == true)
-        }
-        else {
-            updateProducts = [...Products]
+        if (section == "gender") {
+            filterBySection('gender', Products)
         }
         //filter by Brand
-        updateProducts = filterBySection('brand', updateProducts)
-        console.log(updateProducts)
-        setProducts(updateProducts);
+        if (section == "brand") {
+            filterBySection('brand', Products)
+        }
 
     }
     //method filter by section
     const filterBySection = (section, updateProducts) => {
+
+        //check if not all gender is true or false 
         if (
             !Object.values(filterCheckBox[section]).every(value => value == true)
             && !Object.values(filterCheckBox[section]).every(value => value == false)
         ) {
-            updateProducts = [...products].filter(products => (
-                takeAllCheckBoxTrue(section, filterCheckBox).indexOf(products.product[section]) >= 0
+
+            updateProducts = updateProducts.filter(item => (
+                takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
             ))
+
         }
-        else {
-            updateProducts = [...products]
-        }
-        return updateProducts
+        setProducts(updateProducts);
     }
 
-
+    console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>
@@ -82,7 +76,7 @@ function ProductList({ products }) {
 
                     <div className='product-list'>
                         {products.map((product) => (
-                            <div key={product.product.id} className='product-item' >
+                            <div key={product.id} className='product-item' >
                                 <img src={product.product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
                                 <div className='product-detail'>
                                     <h3>{product.product.name}</h3>
