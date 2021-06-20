@@ -40,30 +40,27 @@ function ProductList({ products }) {
     }
     const filterProduct = (section) => {
         //filter by Gender
-        if (section == "gender") {
-            filterBySection('gender', Products)
-        }
-        //filter by Brand
-        if (section == "brand") {
-            filterBySection('brand', Products)
-        }
-
+        filterBySection()
     }
     //method filter by section
-    const filterBySection = (section, updateProducts) => {
-
-        //check if not all gender is true or false 
-        if (
-            !Object.values(filterCheckBox[section]).every(value => value == true)
-            && !Object.values(filterCheckBox[section]).every(value => value == false)
-        ) {
-
-            updateProducts = updateProducts.filter(item => (
-                takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
-            ))
-
+    const filterBySection = () => {
+        let newUpdates = [...products]
+        //use the for loop to loop thought the filterCheckBox
+        //check every section in there
+        //filter all products that qualified the section (except the price section)
+        for (let section in filterCheckBox) {
+            if (
+                !Object.values(filterCheckBox[section]).every(value => value == true)
+                && !Object.values(filterCheckBox[section]).every(value => value == false)
+                && section != "price"
+            ) {
+                newUpdates = newUpdates.filter(item => (
+                    takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
+                ))
+            }
         }
-        setProducts(updateProducts);
+        setProducts(newUpdates);
+
     }
 
     console.log(Products)
