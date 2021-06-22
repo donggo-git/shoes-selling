@@ -24,7 +24,8 @@ function ProductList({ products }) {
             Puma: false,
             Adidas: false,
             Rebook: false
-        }
+        },
+        categories: { category: "" }
     })
     const filterHandle = (filterEvent) => {
         let newFilterCheckBox = { ...filterCheckBox }
@@ -41,12 +42,21 @@ function ProductList({ products }) {
                     newFilterCheckBox["price"].indexOf(targetValue), 1
                 )
             }
-            setFilterCheckBox(newFilterCheckBox)
+        }
+        else if (targetName == "categories") {
+            if (!filterEvent.target.checked) {
+                filterEvent.target.checked = !filterEvent.target.checked
+                newFilterCheckBox[targetName].category = targetValue
+            }
+            else {
+                filterEvent.target.checked = !filterEvent.target.checked
+            }
+            console.log(filterEvent.target.checked)
         }
         else {
             newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
-            setFilterCheckBox(newFilterCheckBox)
         }
+        setFilterCheckBox(newFilterCheckBox)
         filterProduct()
 
     }
@@ -63,44 +73,61 @@ function ProductList({ products }) {
         //check every section in there
         //filter all products that qualified the section (except the price section)
         for (let section in filterCheckBox) {
+            //case section is checked except price
             if (
                 !Object.values(filterCheckBox[section]).every(value => value == true)
                 && !Object.values(filterCheckBox[section]).every(value => value == false)
                 && section != "price"
+                && section != "category"
             ) {
                 newUpdates = newUpdates.filter(item => (
                     takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
                 ))
             }
-            if (section == "price") {
+            //case price section is checked
+            else if (section == "price") {
                 newUpdates = filterByPrice(newUpdates)
+            }
+            else if (section == 'categories') {
+                newUpdates = filterByCategories(newUpdates)
             }
         }
         setProducts(newUpdates);
 
     }
-    const filterByPrice = (org) => {
-        let newUpdates = [...org];
+    const filterByPrice = (update) => {
+        let newUpdates = [...update];
         let filterElement = []
         //convert all string in filterCheckBox.price to array of number
         let arrPrice = filterCheckBox.price.map(price => {
             return price.split(",").map(deeperPrice => Number(deeperPrice))
         })
-        console.log(arrPrice)
+        //if price section is checked filter
         if (filterCheckBox.price.length != 0) {
             for (let item = 0; item < newUpdates.length; item++)
+                //if some item price qualified the arrPrice push item to filterElement 
+                //and assign newUpdate to filterElement
                 if (arrPrice.some(price => (
                     newUpdates[item].product.price >= Math.min(...price)
                     && newUpdates[item].product.price <= Math.max(...price)
                 ))) {
                     filterElement.push(newUpdates[item])
                 }
+            newUpdates = filterElement
         }
-        newUpdates = filterElement
-        console.log(filterElement)
+        //if not return back to the org
         return newUpdates
     }
-    //console.log(Products)
+    const filterByCategories = (update) => {
+        let newUpdates = [...update]
+        if (filterCheckBox.categories.category != "") {
+            newUpdates.filter(item => (
+                item.product.category == filterByCheckbox.categories.category
+            ))
+        }
+        return newUpdates
+    }
+    console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>

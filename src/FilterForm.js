@@ -67,8 +67,10 @@ function FilterForm(props) {
             </div>
             <div className='filter__line category'>
                 {categories.map((category) => (
-                    <div className='category__label'>
-                        <input type='radio' value={category} name='categories' onChange={(e) => props.TrackFilterForm(e)} />
+                    <div className='category__label' key={category}>
+                        <input
+                            type='radio' value={category} name='categories'
+                            onChange={(e) => props.filterHandle(e)} />
                         <label>{category}</label>
                     </div>
                 ))}
