@@ -18,7 +18,7 @@ function ProductList({ products }) {
             Women: false,
             Unisex: false
         },
-        price: [0, 10000],
+        price: [],
         brand: {
             Nike: false,
             Puma: false,
@@ -30,20 +30,34 @@ function ProductList({ products }) {
         let newFilterCheckBox = { ...filterCheckBox }
         let targetName = filterEvent.target.name;
         let targetValue = filterEvent.target.value
-        if (filterEvent.name != "price") {
+        if (targetName == "price") {
+            //check if that value already exist in filterCheckBox[price]
+            if (newFilterCheckBox["price"].indexOf(targetValue) < 0) {
+                newFilterCheckBox["price"].push(targetValue)
+            }
+            //if it is remove it
+            else {
+                newFilterCheckBox["price"].splice(
+                    newFilterCheckBox["price"].indexOf(targetValue), 1
+                )
+            }
+            setFilterCheckBox(newFilterCheckBox)
+        }
+        else {
             newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
             setFilterCheckBox(newFilterCheckBox)
         }
-
-        filterProduct(filterEvent.target.name)
+        filterProduct()
 
     }
-    const filterProduct = (section) => {
-        //filter by Gender
-        filterBySection()
+    const filterProduct = () => {
+        //filter by Checkbox except section price
+        filterByCheckbox()
+        //filter by price
+
     }
     //method filter by section
-    const filterBySection = () => {
+    const filterByCheckbox = () => {
         let newUpdates = [...products]
         //use the for loop to loop thought the filterCheckBox
         //check every section in there
@@ -58,12 +72,35 @@ function ProductList({ products }) {
                     takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
                 ))
             }
+            if (section == "price") {
+                newUpdates = filterByPrice(newUpdates)
+            }
         }
         setProducts(newUpdates);
 
     }
-
-    console.log(Products)
+    const filterByPrice = (org) => {
+        let newUpdates = [...org];
+        let filterElement = []
+        //convert all string in filterCheckBox.price to array of number
+        let arrPrice = filterCheckBox.price.map(price => {
+            return price.split(",").map(deeperPrice => Number(deeperPrice))
+        })
+        console.log(arrPrice)
+        if (filterCheckBox.price.length != 0) {
+            for (let item = 0; item < newUpdates.length; item++)
+                if (arrPrice.some(price => (
+                    newUpdates[item].product.price >= Math.min(...price)
+                    && newUpdates[item].product.price <= Math.max(...price)
+                ))) {
+                    filterElement.push(newUpdates[item])
+                }
+        }
+        newUpdates = filterElement
+        console.log(filterElement)
+        return newUpdates
+    }
+    //console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>
@@ -72,7 +109,7 @@ function ProductList({ products }) {
                 <div className='product-list-show'>
 
                     <div className='product-list'>
-                        {products.map((product) => (
+                        {Products.map((product) => (
                             <div key={product.id} className='product-item' >
                                 <img src={product.product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
                                 <div className='product-detail'>

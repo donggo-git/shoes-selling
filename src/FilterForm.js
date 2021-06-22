@@ -45,23 +45,23 @@ function FilterForm(props) {
             <div className='filter__line'>
                 <p>Shop by Price</p>
                 <div>
-                    <input type='checkbox' value={[0, 25]} name='Price' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[0, 25]} name='price' onChange={(e) => props.filterHandle(e)} />
                     <label for='0-25'>$0-$25</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[25, 50]} name='Price' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[25, 50]} name='price' onChange={(e) => props.filterHandle(e)} />
                     <label for='25-50'>$25-$50</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[50, 100]} name='Price' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[50, 100]} name='price' onChange={(e) => props.filterHandle(e)} />
                     <label for='50-100'>$50-$100</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[100, 150]} name='Price' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[100, 150]} name='price' onChange={(e) => props.filterHandle(e)} />
                     <label for='100-150'>$100-$150</label>
                 </div>
                 <div>
-                    <input type='checkbox' value={[150, 10000]} name='Price' onChange={(e) => props.TrackFilterForm(e)} />
+                    <input type='checkbox' value={[150, 10000]} name='price' onChange={(e) => props.filterHandle(e)} />
                     <label for='150-10000'>Over $150</label>
                 </div>
             </div>
