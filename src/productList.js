@@ -44,13 +44,7 @@ function ProductList({ products }) {
             }
         }
         else if (targetName == "categories") {
-            if (!filterEvent.target.checked) {
-                filterEvent.target.checked = !filterEvent.target.checked
-                newFilterCheckBox[targetName].category = targetValue
-            }
-            else {
-                filterEvent.target.checked = !filterEvent.target.checked
-            }
+            newFilterCheckBox[targetName].category = targetValue
             console.log(filterEvent.target.checked)
         }
         else {
@@ -78,7 +72,7 @@ function ProductList({ products }) {
                 !Object.values(filterCheckBox[section]).every(value => value == true)
                 && !Object.values(filterCheckBox[section]).every(value => value == false)
                 && section != "price"
-                && section != "category"
+                && section != "categories"
             ) {
                 newUpdates = newUpdates.filter(item => (
                     takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
@@ -89,6 +83,7 @@ function ProductList({ products }) {
                 newUpdates = filterByPrice(newUpdates)
             }
             else if (section == 'categories') {
+                console.log(newUpdates)
                 newUpdates = filterByCategories(newUpdates)
             }
         }
@@ -121,10 +116,11 @@ function ProductList({ products }) {
     const filterByCategories = (update) => {
         let newUpdates = [...update]
         if (filterCheckBox.categories.category != "") {
-            newUpdates.filter(item => (
-                item.product.category == filterByCheckbox.categories.category
+            newUpdates = newUpdates.filter(item => (
+                item.product.category == filterCheckBox.categories.category
             ))
         }
+
         return newUpdates
     }
     console.log(Products)
