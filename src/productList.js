@@ -6,6 +6,7 @@ import './productList.css'
 import './detailPage.css'
 import Product_detail from './product-detail'
 import FilterForm from './FilterForm'
+import ProductItem from './ProductItem'
 function ProductList({ products }) {
 
     // filter product by the filter form 
@@ -83,8 +84,8 @@ function ProductList({ products }) {
                 newUpdates = filterByPrice(newUpdates)
             }
             else if (section == 'categories') {
-                console.log(newUpdates)
                 newUpdates = filterByCategories(newUpdates)
+                console.log()
             }
         }
         setProducts(newUpdates);
@@ -133,14 +134,7 @@ function ProductList({ products }) {
 
                     <div className='product-list'>
                         {Products.map((product) => (
-                            <div key={product.id} className='product-item' >
-                                <img src={product.product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
-                                <div className='product-detail'>
-                                    <h3>{product.product.name}</h3>
-                                    <p className='brand'>{product.product.brand}</p>
-                                    <p>${product.product.price}</p>
-                                </div>
-                            </div>
+                            <ProductItem product={product.product} id={product.key} />
                         ))}
 
                     </div>

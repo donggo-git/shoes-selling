@@ -1,0 +1,23 @@
+.ProductItem{
+    margin: 1rem;
+    height: auto;
+    width: 15rem;
+    transition: all 0.4s;
+    cursor: pointer;
+    padding-bottom: 1rem;
+}
+.ProductItem img{
+    height: 18rem;
+}
+.ProductDetail{
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+.ProductDetail h3, .ProductDetail p{
+    margin: 0.5rem 0;
+}
+.brand{
+    font-size: 0.9rem;
+    color: rgb(105, 105, 105);
+}
