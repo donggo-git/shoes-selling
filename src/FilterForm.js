@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './FilterProduct.css'
 
 function FilterForm(props) {
-    let categories = ['Soccer', 'Training', 'Basketball', 'Running', 'Football']
-    const handleFilter = (e) => {
-        console.log(e.target.className)
+    const [categories, setCategories] = useState({
+        Soccer: false,
+        Training: false,
+        Basketball: false,
+        Running: false,
+        Football: false
+    })
+    const handleCategories = (e) => {
+        let newCategories = { ...categories }
+        let passCategory = {
+            target: {
+                name: "categories",
+                value: ""
+            }
+        }
+        if (newCategories[e.target.className.split(" ")[1]] == true) {
+            for (let i in newCategories) {
+                newCategories[i] = false
+            }
+
+        }
+        else {
+            for (let i in newCategories) {
+                newCategories[i] = false
+            }
+            newCategories[e.target.className.split(" ")[1]] = true;
+            passCategory.target.value = e.target.className.split(" ")[1]
+        }
+        console.log(passCategory)
+        props.filterHandle(passCategory)
+        setCategories(newCategories)
+
     }
     return (
         <div className='filter'>
@@ -66,11 +95,11 @@ function FilterForm(props) {
                 </div>
             </div>
             <div className='filter__line category'>
-                {categories.map((category) => (
+                {Object.keys(categories).map((category) => (
                     <div
                         className={`categories ${category}`} key={category}
                         type='radio' name='categories'
-                        onClick={(e) => props.filterHandle(e)} >
+                        onClick={(e) => handleCategories(e)} >
                         {category}
                     </div>
                 ))}

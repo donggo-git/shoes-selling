@@ -30,8 +30,8 @@ function ProductList({ products }) {
     })
     const filterHandle = (filterEvent) => {
         let newFilterCheckBox = { ...filterCheckBox }
-        let targetName = filterEvent.target.name || filterEvent.target.className.split(" ")[0];
-        let targetValue = filterEvent.target.value || filterEvent.target.className.split(" ")[1]
+        let targetName = filterEvent.target.name
+        let targetValue = filterEvent.target.value
         if (targetName == "price") {
             //check if that value already exist in filterCheckBox[price]
             if (newFilterCheckBox["price"].indexOf(targetValue) < 0) {
@@ -46,7 +46,6 @@ function ProductList({ products }) {
         }
         else if (targetName == "categories") {
             newFilterCheckBox[targetName].category = targetValue
-            console.log(filterEvent.target.checked)
         }
         else {
             newFilterCheckBox[targetName][targetValue] = !newFilterCheckBox[targetName][targetValue]
@@ -116,7 +115,7 @@ function ProductList({ products }) {
     }
     const filterByCategories = (update) => {
         let newUpdates = [...update]
-        if (filterCheckBox.categories.category != "") {
+        if (filterCheckBox.categories.category !== "") {
             newUpdates = newUpdates.filter(item => (
                 item.product.category == filterCheckBox.categories.category
             ))
