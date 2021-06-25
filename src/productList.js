@@ -30,8 +30,8 @@ function ProductList({ products }) {
     })
     const filterHandle = (filterEvent) => {
         let newFilterCheckBox = { ...filterCheckBox }
-        let targetName = filterEvent.target.name;
-        let targetValue = filterEvent.target.value
+        let targetName = filterEvent.target.name || filterEvent.target.className.split(" ")[0];
+        let targetValue = filterEvent.target.value || filterEvent.target.className.split(" ")[1]
         if (targetName == "price") {
             //check if that value already exist in filterCheckBox[price]
             if (newFilterCheckBox["price"].indexOf(targetValue) < 0) {

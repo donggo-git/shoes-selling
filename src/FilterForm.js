@@ -4,7 +4,7 @@ import './FilterProduct.css'
 function FilterForm(props) {
     let categories = ['Soccer', 'Training', 'Basketball', 'Running', 'Football']
     const handleFilter = (e) => {
-
+        console.log(e.target.className)
     }
     return (
         <div className='filter'>
@@ -67,11 +67,11 @@ function FilterForm(props) {
             </div>
             <div className='filter__line category'>
                 {categories.map((category) => (
-                    <div className='category__label' key={category}>
-                        <input
-                            type='radio' value={category} name='categories'
-                            onChange={(e) => props.filterHandle(e)} />
-                        <label>{category}</label>
+                    <div
+                        className={`categories ${category}`} key={category}
+                        type='radio' name='categories'
+                        onClick={(e) => props.filterHandle(e)} >
+                        {category}
                     </div>
                 ))}
             </div>
