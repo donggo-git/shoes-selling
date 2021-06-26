@@ -1,10 +1,11 @@
 .ProductItem{
     margin: 1rem;
-    height: auto;
+    height: 25rem;
     width: 15rem;
     transition: all 0.4s;
     cursor: pointer;
     padding-bottom: 1rem;
+    position: relative;
 }
 .ProductItem img{
     height: 18rem;
@@ -20,4 +21,23 @@
 .brand{
     font-size: 0.9rem;
     color: rgb(105, 105, 105);
+}
+.img-list{
+    display: flex;
+}
+.img-list img{
+    height: 50px;
+    margin-right: 3px;
+}
+.ProductItem:hover .ProductDetail_imgList{
+    opacity: 1;
+}
+.ProductDetail_imgList{
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7rem;
+    background-color: #fff;
+    transition: opacity 0.4s;
 }

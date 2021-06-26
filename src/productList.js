@@ -4,7 +4,7 @@ import { source } from './source'
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
-import Product_detail from './product-detail'
+
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
 function ProductList({ products }) {

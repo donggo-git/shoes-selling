@@ -9,6 +9,16 @@ function ProductItem({ id, product }) {
                 <p className='brand'>{product.brand}</p>
                 <p>${product.price}</p>
             </div>
+            <div className="ProductDetail_imgList">
+                <div className='img-list'>
+                    {
+                        product.img.map(imgSrc => (
+                            <img src={imgSrc} />
+                        ))
+                    }
+                </div>
+                <p>${product.price}</p>
+            </div>
         </div>
     )
 }
