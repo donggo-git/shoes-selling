@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import './FilterProduct.css'
-
+import "./FilterForm.css"
 function FilterForm(props) {
     const [categories, setCategories] = useState({
         Soccer: false,
@@ -9,6 +8,9 @@ function FilterForm(props) {
         Running: false,
         Football: false
     })
+    const CategoryStyle = {
+        color: 'rgb(114, 114, 114)'
+    }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
         let passCategory = {
@@ -99,7 +101,8 @@ function FilterForm(props) {
                     <div
                         className={`categories ${category}`} key={category}
                         type='radio' name='categories'
-                        onClick={(e) => handleCategories(e)} >
+                        onClick={(e) => handleCategories(e)}
+                        style={categories[category] ? CategoryStyle : {}}>
                         {category}
                     </div>
                 ))}

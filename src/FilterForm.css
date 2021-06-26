@@ -24,9 +24,10 @@
 }
 .category>div{
     display: inline-block;
-    padding: 5px 0;
+    padding: 5px;
     cursor: pointer;
+    text-align: left;
 }
 .category>div:hover{
-    color: rgb(102, 102, 102);
+
 }
