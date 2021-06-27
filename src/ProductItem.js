@@ -17,7 +17,10 @@ function ProductItem({ id, product }) {
                         ))
                     }
                 </div>
-                <p>${product.price}</p>
+                <div className="ProductDetail_imgList_btn">
+                    <button className="like">Like</button>
+                    <button>Add to cart</button>
+                </div>
             </div>
         </div>
     )
