@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./ProductItem.css"
 function ProductItem({ id, product }) {
+    const [imgOrder, setImgOrder] = useState(0)
+    const handleHover = (imgSrc) => {
+        setImgOrder(product.img.indexOf(imgSrc))
+    }
     return (
         <div key={id} className='ProductItem' >
-            <img src={product.img[0]} height='100%' width='100%' alt={product.name + ' shoes'} />
+            <img src={product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} />
             <div className='ProductDetail'>
                 <h3>{product.name}</h3>
                 <p className='brand'>{product.brand}</p>
@@ -13,7 +17,7 @@ function ProductItem({ id, product }) {
                 <div className='img-list'>
                     {
                         product.img.map(imgSrc => (
-                            <img src={imgSrc} />
+                            <img src={imgSrc} onMouseEnter={(imgSrc) => handleHover(imgSrc.target.src)} />
                         ))
                     }
                 </div>
