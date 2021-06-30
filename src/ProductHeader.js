@@ -3,7 +3,7 @@ import './ProductHeader.css'
 
 
 function ProductSlide() {
-    const random = Math.floor(Math.random() * 3)
+    const [random, setRandom] = useState(Math.floor(Math.random() * 3))
 
     let headerImg = [
         'https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EPNA%7Eothers%7EKOP%7EHome%7ESS21%7ERS+Curve+%7E21_SS_RS+CURVE+ADDITIONAL+IMAGES_SITE_1440x500_0000_1.jpg/fmt/jpg/fmt/png',

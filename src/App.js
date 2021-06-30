@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
+import DetailPage from './DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
@@ -12,10 +13,8 @@ import { db } from './firebase'
 function App() {
 
   const [products, setProducts] = useState([]);
-
-
   const [cart, setCart] = useState([])
-
+  const [detailProduct, setDetailProduct] = useState()
   // add to cart method
   const addToCart = (product) => {
     let updateCart = [...cart]
@@ -44,11 +43,13 @@ function App() {
 
       ));
       setProducts(tempData)
+      setDetailProduct(tempData[0].product)
     })
   }
   useEffect(() => {
     setTimeout(getProduct(), 3000);
   }, [])
+
   return (
     <div>
       <Router>
@@ -82,6 +83,7 @@ function App() {
               <Switch >
                 <Route path='/' exact component={() => <ProductPage addToCart={addToCart} products={products} />} />
                 <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
+                <Route path='/product' component={() => <DetailPage products={detailProduct} />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
