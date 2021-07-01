@@ -21,4 +21,9 @@
 }
 .imgList_container img{
     margin-right: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.imgList_container img:hover{
+    border: solid 1px black;
 }
