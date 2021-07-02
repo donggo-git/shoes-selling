@@ -14,6 +14,7 @@ function ProductPage(props) {
             <ProductList
                 products={props.products}
                 addToCart={props.addToCart}
+                changeDetailProduct={props.changeDetailProduct}
             />
 
         </div>

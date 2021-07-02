@@ -7,7 +7,7 @@ import './detailPage.css'
 
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-function ProductList({ products }) {
+function ProductList({ products, changeDetailProduct }) {
 
     // filter product by the filter form 
 
@@ -84,7 +84,6 @@ function ProductList({ products }) {
             }
             else if (section == 'categories') {
                 newUpdates = filterByCategories(newUpdates)
-                console.log()
             }
         }
         setProducts(newUpdates);
@@ -123,7 +122,7 @@ function ProductList({ products }) {
 
         return newUpdates
     }
-    console.log(Products)
+    //console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>
@@ -133,7 +132,7 @@ function ProductList({ products }) {
 
                     <div className='product-list'>
                         {Products.map((product) => (
-                            <ProductItem product={product.product} id={product.key} />
+                            <ProductItem product={product.product} id={product.key} changeDetailProduct={changeDetailProduct} />
                         ))}
 
                     </div>

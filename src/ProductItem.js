@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import "./ProductItem.css"
-function ProductItem({ id, product }) {
+import { NavLink } from 'react-router-dom'
+function ProductItem({ id, product, changeDetailProduct }) {
     const [imgOrder, setImgOrder] = useState(0)
     const handleHover = (imgSrc) => {
         setImgOrder(product.img.indexOf(imgSrc))
     }
     return (
         <div key={id} className='ProductItem' >
-            <img src={product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} />
+            <NavLink to="/product">
+                <img src={product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} onClick={() => changeDetailProduct(product)} />
+            </NavLink>
             <div className='ProductDetail'>
                 <h3>{product.name}</h3>
                 <p className='brand'>{product.brand}</p>
@@ -17,7 +20,8 @@ function ProductItem({ id, product }) {
                 <div className='img-list'>
                     {
                         product.img.map(imgSrc => (
-                            <img src={imgSrc} onMouseEnter={(imgSrc) => handleHover(imgSrc.target.src)} />
+                            <img src={imgSrc} onMouseEnter={(imgSrc) => handleHover(imgSrc.target.src)}
+                            />
                         ))
                     }
                 </div>

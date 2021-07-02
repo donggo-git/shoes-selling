@@ -31,7 +31,7 @@ function DetailPage({ products }) {
                     </div>
                     <p>{products?.description}</p>
                     <button>Add to cart</button>
-                    <button>Like</button>
+                    <button className="like">Like</button>
                 </div>
             </div>
         </div>

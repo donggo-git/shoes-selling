@@ -15,6 +15,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
+
   // add to cart method
   const addToCart = (product) => {
     let updateCart = [...cart]
@@ -25,7 +26,6 @@ function App() {
     if (cart.length > 0) {
       let updateCart = [...cart];
       updateCart = updateCart.filter(item => item.id != productID)
-      console.log(productID)
       setCart(updateCart)
     }
     else return;
@@ -50,6 +50,9 @@ function App() {
     setTimeout(getProduct(), 3000);
   }, [])
 
+  const changeDetailProduct = (detailProduct) => {
+    setDetailProduct(detailProduct)
+  }
   return (
     <div>
       <Router>
@@ -81,7 +84,8 @@ function App() {
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
-                <Route path='/' exact component={() => <ProductPage addToCart={addToCart} products={products} />} />
+                <Route path='/' exact component={() => <ProductPage
+                  addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} />} />
               </Switch>
