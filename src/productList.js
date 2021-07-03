@@ -7,7 +7,7 @@ import './detailPage.css'
 
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-function ProductList({ products, changeDetailProduct }) {
+function ProductList({ products, changeDetailProduct, addToCart }) {
 
     // filter product by the filter form 
 
@@ -132,7 +132,11 @@ function ProductList({ products, changeDetailProduct }) {
 
                     <div className='product-list'>
                         {Products.map((product) => (
-                            <ProductItem product={product.product} id={product.key} changeDetailProduct={changeDetailProduct} />
+                            <ProductItem
+                                product={product.product} id={product.key}
+                                changeDetailProduct={changeDetailProduct}
+                                addToCart={addToCart}
+                            />
                         ))}
 
                     </div>

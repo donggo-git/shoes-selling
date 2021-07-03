@@ -53,6 +53,7 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
+  console.log(cart)
   return (
     <div>
       <Router>

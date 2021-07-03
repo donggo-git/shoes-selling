@@ -8,9 +8,9 @@ function Cart(props) {
         <div className='cart-page'>
             <div className='cart'>
                 <TransitionGroup>
-                    {props.cart.map((item) => (
+                    {props.cart.length != 0 ? props.cart.map((item) => (
                         <div className='cart-item' key={item.id}>
-                            <img src={item.img[0]} />
+                            <img src={item?.img[0]} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
                                     <h4>{item.name}</h4>
@@ -34,7 +34,7 @@ function Cart(props) {
                                 <button onClick={() => props.removeItem(item.id)}>Remove</button>
                             </div>
                         </div>
-                    ))}
+                    )) : <div></div>}
                 </TransitionGroup>
             </div>
             <div className='summary-cart'>
