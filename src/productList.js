@@ -128,21 +128,18 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
             <h2 className="title">Product</h2>
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
-                <div className='product-list-show'>
 
-                    <div className='product-list'>
-                        {Products.map((product) => (
-                            <ProductItem
-                                product={product.product} id={product.key}
-                                changeDetailProduct={changeDetailProduct}
-                                addToCart={addToCart}
-                            />
-                        ))}
-
-                    </div>
-
+                <div className='product-list'>
+                    {Products.map((product) => (
+                        <ProductItem
+                            product={product.product} id={product.key}
+                            changeDetailProduct={changeDetailProduct}
+                            addToCart={addToCart}
+                        />
+                    ))}
 
                 </div>
+
             </div>
         </div>
     )

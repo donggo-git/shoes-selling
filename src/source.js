@@ -132,7 +132,6 @@ let source = [
         color: ['#fffb01', '#0086e9', 'linear-gradient(#fff,#333)'],
         detail: "Born for speed. Raised in style. The Speedcat returns 20 years later for its second season, backed by motorsport legends Sparco. In 1999, PUMA partnered with Sparco to bring t..."
     },
-    //
     {
         id: 'M',
         name: 'Double DISC Basketball Shoes',
@@ -149,11 +148,12 @@ let source = [
         name: "Porsche Legacy RS-Fast Men's Sneakers",
         price: 120,
         brand: "Puma",
-        img: ["https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306773/01/sv01/fnd/PNA/fmt/png/Porsche-Legacy-RS-Fast-Men's - Sneakers",
+        img: ["https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306773/01/sv01/fnd/PNA/fmt/png/Porsche-Legacy-RS-Fast-Men's-Sneakers",
             "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/306773/02/sv01/fnd/PNA/fmt/png/Porsche-Legacy-RS-Fast-Men's-Sneakers"],
         color: ['linear-gradient(#e4eb00,#eb7900,#333)', 'linear-gradient(#fff,#00e0eb,#cb0000)'],
         detail: "Meet the icons of fast. Faster and fresher than any of our RS kicks yet, RS-Fast from PUMA and Porsche Legacy combines early 2000s design with sleek motorsport elements, including a special edition keychain that pays tribute to the legacy of the 911 Turbo."
     },
+    //
     {
         id: 'O',
         name: "evoSPEED Electric 10 Men's Track Spikes",

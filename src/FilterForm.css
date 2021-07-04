@@ -28,3 +28,13 @@
     cursor: pointer;
     text-align: left;
 }
+@media screen and (max-width: 1000px)  {
+    .filter{
+        width: 20rem;
+        font-size: 2rem;
+    }
+    .filter__line input{
+        height: 2rem;
+        width: 2rem;
+    }
+}

@@ -32,19 +32,10 @@
     }
 }
 @media screen and (max-width: 1000px) {
-    .product-list-show{
-        width: 70%;
-    }
-    .product-item{
-        width: 18rem;
-        
-        margin: 1rem 1.2rem;
-        
-    }
     .product-item img{
         width: 100%;
     }
     .product-list{
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
     }
 }
