@@ -19,7 +19,13 @@ function App() {
   // add to cart method
   const addToCart = (product) => {
     let updateCart = [...cart]
-    updateCart.push(product)
+    if (!updateCart.includes(product)) {
+      product.quantity = 1
+      updateCart.push(product)
+    }
+    else {
+      product.quantity++
+    }
     setCart(updateCart)
   }
   const removeItem = (productID) => {

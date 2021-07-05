@@ -21,6 +21,7 @@ function Cart(props) {
                                         <option value='11'>10</option>
                                         <option value='11'>11</option>
                                     </select>
+                                    <input type="text" for="quantity" value={item.quantity} />
                                     <label for='quantity'>Quantity</label>
                                     <select name='size'>
                                         <option value='11'>1</option>
