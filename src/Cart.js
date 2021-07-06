@@ -21,9 +21,9 @@ function Cart(props) {
                                         <option value='11'>10</option>
                                         <option value='11'>11</option>
                                     </select>
-                                    <div>
+                                    <div className="quantity-container">
                                         <p>quantity</p>
-                                        <button>+</button>
+                                        <button className="add-quantity">+</button>
                                         <input type="text" for="quantity" value={item.quantity} />
                                         <button>-</button>
                                     </div>
