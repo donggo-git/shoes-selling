@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './detailPage.css'
 
-function DetailPage({ products }) {
+function DetailPage({ products, addToCart }) {
     const [mainImg, setMainImg] = useState(0)
     const changeMainImg = (srcImg) => {
         setMainImg(products.img.indexOf(srcImg))
@@ -30,7 +30,7 @@ function DetailPage({ products }) {
                         }
                     </div>
                     <p>{products?.description}</p>
-                    <button>Add to cart</button>
+                    <button onClick={() => addToCart(products)}>Add to cart</button>
                     <button className="like">Like</button>
                 </div>
             </div>

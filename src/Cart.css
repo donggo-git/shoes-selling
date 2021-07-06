@@ -27,11 +27,16 @@
     width: 35rem;
     position: relative;
 }
-.cart-item-detail select{
+.cart-item-detail select, .cart-item-detail>div>input{
 border: none;
 margin: 15px;
 color: rgb(117, 117, 117);
 background: #fff;
+width: 1rem;
+}
+.cart-item-detail>div{
+    display: flex;
+    justify-content: space-between;
 }
 .cart-item-detail select:focus{
     outline: none;
@@ -42,7 +47,7 @@ background: #fff;
     right: 20px;
     margin: 0;
 }
-.cart-item-detail-container button{
+.cart-item-detail-container>button{
     border: none;
     margin-top: 8px;
     margin-right: 15px;

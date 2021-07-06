@@ -17,7 +17,7 @@ function App() {
   const [detailProduct, setDetailProduct] = useState()
 
   // add to cart method
-  const addToCart = (product) => {
+  const addToCart = (product, img) => {
     let updateCart = [...cart]
     if (!updateCart.includes(product)) {
       product.quantity = 1
@@ -94,7 +94,7 @@ function App() {
                 <Route path='/' exact component={() => <ProductPage
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
-                <Route path='/product' component={() => <DetailPage products={detailProduct} />} />
+                <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

@@ -21,14 +21,12 @@ function Cart(props) {
                                         <option value='11'>10</option>
                                         <option value='11'>11</option>
                                     </select>
-                                    <input type="text" for="quantity" value={item.quantity} />
-                                    <label for='quantity'>Quantity</label>
-                                    <select name='size'>
-                                        <option value='11'>1</option>
-                                        <option value='11'>2</option>
-                                        <option value='11'>3</option>
-                                        <option value='11'>4</option>
-                                    </select>
+                                    <div>
+                                        <p>quantity</p>
+                                        <button>+</button>
+                                        <input type="text" for="quantity" value={item.quantity} />
+                                        <button>-</button>
+                                    </div>
                                     <p className='price'>${item.price}</p>
                                 </div>
                                 <button>Move to Favorite</button>
