@@ -15,6 +15,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
+  const [img, setImg] = useState("")
 
   // add to cart method
   const addToCart = (product, img) => {
@@ -22,13 +23,16 @@ function App() {
     if (!updateCart.includes(product)) {
       product.quantity = 1
       updateCart.push(product)
+      setImg(img)
     }
     else {
       product.quantity++
     }
+    console.log(updateCart)
     setCart(updateCart)
   }
   const removeItem = (productID) => {
+    console.log(productID)
     if (cart.length > 0) {
       let updateCart = [...cart];
       updateCart = updateCart.filter(item => item.id != productID)
@@ -93,7 +97,7 @@ function App() {
               <Switch >
                 <Route path='/' exact component={() => <ProductPage
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
-                <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} />} />
+                <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} img={img} />} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} />} />
               </Switch>
             </CSSTransition>

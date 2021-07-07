@@ -27,7 +27,10 @@ function ProductItem({ id, product, changeDetailProduct, addToCart }) {
                 </div>
                 <div className="ProductDetail_imgList_btn">
                     <button className="like">Like</button>
-                    <button onClick={() => addToCart(product)}>Add to cart</button>
+
+                    <button onClick={() => changeDetailProduct(product)}>
+                        <NavLink to="/product">Detail</NavLink>
+                    </button>
                 </div>
             </div>
         </div>
