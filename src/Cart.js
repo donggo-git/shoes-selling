@@ -1,6 +1,7 @@
 import React from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Cart.css'
+import { NavLink } from 'react-router-dom'
 import Summary from './Summary'
 function Cart(props) {
     let subtotal = props.cart.map(item => item.price).reduce((a, b) => a + b, 0);
@@ -13,7 +14,13 @@ function Cart(props) {
                             <img src={item?.img[0]} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
-                                    <h4>{item.name}</h4>
+                                    <NavLink to="/product">
+                                        <h4
+                                            onClick={() => props.changeDetailProduct(item)}
+                                        >
+                                            {item.name}
+                                        </h4>
+                                    </NavLink>
                                     <label for='size'>Size</label>
                                     <select name='size'>
                                         <option value='11'>8</option>

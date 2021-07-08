@@ -97,7 +97,7 @@ function App() {
               <Switch >
                 <Route path='/' exact component={() => <ProductPage
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
-                <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} img={img} />} />
+                <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct} />} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} />} />
               </Switch>
             </CSSTransition>
