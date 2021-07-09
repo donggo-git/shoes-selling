@@ -4,8 +4,7 @@ import './detailPage.css'
 function DetailPage({ products, addToCart }) {
     const [mainImg, setMainImg] = useState(0)
     const changeMainImg = (srcImg) => {
-        setMainImg(products.img.indexOf(srcImg))
-        console.log(products.img.indexOf(srcImg))
+        setMainImg(products.product.img.indexOf(srcImg))
     }
     const styleImgList = {
         border: '1px solid black'
@@ -13,24 +12,24 @@ function DetailPage({ products, addToCart }) {
     return (
         <div className="detailPage">
             <div className="mainImg_container">
-                <img src={products?.img[mainImg]} height="100%" width="100%" />
+                <img src={products?.product?.img[mainImg]} height="100%" width="100%" />
             </div>
 
             <div className='product_detail'>
                 <div className='imgList'>
-                    <h2>{products?.name}</h2>
-                    <p>$ {products?.price}</p>
+                    <h2>{products?.product?.name}</h2>
+                    <p>$ {products?.product?.price}</p>
                     <div className='imgList_container'>
                         {
-                            products?.img.map(singleImg => (
+                            products?.product?.img.map(singleImg => (
                                 <img
                                     src={singleImg} height="100%" onClick={(e) => changeMainImg(e.target.src)}
-                                    style={products?.img.indexOf(singleImg) == mainImg ? styleImgList : {}} />
+                                    style={products?.product.img.indexOf(singleImg) == mainImg ? styleImgList : {}} />
                             ))
                         }
                     </div>
-                    <p>{products?.description}</p>
-                    <button onClick={() => addToCart(products, products?.img[mainImg])}>Add to cart</button>
+                    <p>{products?.product?.description}</p>
+                    <button onClick={() => addToCart(products, products?.product?.img[mainImg])}>Add to cart</button>
                     <button className="like">Like</button>
                 </div>
             </div>

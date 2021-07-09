@@ -122,7 +122,7 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
 
         return newUpdates
     }
-    //console.log(Products)
+    console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>
@@ -132,7 +132,7 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
                 <div className='product-list'>
                     {Products.map((product) => (
                         <ProductItem
-                            product={product.product} id={product.key}
+                            product={product} id={product.key}
                             changeDetailProduct={changeDetailProduct}
                             addToCart={addToCart}
                         />

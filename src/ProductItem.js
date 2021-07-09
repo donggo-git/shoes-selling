@@ -4,22 +4,22 @@ import { NavLink } from 'react-router-dom'
 function ProductItem({ id, product, changeDetailProduct, addToCart }) {
     const [imgOrder, setImgOrder] = useState(0)
     const handleHover = (imgSrc) => {
-        setImgOrder(product.img.indexOf(imgSrc))
+        setImgOrder(product.product.img.indexOf(imgSrc))
     }
     return (
         <div key={id} className='ProductItem' >
             <NavLink to="/product">
-                <img src={product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} onClick={() => changeDetailProduct(product)} />
+                <img src={product.product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} onClick={() => changeDetailProduct(product)} />
             </NavLink>
             <div className='ProductDetail'>
-                <h3>{product.name}</h3>
-                <p className='brand'>{product.brand}</p>
-                <p>${product.price}</p>
+                <h3>{product.product.name}</h3>
+                <p className='brand'>{product.product.brand}</p>
+                <p>${product.product.price}</p>
             </div>
             <div className="ProductDetail_imgList">
                 <div className='img-list'>
                     {
-                        product.img.map(imgSrc => (
+                        product.product.img.map(imgSrc => (
                             <img src={imgSrc} onMouseEnter={(imgSrc) => handleHover(imgSrc.target.src)}
                             />
                         ))
