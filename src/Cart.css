@@ -57,7 +57,7 @@ text-align: center;
     height: 2rem;
     width: 2rem;
 }
-.add-quantity{
+.reduce-quantity{
     margin-left: 20px
 }
 .cart-item-detail select:focus{

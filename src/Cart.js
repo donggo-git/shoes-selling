@@ -4,7 +4,7 @@ import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Summary from './Summary'
 function Cart(props) {
-    let subtotal = props.cart.map(item => item.price).reduce((a, b) => a + b, 0);
+    let subtotal = props.cart.map(item => item.product.price).reduce((a, b) => a + b, 0);
     return (
         <div className='cart-page'>
             <div className='cart'>
@@ -18,7 +18,7 @@ function Cart(props) {
                                         <h4
                                             onClick={() => props.changeDetailProduct(item)}
                                         >
-                                            {item.name}
+                                            {item.product.name}
                                         </h4>
                                     </NavLink>
                                     <label for='size'>Size</label>
@@ -30,11 +30,11 @@ function Cart(props) {
                                     </select>
                                     <div className="quantity-container">
                                         <p>quantity</p>
-                                        <button className="add-quantity">+</button>
+                                        <button className="reduce-quantity">-</button>
                                         <input type="text" for="quantity" value={item.quantity} />
-                                        <button>-</button>
+                                        <button onClick={() => props.addQuantity(item)}>+</button>
                                     </div>
-                                    <p className='price'>${item.price}</p>
+                                    <p className='price'>${item.product.price}</p>
                                 </div>
                                 <button>Move to Favorite</button>
                                 <button onClick={() => props.removeItem(item.id)}>Remove</button>

@@ -122,7 +122,6 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
 
         return newUpdates
     }
-    console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>

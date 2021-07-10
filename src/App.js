@@ -32,7 +32,6 @@ function App() {
     setCart(updateCart)
   }
   const removeItem = (productID) => {
-    console.log(productID)
     if (cart.length > 0) {
       let updateCart = [...cart];
       updateCart = updateCart.filter(item => item.id != productID)
@@ -40,7 +39,12 @@ function App() {
     }
     else return;
   }
-
+  const addQuantity = (product) => {
+    let updateCart = [...cart]
+    //find product that need to increase quantity
+    updateCart.find(cartItem => cartItem.id == product.id).quantity++
+    setCart(updateCart)
+  }
   const getProduct = () => {
 
     db.collection('products').onSnapshot((snapshot) => {
@@ -63,7 +67,6 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
-  console.log(cart)
   return (
     <div>
       <Router>
@@ -97,7 +100,9 @@ function App() {
               <Switch >
                 <Route path='/' exact component={() => <ProductPage
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
-                <Route path='/cart' component={() => <CartPage cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct} />} />
+                <Route path='/cart' component={() => <CartPage
+                  cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
+                  addQuantity={addQuantity} />} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} />} />
               </Switch>
             </CSSTransition>
