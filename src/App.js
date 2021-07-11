@@ -45,6 +45,12 @@ function App() {
     updateCart.find(cartItem => cartItem.id == product.id).quantity++
     setCart(updateCart)
   }
+  const minusQuantity = (product) => {
+    let updateCart = [...cart]
+    //find product that need to increase quantity
+    updateCart.find(cartItem => cartItem.id == product.id).quantity--
+    setCart(updateCart)
+  }
   const getProduct = () => {
 
     db.collection('products').onSnapshot((snapshot) => {
@@ -102,8 +108,8 @@ function App() {
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
-                  addQuantity={addQuantity} />} />
-                <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} />} />
+                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
+                <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} minusQuantity={minusQuantity} />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

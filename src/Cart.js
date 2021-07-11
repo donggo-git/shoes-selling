@@ -30,7 +30,7 @@ function Cart(props) {
                                     </select>
                                     <div className="quantity-container">
                                         <p>quantity</p>
-                                        <button className="reduce-quantity">-</button>
+                                        <button className="reduce-quantity" onClick={() => props.minusQuantity(item)}>-</button>
                                         <input type="text" for="quantity" value={item.quantity} />
                                         <button onClick={() => props.addQuantity(item)}>+</button>
                                     </div>
