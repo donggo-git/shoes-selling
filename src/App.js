@@ -21,12 +21,12 @@ function App() {
   const addToCart = (product, img) => {
     let updateCart = [...cart]
     if (!updateCart.includes(product)) {
-      product.quantity = 1
+      product.product.quantity = 1
       updateCart.push(product)
       setImg(img)
     }
     else {
-      product.quantity++
+      product.product.quantity++
     }
     console.log(updateCart)
     setCart(updateCart)
@@ -42,13 +42,13 @@ function App() {
   const addQuantity = (product) => {
     let updateCart = [...cart]
     //find product that need to increase quantity
-    updateCart.find(cartItem => cartItem.id == product.id).quantity++
+    updateCart.find(cartItem => cartItem.id == product.id).product.quantity++
     setCart(updateCart)
   }
   const minusQuantity = (product) => {
     let updateCart = [...cart]
     //find product that need to increase quantity
-    updateCart.find(cartItem => cartItem.id == product.id).quantity--
+    updateCart.find(cartItem => cartItem.id == product.id).product.quantity--
     setCart(updateCart)
   }
   const getProduct = () => {
