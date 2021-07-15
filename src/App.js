@@ -16,6 +16,7 @@ function App() {
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
+  let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
   // add to cart method
   const addToCart = (product, img) => {
@@ -96,7 +97,7 @@ function App() {
           <NavLink to='/cart'>
             <div className='nav__cart '>
               <IoCartOutline className='cart_icon' />
-              <div className='nav__cart__amount'>{cart.length}</div>
+              <div className='nav__cart__amount'>{cartLength}</div>
             </div>
           </NavLink>
         </nav>
