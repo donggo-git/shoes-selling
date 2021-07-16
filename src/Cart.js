@@ -12,7 +12,7 @@ function Cart(props) {
                 <TransitionGroup>
                     {props.cart.length != 0 ? props.cart.map((item) => (
                         <div className='cart-item' key={item.id}>
-                            <img src={item?.product?.img[0]} />
+                            <img src={item?.product?.img[item.id.slice(-1)]} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
                                     <NavLink to="/product">

@@ -20,16 +20,21 @@ function App() {
 
   // add to cart method
   const addToCart = (product, img) => {
+    //console.log(product.product.color[img])
     let updateCart = [...cart]
-    if (!updateCart.includes(product)) {
-      product.product.quantity = 1
-      updateCart.push(product)
+    let allKeyCartItem = cart.map(item => item.id)
+    let updateProduct;
+    if (!allKeyCartItem.includes(product.id + img)) {
+      updateProduct = { ...product }
+      updateProduct.id = product.id + img
+      updateProduct.product.quantity = 1
+      updateCart.push(updateProduct)
       setImg(img)
     }
     else {
-      product.product.quantity++
+      updateProduct = updateCart.find(item => item.id == (product.id + img))
+      updateProduct.product.quantity++
     }
-    console.log(updateCart)
     setCart(updateCart)
   }
   const removeItem = (productID) => {
@@ -74,6 +79,7 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
+  console.log(cart)
   return (
     <div>
       <Router>
