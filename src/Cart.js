@@ -5,7 +5,11 @@ import { NavLink } from 'react-router-dom'
 import Summary from './Summary'
 function Cart(props) {
     let subtotal = props.cart.length > 0 ? props.cart.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0) : 0;
-    console.log(subtotal)
+    const handleProductCallBack = (item) => {
+        let updateItem = { ...item }
+        updateItem.id = updateItem.id.slice(0, updateItem.id.length - 2)
+        props.changeDetailProduct(updateItem)
+    }
     return (
         <div className='cart-page'>
             <div className='cart'>
@@ -17,7 +21,7 @@ function Cart(props) {
                                 <div className='cart-item-detail'>
                                     <NavLink to="/product">
                                         <h4
-                                            onClick={() => props.changeDetailProduct(item)}
+                                            onClick={() => handleProductCallBack(item)}
                                         >
                                             {item.product.name}
                                         </h4>

@@ -11,31 +11,30 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { db } from './firebase'
 
 function App() {
-
+  const _ = require('lodash');
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
   let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
-  // add to cart method
+  // add to cart method 
   const addToCart = (product, img) => {
     //console.log(product.product.color[img])
     let updateCart = [...cart]
-    let allKeyCartItem = cart.map(item => item.id)
-    let updateProduct;
-    if (!allKeyCartItem.includes(product.id + img)) {
-      updateProduct = { ...product }
+    let updateProduct = JSON.parse(JSON.stringify(product))
+    if (cart.every(item => item.id !== (updateProduct.id + img))) {
       updateProduct.id = product.id + img
       updateProduct.product.quantity = 1
       updateCart.push(updateProduct)
       setImg(img)
     }
     else {
-      updateProduct = updateCart.find(item => item.id == (product.id + img))
+      updateProduct = updateCart.find(item => item.id == product.id + img)
       updateProduct.product.quantity++
     }
     setCart(updateCart)
+    console.log(cart)
   }
   const removeItem = (productID) => {
     if (cart.length > 0) {
@@ -48,13 +47,17 @@ function App() {
   const addQuantity = (product) => {
     let updateCart = [...cart]
     //find product that need to increase quantity
-    updateCart.find(cartItem => cartItem.id == product.id).product.quantity++
+
+    updateCart.find(cartItem => cartItem.id === product.id).product.quantity++
     setCart(updateCart)
   }
   const minusQuantity = (product) => {
     let updateCart = [...cart]
     //find product that need to increase quantity
-    updateCart.find(cartItem => cartItem.id == product.id).product.quantity--
+    let updateItem = updateCart.find(cartItem => cartItem.id == product.id)
+    if (updateItem.product.quantity > 0) {
+      updateCart.find(cartItem => cartItem.id == product.id).product.quantity--
+    }
     setCart(updateCart)
   }
   const getProduct = () => {
