@@ -1,21 +1,26 @@
-import React from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useState } from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
+import Grow from '@material-ui/core/Grow'
 import Summary from './Summary'
 function Cart(props) {
     let subtotal = props.cart.length > 0 ? props.cart.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0) : 0;
     const handleProductCallBack = (item) => {
         let updateItem = { ...item }
-        updateItem.id = updateItem.id.slice(0, updateItem.id.length - 2)
+        updateItem.id = updateItem.id.slice(0, updateItem.id.length - 1)
         props.changeDetailProduct(updateItem)
     }
+    let [quantity, setQuantity] = useState()
     return (
         <div className='cart-page'>
+
             <div className='cart'>
-                <TransitionGroup>
-                    {props.cart.length != 0 ? props.cart.map((item) => (
-                        <div className='cart-item' key={item.id}>
+                {props.cart.map((item) => (
+                    <Grow
+                        in={item.id}
+                        timeout={400}
+                    >
+                        <div className='cart-item'>
                             <img src={item?.product?.img[item.id.slice(-1)]} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
@@ -36,7 +41,9 @@ function Cart(props) {
                                     <div className="quantity-container">
                                         <p>quantity</p>
                                         <button className="reduce-quantity" onClick={() => props.minusQuantity(item)}>-</button>
-                                        <input type="text" for="quantity" value={item.product.quantity} />
+                                        <input
+                                            type="text" for="quantity" value={item.product.quantity}
+                                            onChange={(input) => props.handleQuantity(input)} />
                                         <button onClick={() => props.addQuantity(item)}>+</button>
                                     </div>
                                     <p className='price'>${item.product.price}</p>
@@ -45,8 +52,8 @@ function Cart(props) {
                                 <button onClick={() => props.removeItem(item.id)}>Remove</button>
                             </div>
                         </div>
-                    )) : <div></div>}
-                </TransitionGroup>
+                    </Grow>
+                ))}
             </div>
             <div className='summary-cart'>
                 <Summary subtotal={subtotal} />

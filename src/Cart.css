@@ -8,6 +8,21 @@
     margin-left: 5rem;
     flex: 0.7;
 }
+.item-enter,.item-appear {
+    opacity: 0;
+}
+.item-enter-active, .item-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.item-exit,.item-leave {
+    opacity: 1;
+    transition: opacity 0.8s ease-in;
+}
+.item-exit-active,.item-leave-active {
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
 .cart-item{
     display: flex;
     width: 50rem;
@@ -19,8 +34,7 @@
 }
 .cart-item img{
     display: block;
-    height: 10rem;
-    width: 10rem;
+    height: 12rem;
     margin-right: 2rem;
 }
 .cart-item-detail{

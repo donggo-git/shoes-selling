@@ -60,6 +60,9 @@ function App() {
     }
     setCart(updateCart)
   }
+  const handleQuantity = (product, quantity) => {
+    console.log(quantity.target.value)
+  }
   const getProduct = () => {
 
     db.collection('products').onSnapshot((snapshot) => {
@@ -118,7 +121,7 @@ function App() {
                   addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
-                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
+                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} handleQuantity={handleQuantity} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} minusQuantity={minusQuantity} />} />
               </Switch>
             </CSSTransition>

@@ -23,6 +23,7 @@ function DetailPage({ products, addToCart }) {
                         {
                             products?.product?.img.map(singleImg => (
                                 <img
+                                    key={products.product.img.indexOf(singleImg)}
                                     src={singleImg} height="100%" onClick={(e) => changeMainImg(e.target.src)}
                                     style={products?.product.img.indexOf(singleImg) == mainImg ? styleImgList : {}} />
                             ))
