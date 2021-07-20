@@ -10,7 +10,7 @@ function Cart(props) {
         updateItem.id = updateItem.id.slice(0, updateItem.id.length - 1)
         props.changeDetailProduct(updateItem)
     }
-    let [quantity, setQuantity] = useState()
+    props.cart.map(item => console.log(item.id))
     return (
         <div className='cart-page'>
 

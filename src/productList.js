@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { source } from './source'
+import Fade from '@material-ui/core/Fade'
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
@@ -13,6 +13,7 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
 
     // list of product after filter
     const [Products, setProducts] = useState([...products])
+    const [animateProduct, setAnimateProduct] = useState(true)
     const [filterCheckBox, setFilterCheckBox] = useState({
         gender: {
             Men: false,
@@ -29,6 +30,7 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
         categories: { category: "" }
     })
     const filterHandle = (filterEvent) => {
+        setAnimateProduct(false)
         let newFilterCheckBox = { ...filterCheckBox }
         let targetName = filterEvent.target.name
         let targetValue = filterEvent.target.value
@@ -52,16 +54,9 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
         }
         setFilterCheckBox(newFilterCheckBox)
         filterProduct()
-
     }
     const filterProduct = () => {
-        //filter by Checkbox except section price
-        filterByCheckbox()
-        //filter by price
-
-    }
-    //method filter by section
-    const filterByCheckbox = () => {
+        setAnimateProduct(false)
         let newUpdates = [...products]
         //use the for loop to loop thought the filterCheckBox
         //check every section in there
@@ -86,7 +81,10 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
                 newUpdates = filterByCategories(newUpdates)
             }
         }
-        setProducts(newUpdates);
+        setTimeout(() => {
+            setProducts(newUpdates)
+            setAnimateProduct(true)
+        }, 300);
 
     }
     const filterByPrice = (update) => {
@@ -122,23 +120,24 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
 
         return newUpdates
     }
-    console.log(Products)
     return (
         <div>
             <h2 className="title">Product</h2>
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
 
-                <div className='product-list'>
-                    {Products.map((product) => (
-                        <ProductItem
-                            product={product} id={product.key}
-                            changeDetailProduct={changeDetailProduct}
-                            addToCart={addToCart}
-                        />
-                    ))}
-
-                </div>
+                <Fade in={animateProduct} timeout={800}>
+                    <div className='product-list'>
+                        {Products.map((product) => (
+                            <ProductItem
+                                product={product}
+                                changeDetailProduct={changeDetailProduct}
+                                addToCart={addToCart}
+                                key={product.id}
+                            />
+                        ))}
+                    </div>
+                </Fade>
 
             </div>
         </div>
