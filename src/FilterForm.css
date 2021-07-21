@@ -15,6 +15,9 @@
     font-weight: bolder;
     margin: 0.8rem 0;
 }
+.filter__line>div{
+    height: 30px;
+}
 .category{
     width: 10rem;
     margin-top: 0.8rem;
@@ -27,6 +30,9 @@
     padding: 5px;
     cursor: pointer;
     text-align: left;
+}
+.checkbox{
+    height: 20px;
 }
 @media screen and (max-width: 1000px)  {
     .filter{
