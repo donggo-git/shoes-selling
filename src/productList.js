@@ -12,6 +12,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
 
     // list of product after filter
     const [products, setProducts] = useState([]);
+    const [orgProduct, setOrgProduct] = useState([]);
     const [animateProduct, setAnimateProduct] = useState(true)
     const [filterCheckBox, setFilterCheckBox] = useState({
         gender: {
@@ -40,8 +41,8 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
                 }
 
             ));
+            setOrgProduct(tempData)
             setProducts(tempData)
-
         })
     }
     useEffect(() => {
@@ -76,7 +77,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
     }
     const filterProduct = () => {
         setAnimateProduct(false)
-        let newUpdates = [...products]
+        let newUpdates = [...orgProduct]
         //use the for loop to loop thought the filterCheckBox
         //check every section in there
         //filter all products that qualified the section (except the price section)
@@ -104,8 +105,8 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
             setProducts(newUpdates)
             setAnimateProduct(true)
         }, 300);
-
     }
+
     const filterByPrice = (update) => {
         let newUpdates = [...update];
         let filterElement = []

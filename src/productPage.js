@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ProductList from './productList'
-import P from './ProductHeader'
 import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
 
