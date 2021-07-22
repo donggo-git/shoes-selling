@@ -12,7 +12,6 @@ import { db } from './firebase'
 
 function App() {
   const _ = require('lodash');
-  const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
@@ -63,25 +62,6 @@ function App() {
   const handleQuantity = (product, quantity) => {
     console.log(quantity.target.value)
   }
-  const getProduct = () => {
-
-    db.collection('products').onSnapshot((snapshot) => {
-      let tempData = [];
-      tempData = snapshot.docs.map((doc) => (
-        {
-          id: doc.id,
-          product: doc.data()
-        }
-
-      ));
-      setProducts(tempData)
-      setDetailProduct(tempData[0].product)
-    })
-  }
-  useEffect(() => {
-    setTimeout(getProduct(), 3000);
-  }, [])
-
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
@@ -118,7 +98,8 @@ function App() {
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
                 <Route path='/' exact component={() => <ProductPage
-                  addToCart={addToCart} products={products} changeDetailProduct={changeDetailProduct} />} />
+                  addToCart={addToCart} changeDetailProduct={changeDetailProduct}
+                  setDetailProduct={setDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
                   addQuantity={addQuantity} minusQuantity={minusQuantity} />} handleQuantity={handleQuantity} />

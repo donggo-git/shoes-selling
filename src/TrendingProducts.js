@@ -1,9 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./TrendingProducts.css"
 import { AiOutlineRight } from 'react-icons/ai'
 import { AiOutlineLeft } from 'react-icons/ai'
+import { ListItemAvatar } from '@material-ui/core';
+import { db } from './firebase'
 
-function TrendingProducts({ products }) {
+function TrendingProducts() {
+    const [products, setProducts] = useState([]);
+    const getProduct = () => {
+
+        db.collection('products').onSnapshot((snapshot) => {
+            let tempData = [];
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+
+            ));
+            setProducts(tempData)
+
+        })
+    }
+    useEffect(() => {
+        getProduct();
+    }, [])
+
     const [translateProgress, setTranslateProgress] = useState(0)
     let styledTrending = {
         transform: `translateX(${translateProgress}rem)`

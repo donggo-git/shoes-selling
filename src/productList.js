@@ -1,18 +1,17 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Fade from '@material-ui/core/Fade'
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
-
+import { db } from './firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-function ProductList({ products, changeDetailProduct, addToCart }) {
-
+function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
     // filter product by the filter form 
 
     // list of product after filter
-    const [Products, setProducts] = useState([...products])
+    const [products, setProducts] = useState([]);
     const [animateProduct, setAnimateProduct] = useState(true)
     const [filterCheckBox, setFilterCheckBox] = useState({
         gender: {
@@ -29,6 +28,26 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
         },
         categories: { category: "" }
     })
+
+    const getProduct = () => {
+
+        db.collection('products').onSnapshot((snapshot) => {
+            let tempData = [];
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+
+            ));
+            setProducts(tempData)
+
+        })
+    }
+    useEffect(() => {
+        setTimeout(getProduct(), 3000);
+    }, [])
+
     const filterHandle = (filterEvent) => {
         setAnimateProduct(false)
         let newFilterCheckBox = { ...filterCheckBox }
@@ -128,7 +147,7 @@ function ProductList({ products, changeDetailProduct, addToCart }) {
 
                 <Fade in={animateProduct} timeout={800}>
                     <div className='product-list'>
-                        {Products.map((product) => (
+                        {products.map((product) => (
                             <ProductItem
                                 product={product}
                                 changeDetailProduct={changeDetailProduct}
