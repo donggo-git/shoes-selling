@@ -76,7 +76,11 @@ nav li,.nav__homePage{
   .headerSlide-list{
       width: 500%;
   }
+  nav a{
+    font-size: 1.4rem;
+  }
 }
+
 .nav__cart{
   margin-top: 0.2rem;
   margin-left: 1rem;

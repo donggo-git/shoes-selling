@@ -102,3 +102,8 @@ text-align: center;
 .summary-cart{
 flex: 0.3;
 }
+@media screen and (max-width: 1000px) {
+    .cart{
+        flex: 0.5;
+    }
+}
