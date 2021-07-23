@@ -8,7 +8,6 @@ import DetailPage from './DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { db } from './firebase'
 
 function App() {
   const _ = require('lodash');
@@ -107,7 +106,6 @@ function App() {
             </CSSTransition>
           </TransitionGroup>
         )} />
-
       </Router>
     </div >
   );
