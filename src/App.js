@@ -95,7 +95,7 @@ function App() {
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
-                <Route path='/shoe-selling' component={() => <ProductPage
+                <Route path='/shoes-selling/' component={() => <ProductPage
                   addToCart={addToCart} changeDetailProduct={changeDetailProduct}
                   setDetailProduct={setDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage
