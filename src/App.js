@@ -69,7 +69,7 @@ function App() {
       <Router>
         <nav>
           <ul>
-            <NavLink to='/' className='nav__homePage'>Home</NavLink>
+            <NavLink to='/shoe-selling' className='nav__homePage'>Home</NavLink>
             <a href='#trending'><li>Trending</li></a>
             <a href='#'><li>Men</li></a>
             <a href='#'><li>Women</li></a>
@@ -95,7 +95,7 @@ function App() {
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
-                <Route path='/' exact component={() => <ProductPage
+                <Route path='/shoe-selling' component={() => <ProductPage
                   addToCart={addToCart} changeDetailProduct={changeDetailProduct}
                   setDetailProduct={setDetailProduct} />} />
                 <Route path='/cart' component={() => <CartPage
