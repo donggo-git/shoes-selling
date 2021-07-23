@@ -46,9 +46,13 @@
     justify-content: space-between;
     margin-top: 5px;
 }
-.ProductDetail_imgList_btn button, .ProductDetail_imgList_btn NavLink{
+.ProductDetail_imgList_btn>a{
     flex: 0.49;
+}
+.ProductDetail_imgList_btn button{
     padding: 8px;
+    height: 100%;
+    width: 100%;
 }
 .like{
     background-color: rgb(43, 42, 42);

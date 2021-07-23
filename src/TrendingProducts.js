@@ -42,7 +42,7 @@ function TrendingProducts() {
         }
     }
     return (
-        <div className="Trending_container">
+        <div className="Trending_container" id='trending'>
             <h2 className="title">Trending</h2>
             <div
                 className="Trending_btn previousBtn_container"

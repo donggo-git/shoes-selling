@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
@@ -65,14 +65,13 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
-  console.log(cart)
   return (
     <div>
       <Router>
         <nav>
           <ul>
             <NavLink to='/' className='nav__homePage'>Home</NavLink>
-            <a href='#'><li>New Releases</li></a>
+            <a href='#trending'><li>Trending</li></a>
             <a href='#'><li>Men</li></a>
             <a href='#'><li>Women</li></a>
             <a href='#'><li>Kids</li></a>

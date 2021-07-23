@@ -13,7 +13,9 @@ function ProductItem({ product, changeDetailProduct, addToCart }) {
                 <img src={product.product.img[imgOrder]} height='100%' width='100%' alt={product.name + ' shoes'} onClick={() => changeDetailProduct(product)} />
             </NavLink>
             <div className='ProductDetail'>
-                <h3>{product.product.name}</h3>
+                <NavLink to="/product">
+                    <h3 onClick={() => changeDetailProduct(product)}>{product.product.name}</h3>
+                </NavLink>
                 <p className='brand'>{product.product.brand}</p>
                 <p>${product.product.price}</p>
             </div>
@@ -27,11 +29,14 @@ function ProductItem({ product, changeDetailProduct, addToCart }) {
                     }
                 </div>
                 <div className="ProductDetail_imgList_btn">
-                    <button className="like">Like</button>
-
-                    <button onClick={() => changeDetailProduct(product)}>
-                        <NavLink to="/product">Detail</NavLink>
-                    </button>
+                    <NavLink to="/product">
+                        <button className="like">Like</button>
+                    </NavLink>
+                    <NavLink to="/product">
+                        <button onClick={() => changeDetailProduct(product)}>
+                            Detail
+                        </button>
+                    </NavLink>
                 </div>
             </div>
         </div>

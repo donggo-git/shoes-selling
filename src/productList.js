@@ -14,6 +14,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
     const [products, setProducts] = useState([]);
     const [orgProduct, setOrgProduct] = useState([]);
     const [animateProduct, setAnimateProduct] = useState(true)
+    const [scroll, setScroll] = useState(document.documentElement.scrollTop)
     const [filterCheckBox, setFilterCheckBox] = useState({
         gender: {
             Men: false,
@@ -29,7 +30,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
         },
         categories: { category: "" }
     })
-
+    //get product from firebase
     const getProduct = () => {
 
         db.collection('products').onSnapshot((snapshot) => {
@@ -48,7 +49,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
     useEffect(() => {
         setTimeout(getProduct(), 3000);
     }, [])
-
+    //handle the filter form
     const filterHandle = (filterEvent) => {
         setAnimateProduct(false)
         let newFilterCheckBox = { ...filterCheckBox }
@@ -75,6 +76,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
         setFilterCheckBox(newFilterCheckBox)
         filterProduct()
     }
+    //filter product from price, gender, sport etc.
     const filterProduct = () => {
         setAnimateProduct(false)
         let newUpdates = [...orgProduct]
@@ -106,7 +108,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
             setAnimateProduct(true)
         }, 300);
     }
-
+    //filter by price
     const filterByPrice = (update) => {
         let newUpdates = [...update];
         let filterElement = []
@@ -130,6 +132,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
         //if not return back to the org
         return newUpdates
     }
+    //filter by category
     const filterByCategories = (update) => {
         let newUpdates = [...update]
         if (filterCheckBox.categories.category !== "") {
@@ -140,6 +143,8 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart }) {
 
         return newUpdates
     }
+
+
     return (
         <div>
             <h2 className="title">Product</h2>

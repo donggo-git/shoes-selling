@@ -1,16 +1,7 @@
 .product-list-container{
     width: 100%;
     display: flex;
-    height: auto;
-}
-.product-list-show{
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    height: auto;
-    justify-content: flex-start;
-    z-index: 5;
-   margin-left: 1rem;
+
 }
 .product-list{
     display: grid;
@@ -32,10 +23,15 @@
     }
 }
 @media screen and (max-width: 1000px) {
-    .product-item img{
+    .img-list{
         width: 100%;
+        height: 30px;
+        overflow: hidden;
+    }
+    .img-list img{
+        height: 100%;
     }
     .product-list{
-        grid-template-columns: auto;
+        grid-template-columns: auto auto;
     }
 }

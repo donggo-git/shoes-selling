@@ -4,10 +4,11 @@ import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
 
 function ProductPage(props) {
-
-
+    const handleScroll = () => {
+        console.log("hello")
+    }
     return (
-        <div>
+        <div onScroll={handleScroll}>
             <ProductHeader />
             <TrendingProducts products={props.products} />
             <ProductList

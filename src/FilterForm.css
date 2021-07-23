@@ -1,11 +1,12 @@
 .filter{
     z-index: 5;
-    position: sticky;   
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
     top: 0;
     margin-left: 3rem;
     margin-top: 2rem;
     width: 11rem;
-    display: block;
+    
 }
 .filter__line{
     display: flex;
@@ -37,7 +38,7 @@
 @media screen and (max-width: 1000px)  {
     .filter{
         width: 20rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .filter__line input{
         height: 2rem;

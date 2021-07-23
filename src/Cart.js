@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
-import Grow from '@material-ui/core/Grow'
+import Fade from '@material-ui/core/Fade'
 import Summary from './Summary'
 function Cart(props) {
     let subtotal = props.cart.length > 0 ? props.cart.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0) : 0;
@@ -16,9 +16,9 @@ function Cart(props) {
 
             <div className='cart'>
                 {props.cart.map((item) => (
-                    <Grow
+                    <Fade
                         in={item.id}
-                        timeout={400}
+                        timeout={500}
                     >
                         <div className='cart-item'>
                             <img src={item?.product?.img[item.id.slice(-1)]} />
@@ -52,7 +52,7 @@ function Cart(props) {
                                 <button onClick={() => props.removeItem(item.id)}>Remove</button>
                             </div>
                         </div>
-                    </Grow>
+                    </Fade>
                 ))}
             </div>
             <div className='summary-cart'>
