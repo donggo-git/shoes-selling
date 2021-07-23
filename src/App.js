@@ -69,7 +69,7 @@ function App() {
       <Router>
         <nav>
           <ul>
-            <NavLink to='/shoe-selling' className='nav__homePage'>Home</NavLink>
+            <NavLink to='/shoes-selling/' className='nav__homePage'>Home</NavLink>
             <a href='#trending'><li>Trending</li></a>
             <a href='#'><li>Men</li></a>
             <a href='#'><li>Women</li></a>
