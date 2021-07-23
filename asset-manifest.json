@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shoes-selling/static/css/main.262d3645.chunk.css",
-    "main.js": "/shoes-selling/static/js/main.40d2b610.chunk.js",
-    "main.js.map": "/shoes-selling/static/js/main.40d2b610.chunk.js.map",
+    "main.js": "/shoes-selling/static/js/main.6cdf2be4.chunk.js",
+    "main.js.map": "/shoes-selling/static/js/main.6cdf2be4.chunk.js.map",
     "runtime-main.js": "/shoes-selling/static/js/runtime-main.c2bba87e.js",
     "runtime-main.js.map": "/shoes-selling/static/js/runtime-main.c2bba87e.js.map",
     "static/js/2.d41ab21c.chunk.js": "/shoes-selling/static/js/2.d41ab21c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c2bba87e.js",
     "static/js/2.d41ab21c.chunk.js",
     "static/css/main.262d3645.chunk.css",
-    "static/js/main.40d2b610.chunk.js"
+    "static/js/main.6cdf2be4.chunk.js"
   ]
 }
