@@ -66,4 +66,7 @@
     .ProductItem img{
         height: 25rem;
     }
+    .img-list{
+        background-color: transparent;
+    }
 }

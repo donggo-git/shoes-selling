@@ -29,8 +29,8 @@ function DetailPage({ products, addToCart }) {
                             ))
                         }
                     </div>
-                    <p>{products?.product?.description}</p>
-                    <button onClick={() => addToCart(products, mainImg)}>Add to cart</button>
+                    <p className='product_detail_description'>{products?.product?.description}</p>
+                    <button onClick={() => addToCart(products, mainImg)} className="AddToCart">Add to cart</button>
                     <button className="like">Like</button>
                 </div>
             </div>
