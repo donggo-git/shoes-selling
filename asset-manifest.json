@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shoes-selling/static/css/main.adca12ca.chunk.css",
+    "main.css": "/shoes-selling/static/css/main.f3a8c9e9.chunk.css",
     "main.js": "/shoes-selling/static/js/main.9636213e.chunk.js",
     "main.js.map": "/shoes-selling/static/js/main.9636213e.chunk.js.map",
     "runtime-main.js": "/shoes-selling/static/js/runtime-main.c2bba87e.js",
@@ -10,13 +10,13 @@
     "static/js/3.4134bf53.chunk.js": "/shoes-selling/static/js/3.4134bf53.chunk.js",
     "static/js/3.4134bf53.chunk.js.map": "/shoes-selling/static/js/3.4134bf53.chunk.js.map",
     "index.html": "/shoes-selling/index.html",
-    "static/css/main.adca12ca.chunk.css.map": "/shoes-selling/static/css/main.adca12ca.chunk.css.map",
+    "static/css/main.f3a8c9e9.chunk.css.map": "/shoes-selling/static/css/main.f3a8c9e9.chunk.css.map",
     "static/js/2.d41ab21c.chunk.js.LICENSE.txt": "/shoes-selling/static/js/2.d41ab21c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c2bba87e.js",
     "static/js/2.d41ab21c.chunk.js",
-    "static/css/main.adca12ca.chunk.css",
+    "static/css/main.f3a8c9e9.chunk.css",
     "static/js/main.9636213e.chunk.js"
   ]
 }
