@@ -73,12 +73,7 @@ nav li,.nav__homePage{
   outline: none;
 }
 @media screen and (max-width: 1000px) {
-  .headerSlide-list{
-      width: 500%;
-  }
-  nav a{
-    font-size: 1.4rem;
-  }
+
 }
 
 .nav__cart{
@@ -108,10 +103,11 @@ nav li,.nav__homePage{
   border-radius: 50%;
 }
 .cart_icon{
-  margin-top: 3px;
-  margin-right: 2rem;
+  top: 50%;
+  position: absolute;
   font-size: 1.2rem;
   font-weight: lighter;
+  transform: translateY(-50%);
 }
 .page{
   position: absolute;
@@ -133,4 +129,22 @@ nav li,.nav__homePage{
 .fade-exit.fade-exit-active{
   opacity: 0;
   transition: opacity 150ms linear;
+}
+@media screen and (max-width:1000px) {
+  .cart_icon{
+    font-size: 2rem;
+  }
+  .nav__cart__amount{
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.2rem;
+    top: -120%;
+    right: -150%;
+  }
+    .headerSlide-list{
+      width: 500%;
+  }
+  nav a{
+    font-size: 1.4rem;
+  }
 }
