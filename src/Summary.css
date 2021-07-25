@@ -76,3 +76,8 @@
 .Paypal-btn:hover{
     background-color: #fff;
 }
+@media screen and (max-width: 1000px) {
+    .Summary{
+        width: 100%;
+    }
+}
