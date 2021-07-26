@@ -4,8 +4,9 @@ import { AiOutlineRight } from 'react-icons/ai'
 import { AiOutlineLeft } from 'react-icons/ai'
 import { ListItemAvatar } from '@material-ui/core';
 import { db } from './firebase'
+import { NavLink } from 'react-router-dom'
 
-function TrendingProducts() {
+function TrendingProducts({ changeDetailProduct }) {
     const [products, setProducts] = useState([]);
     const getProduct = () => {
 
@@ -62,11 +63,13 @@ function TrendingProducts() {
                         products
                             .filter(product => (product.product.trending == true))
                             .map(product => (
-                                <div key={product.id} className="Trending_slide_product">
-                                    <img src={product.product.img[0]} height='100%' width='100%' />
-                                    <p>{product.product.name}</p>
-                                    <p>$ {product.product.price}</p>
-                                </div>
+                                <NavLink to="/product" key={product.id}>
+                                    <div className="Trending_slide_product" onClick={() => changeDetailProduct(product)}>
+                                        <img src={product.product.img[0]} height='100%' width='100%' />
+                                        <p>{product.product.name}</p>
+                                        <p>$ {product.product.price}</p>
+                                    </div>
+                                </NavLink>
                             ))
                     }
                 </div>

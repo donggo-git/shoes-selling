@@ -10,7 +10,7 @@ function ProductPage(props) {
     return (
         <div onScroll={handleScroll}>
             <ProductHeader />
-            <TrendingProducts products={props.products} />
+            <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
             <ProductList
                 products={props.products}
                 addToCart={props.addToCart}
