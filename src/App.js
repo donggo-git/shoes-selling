@@ -7,6 +7,8 @@ import CartPage from './Cart'
 import DetailPage from './DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
+import { AiOutlineCheck } from 'react-icons/ai'
+import Grow from '@material-ui/core/Grow'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 function App() {
@@ -64,6 +66,9 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
+  const addToFavorite = () => {
+
+  }
   return (
     <div>
       <Router>
@@ -91,6 +96,14 @@ function App() {
             </div>
           </NavLink>
         </nav>
+        <div className='favoriteAnnounceContainer'>
+          <Grow in={true} timeout={300}>
+            <div className='favoriteAnnounce'>
+              <p>Add to favorite</p>
+              <AiOutlineCheck />
+            </div>
+          </Grow>
+        </div>
         <Route render={({ location }) => (
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
