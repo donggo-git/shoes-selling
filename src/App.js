@@ -16,6 +16,7 @@ function App() {
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
+  const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
   let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
   // add to cart method 
@@ -67,7 +68,8 @@ function App() {
     setDetailProduct(detailProduct)
   }
   const addToFavorite = () => {
-
+    setIsFavoriteAnnounce(true)
+    setTimeout(() => setIsFavoriteAnnounce(false), 1000)
   }
   return (
     <div>
@@ -97,7 +99,7 @@ function App() {
           </NavLink>
         </nav>
         <div className='favoriteAnnounceContainer'>
-          <Grow in={true} timeout={300}>
+          <Grow in={isFavoriteAnnounce} timeout={500}>
             <div className='favoriteAnnounce'>
               <p>Add to favorite</p>
               <AiOutlineCheck />
@@ -110,7 +112,7 @@ function App() {
               <Switch >
                 <Route path='/shoes-selling/' component={() => <ProductPage
                   addToCart={addToCart} changeDetailProduct={changeDetailProduct}
-                  setDetailProduct={setDetailProduct} />} />
+                  setDetailProduct={setDetailProduct} addToFavorite={addToFavorite} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
                   addQuantity={addQuantity} minusQuantity={minusQuantity} />} handleQuantity={handleQuantity} />

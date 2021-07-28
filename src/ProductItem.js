@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
-function ProductItem({ product, changeDetailProduct, addToCart }) {
+function ProductItem({ product, changeDetailProduct, addToFavorite }) {
     const [imgOrder, setImgOrder] = useState(0)
     const handleHover = (imgSrc) => {
         setImgOrder(product.product.img.indexOf(imgSrc))
@@ -29,9 +29,7 @@ function ProductItem({ product, changeDetailProduct, addToCart }) {
                     }
                 </div>
                 <div className="ProductDetail_imgList_btn">
-                    <NavLink to="/product">
-                        <button className="like">Like</button>
-                    </NavLink>
+                    <button className="like" onClick={() => addToFavorite()}>Like</button>
                     <NavLink to="/product">
                         <button onClick={() => changeDetailProduct(product)}>
                             Detail

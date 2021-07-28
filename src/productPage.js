@@ -15,6 +15,7 @@ function ProductPage(props) {
                 products={props.products}
                 addToCart={props.addToCart}
                 changeDetailProduct={props.changeDetailProduct}
+                addToFavorite={props.addToFavorite}
             />
         </div>
     )
