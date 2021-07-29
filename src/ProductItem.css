@@ -49,14 +49,19 @@
 .ProductDetail_imgList_btn>a{
     flex: 0.49;
 }
-.ProductDetail_imgList_btn button,.like{
-    padding: 8px;
+.ProductDetail_imgList_btn a,.like{
+    
+    flex: 1;   
+}
+.ProductDetail_imgList_btn button{
     height: 100%;
-    width: 50%;
+    width: 100%;
 }
 .like{
     background-color: rgb(43, 42, 42);
     color: white;
+    height: 100%;
+    padding: 8px;
 }
 @media screen and (max-width: 1000px) {
     .ProductItem{

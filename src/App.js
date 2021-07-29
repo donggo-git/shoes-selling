@@ -14,6 +14,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 function App() {
   const _ = require('lodash');
   const [cart, setCart] = useState([])
+  const [favorite, setFavorite] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
   const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
@@ -61,15 +62,17 @@ function App() {
     }
     setCart(updateCart)
   }
-  const handleQuantity = (product, quantity) => {
-    console.log(quantity.target.value)
-  }
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
-  const addToFavorite = () => {
+  const addToFavorite = (product) => {
+    let updateFavorite = [...favorite]
+    if (favorite.every(item => item.id !== product.id)) {
+      updateFavorite.push(product)
+      setFavorite(updateFavorite)
+    }
     setIsFavoriteAnnounce(true)
-    setTimeout(() => setIsFavoriteAnnounce(false), 1000)
+    setTimeout(() => setIsFavoriteAnnounce(false), 800)
   }
   return (
     <div>
@@ -115,7 +118,7 @@ function App() {
                   setDetailProduct={setDetailProduct} addToFavorite={addToFavorite} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
-                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} handleQuantity={handleQuantity} />
+                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
                 <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} minusQuantity={minusQuantity} />} />
               </Switch>
             </CSSTransition>
