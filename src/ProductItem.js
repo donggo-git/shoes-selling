@@ -29,7 +29,7 @@ function ProductItem({ product, changeDetailProduct, addToFavorite }) {
                     }
                 </div>
                 <div className="ProductDetail_imgList_btn">
-                    <button className="like" onClick={() => addToFavorite()}>Like</button>
+                    <button className="like" onClick={() => addToFavorite(product)}>Like</button>
                     <NavLink to="/product">
                         <button onClick={() => changeDetailProduct(product)}>
                             Detail

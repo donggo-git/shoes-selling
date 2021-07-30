@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
+import Favorite from './Favorite';
 import DetailPage from './DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
@@ -84,7 +85,7 @@ function App() {
             <a href='#'><li>Men</li></a>
             <a href='#'><li>Women</li></a>
             <a href='#'><li>Kids</li></a>
-            <a href='#'><li>Customize</li></a>
+            <NavLink to="/Favorite"><li>Favorite</li></NavLink>
             <a href='#'><li>Sale</li></a>
 
           </ul>
@@ -102,7 +103,7 @@ function App() {
           </NavLink>
         </nav>
         <div className='favoriteAnnounceContainer'>
-          <Grow in={isFavoriteAnnounce} timeout={500}>
+          <Grow in={isFavoriteAnnounce} timeout={{ appear: 500, enter: 500, exit: 1 }}>
             <div className='favoriteAnnounce'>
               <p>Add to favorite</p>
               <AiOutlineCheck />
@@ -119,7 +120,10 @@ function App() {
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
                   addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
-                <Route path='/product' component={() => <DetailPage products={detailProduct} addToCart={addToCart} minusQuantity={minusQuantity} />} />
+                <Route path='/product' component={() => <DetailPage
+                  products={detailProduct} addToCart={addToCart}
+                  minusQuantity={minusQuantity} />} />
+                <Route path="/Favorite" component={() => <Favorite favorite={favorite} />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

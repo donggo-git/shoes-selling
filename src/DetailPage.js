@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
 
 function DetailPage({ products, addToCart }) {
     const [mainImg, setMainImg] = useState(0)
+    const [isSlide, setIsSlide] = useState(true)
     const changeMainImg = (srcImg) => {
+        setIsSlide(false)
         setMainImg(products.product.img.indexOf(srcImg))
+        setTimeout(() => setIsSlide(true), 200)
     }
     const styleImgList = {
         border: '1px solid black'
@@ -12,7 +16,9 @@ function DetailPage({ products, addToCart }) {
     return (
         <div className="detailPage">
             <div className="mainImg_container">
-                <img src={products?.product?.img[mainImg]} height="100%" width="100%" />
+                <Slide in={isSlide} timeout={{ enter: 400, exit: 0 }} direction={'right'}>
+                    <img src={products?.product?.img[mainImg]} height="100%" width="100%" />
+                </Slide>
             </div>
 
             <div className='product_detail'>
