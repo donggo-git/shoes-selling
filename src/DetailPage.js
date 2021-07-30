@@ -16,7 +16,7 @@ function DetailPage({ products, addToCart }) {
     return (
         <div className="detailPage">
             <div className="mainImg_container">
-                <Slide in={isSlide} timeout={{ enter: 400, exit: 0 }} direction={'right'}>
+                <Slide in={isSlide} timeout={{ enter: 400, exit: 0 }} direction={'left'}>
                     <img src={products?.product?.img[mainImg]} height="100%" width="100%" />
                 </Slide>
             </div>
