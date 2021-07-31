@@ -152,6 +152,7 @@ nav li,.nav__homePage{
 .favoriteAnnounce p{
   margin-bottom: 10px;
 }
+
 @media screen and (max-width:1000px) {
   .cart_icon{
     font-size: 2rem;

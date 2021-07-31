@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Collapse from '@material-ui/core/Collapse';
 import './Summary.css'
 function Summary(props) {
     let tax = Math.round(props.subtotal * 10.1) / 100;
@@ -6,6 +7,7 @@ function Summary(props) {
     let [codeEnter, setCodeEnter] = useState('');
     let [discountAmount, setDiscountAmount] = useState(0)
     let [discountStyle, setDiscountStyle] = useState({ display: 'none' })
+    const [isCodeShow, setIsCodeShow] = useState(false)
     const handleEnterCode = (e) => {
         setCodeEnter(e);
     }
@@ -32,14 +34,19 @@ function Summary(props) {
         setCodeEnter('')
 
     }
+    const animateDiscountCode = () => {
+        setIsCodeShow(pre => !pre)
+    }
     return (
         <div className='Summary'>
             <h2>Summary</h2>
             <div className='summary__discountCode'>
-                <p>Do you have  discount code?</p>
+                <p className="discount_input" onClick={animateDiscountCode}>Do you have  discount code?</p>
                 <div className='summary__discountCode__enterCode'>
-                    <input type='text' onChange={(e) => handleEnterCode(e.target.value)} value={codeEnter} />
-                    <button onClick={handleSubmitCode}>Apply</button>
+                    <Collapse in={isCodeShow} timeout={300}>
+                        <input type='text' onChange={(e) => handleEnterCode(e.target.value)} value={codeEnter} />
+                        <button onClick={handleSubmitCode}>Apply</button>
+                    </Collapse>
                 </div>
             </div>
 
@@ -67,7 +74,6 @@ function Summary(props) {
             </div>
             <div></div>
             <button className='Checkout-btn'>Checkout</button>
-            <button className='Paypal-btn'>Paypal</button>
         </div >
     )
 }
