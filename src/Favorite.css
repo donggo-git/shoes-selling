@@ -1,0 +1,14 @@
+.favorite_page{
+    margin-top: 3rem;
+}
+.favorite_item{
+    height: auto;
+    width: 15rem
+}
+.favorite_img_container{
+    height: 50%;
+}
+.favorite_item img{
+    display: block;
+    height: 18rem;
+}
