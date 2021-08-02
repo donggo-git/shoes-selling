@@ -1,14 +1,40 @@
 .favorite_page{
-    margin-top: 3rem;
+    height: 100vh;
+    background-color: rgb(56, 56, 56);
+}
+.favorite_container{
+    margin: 0 auto;
+    width: 70%;
+    background-color: #fff;
+    height: 100%;
+    padding: 0 50px;
+}
+.favorite_container>h2{
+    padding-top: 5rem;
+
+}
+.favorite_list{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+    margin-top: 1.5rem;
 }
 .favorite_item{
     height: auto;
-    width: 15rem
+    width: 12rem;
+    justify-content: space-between;
+    
 }
 .favorite_img_container{
-    height: 50%;
+    height: 18rem;
 }
 .favorite_item img{
     display: block;
-    height: 18rem;
+    height: 100%;
+}
+.favorite_item_content{
+    
+}
+.favorite_item_content h2{
+    font-size: 1.2rem;
 }
