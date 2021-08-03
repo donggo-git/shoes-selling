@@ -1,12 +1,12 @@
 .favorite_page{
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(56, 56, 56);
 }
 .favorite_container{
     margin: 0 auto;
     width: 70%;
     background-color: #fff;
-    height: 100%;
+    min-height: 100vh;
     padding: 0 50px;
 }
 .favorite_container>h2{
@@ -16,14 +16,14 @@
 .favorite_list{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    justify-content: space-between;
-    margin-top: 1.5rem;
+    justify-content: center;
+    margin-top: 1.2rem;
 }
 .favorite_item{
     height: auto;
     width: 12rem;
     justify-content: space-between;
-    
+    margin-right: 25px;
 }
 .favorite_img_container{
     height: 18rem;
@@ -33,8 +33,17 @@
     height: 100%;
 }
 .favorite_item_content{
-    
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    align-items: stretch;
 }
 .favorite_item_content h2{
-    font-size: 1.2rem;
+    margin: auto;
+    font-size: 0.9rem;
+}
+.favoriteDelete{
+    width: 100%;
+    align-self: flex-end;
+    
 }

@@ -1,11 +1,14 @@
 import React from 'react'
 import "./Favorite.css"
+import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
 
 function Favorite({ favorite }) {
     return (
         <div className='favorite_page'>
             <div className="favorite_container">
-                <h2>Your favorite list</h2>
+                <h2>Your favorite list ({favorite.length})</h2>
+
                 <div className='favorite_list'>
                     {favorite.map(item => (
                         <div className='favorite_item'>
@@ -14,14 +17,15 @@ function Favorite({ favorite }) {
                             </div>
                             <div className="favorite_item_content">
                                 <h2>{item.product.name}</h2>
-                                <p>{item.product.brand}</p>
-                                <p>{item.product.price}</p>
+                                <Button color="secondary" variant="outlined" size='small' className='favoriteDelete'>
+                                    Remove
+                                </Button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

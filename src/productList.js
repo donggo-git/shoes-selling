@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Fade from '@material-ui/core/Fade'
+import Slide from '@material-ui/core/Slide';
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
@@ -143,13 +144,13 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFa
 
         return newUpdates
     }
-
-
+    console.log(window.screen.width)
     return (
         <div>
             <h2 className="title">Product</h2>
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
+
 
                 <Fade in={animateProduct} timeout={800}>
                     <div className='product-list'>

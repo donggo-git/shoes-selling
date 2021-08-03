@@ -1,7 +1,4 @@
 .filter{
-    z-index: 5;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
     top: 0;
     margin-left: 3rem;
     margin-top: 2rem;
@@ -37,8 +34,9 @@
 }
 @media screen and (max-width: 1000px)  {
     .filter{
-        width: 20rem;
+        width: auto;
         font-size: 1.5rem;
+        
     }
     .filter__line input{
         height: 2rem;

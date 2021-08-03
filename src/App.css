@@ -1,3 +1,4 @@
+
 ul{
   list-style: none;
 }
@@ -7,6 +8,7 @@ a{
 }
 body{
   font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 *{
   scroll-behavior: smooth;
@@ -26,6 +28,7 @@ nav{
   position: fixed;
   background-color: #ffffff;
   z-index: 15;
+  overflow: hidden;
 }
 nav ul{
   display: flex;

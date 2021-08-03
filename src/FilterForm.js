@@ -12,14 +12,12 @@ function FilterForm(props) {
     const CategoryStyle = {
         color: 'rgb(114, 114, 114)'
     }
-    const styles = () => ({
-        root: {
-            "&$checked": {
-                color: "rgba(0, 0, 0, 0.54)"
-            }
-        },
-        checked: {}
-    })
+    const responsiveStyle = {
+        position: 'absolute',
+        top: 0,
+        left: '0%',
+        transition: 'all 0.8s'
+    }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
         let passCategory = {
@@ -47,7 +45,7 @@ function FilterForm(props) {
 
     }
     return (
-        <div className='filter'>
+        <div className='filter' style={responsiveStyle}>
             <div className='filter__line'>
                 <p>Gender</p>
                 <div>
