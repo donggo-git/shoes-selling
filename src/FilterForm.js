@@ -9,6 +9,7 @@ function FilterForm(props) {
         Running: false,
         Football: false
     })
+    const [isAnimate, setIsAnimate] = useState(false)
     const CategoryStyle = {
         color: 'rgb(114, 114, 114)'
     }
@@ -16,7 +17,8 @@ function FilterForm(props) {
         position: 'absolute',
         top: 0,
         left: '0%',
-        transition: 'all 0.8s'
+        transition: 'all 0.8s',
+        transform: isAnimate ? 'translateX(0)' : 'translateX(-150%)'
     }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
@@ -45,7 +47,7 @@ function FilterForm(props) {
 
     }
     return (
-        <div className='filter' style={responsiveStyle}>
+        <div className='filter' style={window.screen.width < 1000 ? responsiveStyle : {}}>
             <div className='filter__line'>
                 <p>Gender</p>
                 <div>

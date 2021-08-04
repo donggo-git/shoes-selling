@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Fade from '@material-ui/core/Fade'
-import Slide from '@material-ui/core/Slide';
+import { BsFilterLeft } from 'react-icons/bs'
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
@@ -150,8 +150,12 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFa
             <h2 className="title">Product</h2>
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
-
-
+                <div
+                    style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
+                    className='filter_responsive_btn'>
+                    <p>Filter </p>
+                    <BsFilterLeft />
+                </div>
                 <Fade in={animateProduct} timeout={800}>
                     <div className='product-list'>
                         {products.map((product) => (

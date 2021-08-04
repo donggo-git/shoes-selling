@@ -1,19 +1,32 @@
 .product-list-container{
     width: 100%;
     display: flex;
-    position: relative;
 }
 .product-list{
     display: grid;
     width: 100%;
-    margin: 2rem auto;
+    margin: 2rem 0;
     grid-template-columns: auto auto auto;
     justify-content: center;
     align-items: flex-start;
     margin-left: 2rem;
-    height: auto;
+}
+.filter_responsive_btn{
+    display: flex;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    padding: 8px 13px;
+    font-size: 1.5rem;
+    border: 1px solid #333;
+    border-radius: 10rem;
+    height: 2rem;
+    top: 0;
 }
 
+.filter_responsive_btn>p{
+    display: inline;
+}
 
 
 
@@ -30,6 +43,12 @@
     }
     
     .product-list{
+        width: auto;
         grid-template-columns: auto auto;
+        margin: 2rem auto;
+        height: 150vh;
+    }
+    .product-list-container{
+        flex-direction: row;
     }
 }
