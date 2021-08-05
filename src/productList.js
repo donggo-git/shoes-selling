@@ -148,14 +148,15 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFa
     return (
         <div>
             <h2 className="title">Product</h2>
+            <div
+                style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
+                className='filter_responsive_btn'>
+                <p>Filter </p>
+                <BsFilterLeft />
+            </div>
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
-                <div
-                    style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
-                    className='filter_responsive_btn'>
-                    <p>Filter </p>
-                    <BsFilterLeft />
-                </div>
+
                 <Fade in={animateProduct} timeout={800}>
                     <div className='product-list'>
                         {products.map((product) => (

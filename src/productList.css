@@ -12,16 +12,16 @@
     margin-left: 2rem;
 }
 .filter_responsive_btn{
-    display: flex;
-    align-items: center;
+   
     position: -webkit-sticky;
     position: sticky;
+    height: auto!important;
+    top: 2.5rem;
+    margin-top: 20px;
     padding: 8px 13px;
     font-size: 1.5rem;
     border: 1px solid #333;
     border-radius: 10rem;
-    height: 2rem;
-    top: 0;
 }
 
 .filter_responsive_btn>p{
@@ -50,5 +50,9 @@
     }
     .product-list-container{
         flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: auto;
+        overflow: auto;
     }
 }
