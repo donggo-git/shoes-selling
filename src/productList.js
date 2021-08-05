@@ -146,14 +146,7 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFa
     }
     console.log(window.screen.width)
     return (
-        <div>
-            <h2 className="title">Product</h2>
-            <div
-                style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
-                className='filter_responsive_btn'>
-                <p>Filter </p>
-                <BsFilterLeft />
-            </div>
+        <div className="product-list-component">
             <div className='product-list-container'>
                 <FilterForm filterHandle={filterHandle} />
 
