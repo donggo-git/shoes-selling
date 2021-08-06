@@ -1,14 +1,13 @@
 
 import React, { useState, useEffect } from 'react'
 import Fade from '@material-ui/core/Fade'
-import { BsFilterLeft } from 'react-icons/bs'
 import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
 import './detailPage.css'
 import { db } from './firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFavorite }) {
+function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyle, closeFilter }) {
     // filter product by the filter form 
 
     // list of product after filter
@@ -144,11 +143,14 @@ function ProductList({ setDetailProduct, changeDetailProduct, addToCart, addToFa
 
         return newUpdates
     }
-    console.log(window.screen.width)
     return (
         <div className="product-list-component">
             <div className='product-list-container'>
-                <FilterForm filterHandle={filterHandle} />
+                <FilterForm
+                    filterHandle={filterHandle}
+                    filterStyle={filterStyle}
+                    closeFilter={closeFilter}
+                />
 
                 <Fade in={animateProduct} timeout={800}>
                     <div className='product-list'>

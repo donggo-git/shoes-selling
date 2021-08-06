@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
+import { AiOutlineClose } from 'react-icons/ai'
 import "./FilterForm.css"
 function FilterForm(props) {
     const [categories, setCategories] = useState({
@@ -13,12 +14,11 @@ function FilterForm(props) {
     const CategoryStyle = {
         color: 'rgb(114, 114, 114)'
     }
-    const responsiveStyle = {
-        position: 'absolute',
-        top: 0,
-        left: '0%',
-        transition: 'all 0.8s',
-        transform: isAnimate ? 'translateX(0)' : 'translateX(-150%)'
+    const showResponsiveFilter = {
+        transform: 'translateX(0)'
+    }
+    const hideResponsiveFilter = {
+        transform: 'translateX(-150%)'
     }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
@@ -47,7 +47,8 @@ function FilterForm(props) {
 
     }
     return (
-        <div className='filter' style={window.screen.width < 1000 ? responsiveStyle : {}}>
+        <div className='filter' style={window.screen.width < 1000 ? props.filterStyle : {}}>
+            <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />
             <div className='filter__line'>
                 <p>Gender</p>
                 <div>
