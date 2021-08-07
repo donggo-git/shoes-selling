@@ -3,6 +3,8 @@ import ProductList from './productList'
 import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
 import { BsFilterLeft } from 'react-icons/bs'
+import Fade from '@material-ui/core/Fade'
+import './ProductPage.css'
 
 function ProductPage(props) {
     const [isFilterAnimate, setIsFilterAnimate] = useState(false)
@@ -13,11 +15,13 @@ function ProductPage(props) {
         setFilterStyle({
             transform: 'translateX(0%)'
         })
+        setIsFilterAnimate(true)
     }
     const closeFilter = () => {
         setFilterStyle({
             transform: 'translateX(-150%)'
         })
+        setIsFilterAnimate(false)
     }
     return (
         <div>
@@ -31,6 +35,9 @@ function ProductPage(props) {
                 <p>Filter </p>
                 <BsFilterLeft />
             </div>
+            <Fade in={isFilterAnimate} timeout={300}>
+                <div className="modal"></div>
+            </Fade>
             <ProductList
                 products={props.products}
                 addToCart={props.addToCart}
