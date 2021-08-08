@@ -75,6 +75,11 @@ function App() {
     setIsFavoriteAnnounce(true)
     setTimeout(() => setIsFavoriteAnnounce(false), 800)
   }
+  const removeFavorite = (product) => {
+    let updateFavorite = [...favorite]
+    updateFavorite = updateFavorite.filter(item => item.id != product.id)
+    setFavorite(updateFavorite)
+  }
   return (
     <div>
       <Router>
@@ -123,7 +128,7 @@ function App() {
                 <Route path='/product' component={() => <DetailPage
                   products={detailProduct} addToCart={addToCart}
                   minusQuantity={minusQuantity} />} />
-                <Route path="/Favorite" component={() => <Favorite favorite={favorite} />} />
+                <Route path="/Favorite" component={() => <Favorite favorite={favorite} removeFavorite={removeFavorite} />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>

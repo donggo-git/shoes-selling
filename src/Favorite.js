@@ -3,7 +3,7 @@ import "./Favorite.css"
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 
-function Favorite({ favorite }) {
+function Favorite({ favorite, removeFavorite }) {
     return (
         <div className='favorite_page'>
             <div className="favorite_container">
@@ -17,7 +17,12 @@ function Favorite({ favorite }) {
                             </div>
                             <div className="favorite_item_content">
                                 <h2>{item.product.name}</h2>
-                                <Button color="secondary" variant="outlined" size='small' className='favoriteDelete'>
+                                <Button
+                                    color="secondary"
+                                    variant="outlined"
+                                    size='small'
+                                    className='favoriteDelete'
+                                    onClick={() => removeFavorite(item)}>
                                     Remove
                                 </Button>
                             </div>
