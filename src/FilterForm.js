@@ -15,10 +15,10 @@ function FilterForm(props) {
         color: 'rgb(114, 114, 114)'
     }
     const showResponsiveFilter = {
-        transform: 'translateX(0)'
+        transform: 'translateY(0)'
     }
     const hideResponsiveFilter = {
-        transform: 'translateX(-150%)'
+        transform: 'translateY(-150%)'
     }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
@@ -49,7 +49,7 @@ function FilterForm(props) {
     return (
         <div className='filter' style={window.screen.width < 1000 ? props.filterStyle : {}}>
             <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />
-            <div className='filter__line'>
+            <div className='filter__line first__filter__line'>
                 <p>Gender</p>
                 <div>
                     <Checkbox

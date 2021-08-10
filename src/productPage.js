@@ -9,17 +9,17 @@ import './ProductPage.css'
 function ProductPage(props) {
     const [isFilterAnimate, setIsFilterAnimate] = useState(false)
     const [filterStyle, setFilterStyle] = useState({
-        transform: 'translateX(-150%)'
+        transform: 'translateY(150%)'
     })
     const openFilter = () => {
         setFilterStyle({
-            transform: 'translateX(0%)'
+            transform: 'translateY(0%)'
         })
         setIsFilterAnimate(true)
     }
     const closeFilter = () => {
         setFilterStyle({
-            transform: 'translateX(-150%)'
+            transform: 'translateY(150%)'
         })
         setIsFilterAnimate(false)
     }
