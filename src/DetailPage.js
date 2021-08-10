@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
 
-function DetailPage({ products, addToCart }) {
+function DetailPage({ products, addToCart, addToFavorite }) {
     const [mainImg, setMainImg] = useState(0)
     const [isSlide, setIsSlide] = useState(true)
     const changeMainImg = (srcImg) => {
@@ -37,7 +37,7 @@ function DetailPage({ products, addToCart }) {
                     </div>
                     <p className='product_detail_description'>{products?.product?.description}</p>
                     <button onClick={() => addToCart(products, mainImg)} className="AddToCart">Add to cart</button>
-                    <button className="like">Like</button>
+                    <button onClick={() => addToFavorite(products)} className="like">Like</button>
                 </div>
             </div>
         </div>

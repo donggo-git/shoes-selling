@@ -38,12 +38,20 @@
     height: 5rem;
     align-items: stretch;
 }
-.favorite_item_content h2{
+.favorite_item_content>a{
     margin: auto;
-    font-size: 0.9rem;
+    
+}
+.favorite_item_content>a>h2{
+    font-size: 1rem;
 }
 .favoriteDelete{
     width: 100%;
     align-self: flex-end;
     
+}
+@media screen and (max-width:1000px) {
+    .favorite_list{
+        grid-template-columns: auto auto;
+    }
 }

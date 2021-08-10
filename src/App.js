@@ -127,8 +127,11 @@ function App() {
                   addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
                 <Route path='/product' component={() => <DetailPage
                   products={detailProduct} addToCart={addToCart}
-                  minusQuantity={minusQuantity} />} />
-                <Route path="/Favorite" component={() => <Favorite favorite={favorite} removeFavorite={removeFavorite} />} />
+                  minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
+                <Route path="/Favorite" component={() => <Favorite
+                  favorite={favorite} removeFavorite={removeFavorite}
+                  setDetailProduct={setDetailProduct}
+                />} />
               </Switch>
             </CSSTransition>
           </TransitionGroup>
