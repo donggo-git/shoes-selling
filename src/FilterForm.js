@@ -53,7 +53,7 @@ function FilterForm(props) {
                 <p>Gender</p>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Men'
                         name='gender' className="checkbox"
                         onChange={(e) => props.filterHandle(e)} />
@@ -61,7 +61,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Women'
                         name='gender' className="checkbox"
                         onChange={(e) => props.filterHandle(e)} />
@@ -69,7 +69,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Unisex'
                         name='gender'
                         onChange={(e) => props.filterHandle(e)} />
@@ -80,7 +80,7 @@ function FilterForm(props) {
                 <p>Brand</p>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Nike'
                         name='brand'
                         onChange={(e) => props.filterHandle(e)} />
@@ -88,7 +88,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Puma'
                         name='brand'
                         onChange={(e) => props.filterHandle(e)} />
@@ -96,7 +96,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Adidas'
                         name='brand'
                         onChange={(e) => props.filterHandle(e)} />
@@ -104,7 +104,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value='Rebook'
                         name='brand'
                         onChange={(e) => props.filterHandle(e)} />
@@ -115,7 +115,7 @@ function FilterForm(props) {
                 <p>Shop by Price</p>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value={[0, 25]}
                         name='price'
                         onChange={(e) => props.filterHandle(e)} />
@@ -123,7 +123,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value={[25, 50]}
                         name='price'
                         onChange={(e) => props.filterHandle(e)} />
@@ -131,7 +131,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value={[50, 100]}
                         name='price'
                         onChange={(e) => props.filterHandle(e)} />
@@ -139,7 +139,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox' value={[100, 150]}
                         name='price'
                         onChange={(e) => props.filterHandle(e)} />
@@ -147,7 +147,7 @@ function FilterForm(props) {
                 </div>
                 <div>
                     <Checkbox
-                        size="small"
+                        size={window.screen.width > 1000 ? "small" : "medium"}
                         type='checkbox'
                         value={[150, 10000]}
                         name='price'

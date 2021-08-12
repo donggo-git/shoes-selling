@@ -4,6 +4,7 @@
     margin-top: 2rem;
     width: 11rem;
     position: relative;
+    
 }
 .filter__line{
     display: flex;
@@ -59,10 +60,16 @@
         border-bottom: 1px solid rgb(219, 219, 219);
         padding-bottom: 20px;
         width: calc(100% - 100px);
+        font-size: 2rem;
+        
     }
     .filter__line input{
         height: 2rem;
         width: 2rem;
+        
+    }
+    .filter__line>div{
+        padding-bottom: 20px;
     }
     .close-btn{
         display: block;
