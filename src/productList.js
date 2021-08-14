@@ -14,7 +14,6 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
     const [products, setProducts] = useState([]);
     const [orgProduct, setOrgProduct] = useState([]);
     const [animateProduct, setAnimateProduct] = useState(true)
-    const [scroll, setScroll] = useState(document.documentElement.scrollTop)
     const [filterCheckBox, setFilterCheckBox] = useState({
         gender: {
             Men: false,
@@ -55,7 +54,7 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
         let newFilterCheckBox = { ...filterCheckBox }
         let targetName = filterEvent.target.name
         let targetValue = filterEvent.target.value
-        if (targetName == "price") {
+        if (targetName === "price") {
             //check if that value already exist in filterCheckBox[price]
             if (newFilterCheckBox["price"].indexOf(targetValue) < 0) {
                 newFilterCheckBox["price"].push(targetValue)
@@ -67,7 +66,7 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
                 )
             }
         }
-        else if (targetName == "categories") {
+        else if (targetName === "categories") {
             newFilterCheckBox[targetName].category = targetValue
         }
         else {
@@ -86,20 +85,20 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
         for (let section in filterCheckBox) {
             //case section is checked except price
             if (
-                !Object.values(filterCheckBox[section]).every(value => value == true)
-                && !Object.values(filterCheckBox[section]).every(value => value == false)
-                && section != "price"
-                && section != "categories"
+                !Object.values(filterCheckBox[section]).every(value => value === true)
+                && !Object.values(filterCheckBox[section]).every(value => value === false)
+                && section !== "price"
+                && section !== "categories"
             ) {
                 newUpdates = newUpdates.filter(item => (
                     takeAllCheckBoxTrue(section, filterCheckBox).indexOf(`${item.product[section]}`) >= 0
                 ))
             }
             //case price section is checked
-            else if (section == "price") {
+            else if (section === "price") {
                 newUpdates = filterByPrice(newUpdates)
             }
-            else if (section == 'categories') {
+            else if (section === 'categories') {
                 newUpdates = filterByCategories(newUpdates)
             }
         }
@@ -117,12 +116,12 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
             return price.split(",").map(deeperPrice => Number(deeperPrice))
         })
         //if price section is checked filter
-        if (filterCheckBox.price.length != 0) {
+        if (filterCheckBox.price.length !== 0) {
             for (let item = 0; item < newUpdates.length; item++)
                 //if some item price qualified the arrPrice push item to filterElement 
                 //and assign newUpdate to filterElement
                 if (arrPrice.some(price => (
-                    newUpdates[item].product.price >= Math.min(...price)
+                    newUpdates[item]?.product.price >= Math.min(...price)
                     && newUpdates[item].product.price <= Math.max(...price)
                 ))) {
                     filterElement.push(newUpdates[item])
@@ -137,7 +136,7 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
         let newUpdates = [...update]
         if (filterCheckBox.categories.category !== "") {
             newUpdates = newUpdates.filter(item => (
-                item.product.category == filterCheckBox.categories.category
+                item.product.category === filterCheckBox.categories.category
             ))
         }
 
