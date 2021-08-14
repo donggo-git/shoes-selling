@@ -124,7 +124,7 @@ function App() {
                   setDetailProduct={setDetailProduct} addToFavorite={addToFavorite} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
-                  addQuantity={addQuantity} minusQuantity={minusQuantity} />} />
+                  addQuantity={addQuantity} minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
                 <Route path='/product' component={() => <DetailPage
                   products={detailProduct} addToCart={addToCart}
                   minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />

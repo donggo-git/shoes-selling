@@ -48,7 +48,7 @@ function Cart(props) {
                                     </div>
                                     <p className='price'>${item.product.price}</p>
                                 </div>
-                                <button>Move to Favorite</button>
+                                <button onClick={() => props.addToFavorite(item)}>Move to Favorite</button>
                                 <button onClick={() => props.removeItem(item.id)}>Remove</button>
                             </div>
                         </div>
