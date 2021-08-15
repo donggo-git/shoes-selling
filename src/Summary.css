@@ -51,8 +51,6 @@
     
     padding: 15px 0;
 }
-.summary__textLine__discount p{
-}
 .total{
     border-top: 1px solid rgb(146, 145, 145);
     border-bottom: 1px solid rgb(146, 145, 145);
@@ -80,5 +78,27 @@
         width: 80%;
         font-size: 1.8rem;
         margin: 0 auto;
+    }
+    .summary__discountCode p{
+        width: 55%;
+    }
+    .summary__discountCode__enterCode{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .summary__discountCode__enterCode>div>div>div{
+        display: flex;
+        width: 100%;
+    }
+    .summary__discountCode__enterCode input{
+        width: 400px;
+        font-size: 1.5rem;
+    }
+    .summary__discountCode__enterCode button{
+        font-size: 1.5rem;
+    }
+    .Checkout-btn{
+        height: 100px;
+        font-size: 1.8rem!important;
     }
 }
