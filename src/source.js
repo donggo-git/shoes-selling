@@ -1,57 +1,6 @@
 let source = [
 
     {
-        id: 'T',
-        name: 'Kaptir Super Shoes',
-        price: 81,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/b91744ddda684786830cac55009b55be_9366/Kaptir_Super_Shoes_Blue_FZ2861_01_standard.jpg',
-            'https://assets.adidas.com/images/w_600,f_auto,q_auto/3bd42a723c014fd1aa49ac21012dec59_9366/Kaptir_Super_Shoes_Black_FZ2869_01_standard.jpg',
-            'https://assets.adidas.com/images/w_600,f_auto,q_auto/69fe2d00c647458fa5a0ac640104ea68_9366/Kaptir_Super_Shoes_Grey_FZ2868_01_standard.jpg'],
-        color: ['linear-gradient(#a9f600,#333)', 'linear-gradient(#ff4e09,#333)', 'linear-gradient(#bababa,#0097e0)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'U',
-        name: 'ZX 2K Boost Shoes',
-        price: 150,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/b084f81ec240465180bdac72011697ac_9366/ZX_2K_Boost_Shoes_Yellow_FX7031_01_standard.jpg',
-            'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/cc4cda105573429e910aac8400a25614_9366/ZX_2K_Boost_Shoes_White_FX7030_01_standard.jpg'],
-        color: ['#e6ed1c', 'linear-gradient(#fff,#f16906)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'V',
-        name: 'Swift Run X Shoes',
-        price: 85,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/8974d274c39f4f738dbbac9200bb56e0_9366/Swift_Run_X_Shoes_Black_FY5686_01_standard.jpg',
-            'https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/2cbf1bcc5a4847239e85ac9200b422e3_9366/Swift_Run_X_Shoes_Blue_FY5435_01_standard.jpg'],
-        color: ['linear-gradient(#fff,#7ce200,#333)', 'linear-gradient(#fff,#d9220f,#1f008f)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'W',
-        name: 'Day Jogger Shoes',
-        price: 84,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/e9a5e781502248e48f91aba501262ceb_9366/Day_Jogger_Shoes_Grey_FW4868_01_standard.jpg',
-            'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/c7f313343a0b42f3a8bfab9700cc178d_9366/Day_Jogger_Shoes_White_FY0237_01_standard.jpg'],
-        color: ['linear-gradient(#fff,#68fc49,#929292)', 'linear-gradient(#fff,#ff6c00,#9b9b9b)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'X',
-        name: 'Ultraboost 20 Shoes',
-        price: 126,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d2581189185446c48ae6aba0000e44d3_9366/Ultraboost_20_Shoes_Green_FY8984_01_standard.jpg',
-            'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8dc7030a45a147fabfb5ac4e00fa68eb_9366/Ultraboost_20_Shoes_Blue_FX7978_01_standard.jpg'],
-        color: ['linear-gradient(#e0ff9c,#333)', 'linear-gradient(#ffb261,#0d51bd)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
         id: 'Y',
         name: 'NMD_R1 Shoes',
         price: 126,
@@ -170,23 +119,5 @@ let source = [
         detail: "Wherever your run takes you, channel the feeling of mountain vistas and quiet, tree-canopied trails. These men's running shoes were inspired by '90s trail runners. A mix of suede, leather, textile and synthetic gives the upper a layered look with an outdoor vibe. The innovative outsole disperses energy for a comfortable feel from heel-strike to toe-off."
     }
 ]
-let logo = [
-    {
-        name: "Nike",
-        img: "https://thedrop101.files.wordpress.com/2014/11/nike_swoosh_logo_black_original-1.jpg"
-    },
-    {
-        name: "Puma",
-        img: "https://logorealm.com/wp-content/uploads/2017/03/puma-square.jpg"
-    },
-    {
-        name: "Adidas",
-        img: "https://pngimg.com/uploads/adidas/adidas_PNG18.png"
-    },
-    {
-        name: "Rebook",
-        img: "https://th.bing.com/th/id/R2f1460641fbc86f00aa4c0eef0225565?rik=dhypM4L1AXm3UA&riu=http%3a%2f%2fmasses.com.my%2fwp-content%2fuploads%2f2019%2f11%2freebok-logo-2.jpg&ehk=%2feU2pk2RES8ts4CsUTo4qGgFRZD51zAGXKS8kXeHESQ%3d&risl=&pid=ImgRaw"
-    },
 
-]
 export { source, logo }
