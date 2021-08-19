@@ -1,66 +1,6 @@
 let source = [
 
     {
-        id: 'Y',
-        name: 'NMD_R1 Shoes',
-        price: 126,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/872299528a554356909cac4400f4ef29_9366/NMD_R1_Shoes_Grey_FY5730_01_standard.jpg',
-            'https://assets.adidas.com/images/w_320,f_auto,q_auto:sensitive,fl_lossy/178b0dce25ad4f26a04bac0200ac3b99_9366/NMD_R1_Shoes_Black_FY5727_01_standard.jpg'],
-        color: ['linear-gradient(#b8b8b8,#ff6c01)', 'linear-gradient(#333,#ff6c01,#3396ff)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'Z',
-        name: 'Ultraboost 21 Shoes',
-        price: 180,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/707bd9b6c1a44ce7bb58ac77012fcb2e_9366/Ultraboost_21_Shoes_Grey_FY0375_01_standard.jpg',
-            'https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/429a510e09fe4039ba33ac770135d8be_9366/Ultraboost_21_Shoes_White_FY0377_01_standard.jpg'],
-        color: ['linear-gradient(#c8c8c8,#ff8300)', 'linear-gradient(#fff,#dcf563)'],
-        detail: "Don't shrink away from the sun. Harness its energy as you hit the pavement in these adidas running shoes. The super breathable mesh upper with HEAT.RDY maximizes airflow so you stay cool and ventilated even when the temperature rises. Segmented Boost cushioning returns energy to your stride, keeping your legs fresh and your mind free to focus on the clear blue skies."
-    },
-    {
-        id: 'AA',
-        name: 'NMD_R1 Primeknit Shoes',
-        price: 180,
-        brand: "Adidas",
-        img: ['https://assets.adidas.com/images/w_600,f_auto,q_auto/72c6639cdf0941abade4ac6b011dd053_9366/NMD_R1_Primeknit_Shoes_Black_G57941_01_standard.jpg',
-            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ff2df471f395411cb192acb500d05976_9366/Nano_X1_Grit_Men's_Training_Shoes_Black_S42565_01_standard.jpg"],
-        color: ['linear-gradient(#69e900,#fe50db,#333)', 'linear-gradient(#333,#5d5d5d)'],
-        detail: "The NMD series turns five, and in true NMD fashion, we're celebrating by making some major noise. Visually, that is. Volume and location is all you. These adidas shoes combine inspiration from the most iconic NMDs and create a bold statement with standout graphics. Continue the legacy with signature NMD plugs and a flexible sock-like upper. Energy-returning cushioning keeps you comfortable all day. The party is already off to a solid start with these ones."
-    },
-    {
-        id: 'AB',
-        name: "Nano X1 Grit Men's Training Shoes",
-        price: 130,
-        brand: "Rebook",
-        img: ["https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/5faab3ff4faa4336b251ac9f017bcb24_9366/Nano_X1_Grit_Men's_Training_Shoes_Grey_S42564_01_standard.jpg",
-            'https://assets.adidas.com/images/w_600,f_auto,q_auto/3ae212fd39474d459222ac6b011d8a42_9366/NMD_R1_Primeknit_Shoes_Grey_G57939_01_standard.jpg'],
-        color: ['linear-gradient(#949494,#ff7800)', 'linear-gradient(#96f296, #f0afba,rgb(152, 152, 152))'],
-        detail: "When you enter the box, you put your game face on. You're gunning for the leaderboard and nothing's gonna stop you. These men's Reebok training shoes are built for your most demanding workouts. A woven Flexweave® upper is lightweight but able to take a beating. Floatride Energy Foam cushioning in the forefoot provides a responsive feel for running or double unders. A heel clip adds stability for quick lateral moves."
-    },
-    {
-        id: 'AC',
-        name: "Nano X1 Men's Training Shoes Les Mills",
-        price: 130,
-        brand: "Rebook",
-        img: ["https://assets.reebok.com/images/w_600,f_auto,q_auto/aba35c9a73504f8ea5f9ac940053f418_9366/Nano_X1_Men's_Training_Shoes_Black_GX2801_01_standard.jpg",
-            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/45262f1acec740d7a4d8ac7700c90390_9366/Nano_X1_Men's_Training_Shoes_Les_Mills(r)_White_FZ4298_01_standard.jpg"],
-        color: ['linear-gradient(#333,#addd00,#00baf3)', '#333'],
-        detail: "When you enter the box, you put your game face on. You're gunning for the leaderboard and nothing's gonna stop you. These men's Reebok training shoes are built for your most demanding workouts. A woven Flexweave® upper is lightweight but able to take a beating. Floatride Energy Foam cushioning in the forefoot provides a responsive feel for running or double unders. A heel clip adds stability for quick lateral moves."
-    },
-    {
-        id: 'AD',
-        name: "ZigWild Trail 6 Women's Shoes",
-        price: 130,
-        brand: "Rebook",
-        img: ["https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/68f693a96c9d42e7bad0ac78012b4a7c_9366/ZigWild_Trail_6_Women's_Shoes_Grey_S42637_01_standard.jpg",
-            "https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/e941871d985a47fc9ff5ab1c000fb764_9366/ZigWild_Trail_6_Women's_Shoes_Black_FX1439_01_standard.jpg"],
-        color: ['linear-gradient(#fe8b5e,#9e9d9d)', 'linear-gradient(#f918c1,#333)'],
-        detail: "These women's running shoes bring an outdoor feel to your everyday routine. The upper shows off a '90s trail vibe. The innovative outsole disperses energy for a comfortable feel from heel strike to toe-off."
-    },
-    {
         id: 'AE',
         name: "Hot Ones Question Mid Men's Basketball Shoes",
         price: 160,
