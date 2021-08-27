@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
 import { AiOutlineClose } from 'react-icons/ai'
 import "./FilterForm.css"
@@ -10,15 +10,9 @@ function FilterForm(props) {
         Running: false,
         Football: false
     })
-    const [isAnimate, setIsAnimate] = useState(false)
+    const [isPositionFixed, setIsPositionFixed] = useState(false)
     const CategoryStyle = {
         color: 'rgb(114, 114, 114)'
-    }
-    const showResponsiveFilter = {
-        transform: 'translateY(0)'
-    }
-    const hideResponsiveFilter = {
-        transform: 'translateY(-150%)'
     }
     const handleCategories = (e) => {
         let newCategories = { ...categories }
@@ -46,8 +40,17 @@ function FilterForm(props) {
         setCategories(newCategories)
 
     }
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 1000) setIsPositionFixed(true)
+            else setIsPositionFixed(false)
+        });
+        return () => window.removeEventListener("scroll")
+    }, [])
     return (
-        <div className='filter' style={window.screen.width < 1000 ? props.filterStyle : {}}>
+        <div className={`filter ${isPositionFixed & window.screen.width > 790 ? 'filter_fixed' : ''}`}
+            style={window.screen.width < 1000 ? props.filterStyle : {}}
+        >
             <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />
             <div className='filter__line first__filter__line'>
                 <p>Gender</p>

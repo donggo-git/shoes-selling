@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ProductList from './productList'
 import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
@@ -8,6 +8,15 @@ import './ProductPage.css'
 
 function ProductPage(props) {
     const [isFilterAnimate, setIsFilterAnimate] = useState(false)
+    const [isFixed, setIsFixed] = useState(false)
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 1010) setIsFixed(true)
+            else setIsFixed(false)
+        });
+        return () => window.removeEventListener("scroll")
+    }, []
+    )
     const [filterStyle, setFilterStyle] = useState({
         transform: 'translateY(150%)'
     })
@@ -31,7 +40,9 @@ function ProductPage(props) {
             <div
                 style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
                 onClick={() => openFilter()}
-                className='filter_responsive_btn'>
+                className={`filter_responsive_btn 
+                ${isFixed & window.screen.width < 1000 ? 'filter_responsive_btn_fixed' : ''}`}
+            >
                 <p>Filter </p>
                 <BsFilterLeft />
             </div>

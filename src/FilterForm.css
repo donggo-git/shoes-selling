@@ -1,11 +1,24 @@
 .filter{
     top: 0;
     margin-left: 3rem;
-    margin-top: 2rem;
     width: 11rem;
     position: relative;
-    
+    scrollbar-width: thin;
+    scrollbar-color: rgb(109, 109, 109) rgb(255, 255, 255);
+    overflow-y: scroll;
+    height: calc(100vh - 80px);
 }
+.filter::-webkit-scrollbar {
+    width: 5px;
+  }
+  .filter::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .filter::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
 .filter__line{
     display: flex;
     flex-direction: column;
@@ -22,7 +35,6 @@
     margin-top: 0.8rem;
     flex-direction: column;
     font-weight: bold;
-    
 }
 .category>div{
     display: inline-block;
@@ -35,6 +47,12 @@
 }
 .close-btn{
     display: none;
+}
+.filter_fixed{
+    height: calc(100vh - 75px);
+    top: 68px;
+    position: fixed;
+    
 }
 @media screen and (max-width: 1000px)  {
     .filter{

@@ -13,8 +13,9 @@
     scrollbar-width: none;
     position: relative;
 }
-.Trending_slide_container::-webkit-scrollbar {
-    width: 5px;               /* width of the entire scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0;
   }
 .Trending_slide{
     display: flex;
