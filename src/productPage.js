@@ -11,7 +11,7 @@ function ProductPage(props) {
     const [isFixed, setIsFixed] = useState(false)
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 1010) setIsFixed(true)
+            if (window.scrollY > 1008) setIsFixed(true)
             else setIsFixed(false)
         });
         return () => window.removeEventListener("scroll")
@@ -37,26 +37,28 @@ function ProductPage(props) {
             <ProductHeader />
             <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
             <h2 className="title product-title">Product</h2>
-            <div
-                style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
-                onClick={() => openFilter()}
-                className={`filter_responsive_btn 
+            <div className="product">
+                <div
+                    style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
+                    onClick={() => openFilter()}
+                    className={`filter_responsive_btn 
                 ${isFixed & window.screen.width < 1000 ? 'filter_responsive_btn_fixed' : ''}`}
-            >
-                <p>Filter </p>
-                <BsFilterLeft />
+                >
+                    <p>Filter </p>
+                    <BsFilterLeft />
+                </div>
+                <Fade in={isFilterAnimate} timeout={300}>
+                    <div className="modal"></div>
+                </Fade>
+                <ProductList
+                    products={props.products}
+                    addToCart={props.addToCart}
+                    changeDetailProduct={props.changeDetailProduct}
+                    addToFavorite={props.addToFavorite}
+                    closeFilter={closeFilter}
+                    filterStyle={filterStyle}
+                />
             </div>
-            <Fade in={isFilterAnimate} timeout={300}>
-                <div className="modal"></div>
-            </Fade>
-            <ProductList
-                products={props.products}
-                addToCart={props.addToCart}
-                changeDetailProduct={props.changeDetailProduct}
-                addToFavorite={props.addToFavorite}
-                closeFilter={closeFilter}
-                filterStyle={filterStyle}
-            />
         </div>
     )
 }
