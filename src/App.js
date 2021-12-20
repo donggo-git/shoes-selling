@@ -66,7 +66,8 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
-  const addToFavorite = (product) => {
+  const addToFavorite = (e, product) => {
+    e.preventDefault();
     let updateFavorite = [...favorite]
     if (favorite.every(item => item.id !== product.id)) {
       updateFavorite.push(product)
@@ -86,12 +87,7 @@ function App() {
         <nav>
           <ul>
             <NavLink to='/shoes-selling/' className='nav__homePage'>Home</NavLink>
-            <a href='#trending'><li>Trending</li></a>
-            <a href='#'><li>Men</li></a>
-            <a href='#'><li>Women</li></a>
-            <a href='#'><li>Kids</li></a>
             <NavLink to="/Favorite"><li>Favorite</li></NavLink>
-            <a href='#'><li>Sale</li></a>
 
           </ul>
 

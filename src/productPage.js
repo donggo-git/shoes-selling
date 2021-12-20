@@ -14,9 +14,8 @@ function ProductPage(props) {
             if (window.scrollY > 1008) setIsFixed(true)
             else setIsFixed(false)
         });
-        return () => window.removeEventListener("scroll")
-    }, []
-    )
+        //return () => window.removeEventListener("scroll")
+    }, [])
     const [filterStyle, setFilterStyle] = useState({
         transform: 'translateY(150%)'
     })

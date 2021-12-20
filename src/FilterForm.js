@@ -45,7 +45,7 @@ function FilterForm(props) {
             if (window.scrollY > 1000) setIsPositionFixed(true)
             else setIsPositionFixed(false)
         });
-        return () => window.removeEventListener("scroll")
+        //return () => window.removeEventListener("scroll")
     }, [])
     return (
         <div className={`filter ${isPositionFixed & window.screen.width > 790 ? 'filter_fixed' : ''}`}

@@ -37,7 +37,7 @@ function DetailPage({ products, addToCart, addToFavorite }) {
                     </div>
                     <p className='product_detail_description'>{products?.product?.description}</p>
                     <button onClick={() => addToCart(products, mainImg)} className="AddToCart">Add to cart</button>
-                    <button onClick={() => addToFavorite(products)} className="like">Like</button>
+                    <button onClick={(e) => addToFavorite(e, products)} className="like">Like</button>
                 </div>
             </div>
         </div>
