@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BsSearch } from 'react-icons/bs';
 import ProductPage from './productPage'
 import CartPage from './Cart'
@@ -11,6 +11,7 @@ import { IoCartOutline } from 'react-icons/io5'
 import { AiOutlineCheck } from 'react-icons/ai'
 import Grow from '@material-ui/core/Grow'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { db } from './firebase'
 
 function App() {
   const _ = require('lodash');
@@ -19,9 +20,11 @@ function App() {
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
   const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
+  const [searchInput, setSearchInput] = useState("");
+  const [searchList, setSearchList] = useState([]);
   let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
-  // add to cart method 
+  // functionality for cart
   const addToCart = (product, img) => {
     //console.log(product.product.color[img])
     let updateCart = [...cart]
@@ -66,10 +69,10 @@ function App() {
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
   }
-  const addToFavorite = (e, product) => {
-    e.preventDefault();
+  //functionality for favorite
+  const addToFavorite = (product) => {
     let updateFavorite = [...favorite]
-    if (favorite.every(item => item.id !== product.id)) {
+    if (favorite.every(item => item?.id !== product?.id)) {
       updateFavorite.push(product)
       setFavorite(updateFavorite)
     }
@@ -81,11 +84,32 @@ function App() {
     updateFavorite = updateFavorite.filter(item => item.id != product.id)
     setFavorite(updateFavorite)
   }
+  //functionality for search
+  const handleSearch = (searchInput) => {
+    setSearchInput(searchInput);
+  }
+  //search product every time searchInput changes  
+  useEffect(() => {
+    if (searchInput != "") {
+      db.collection('products').onSnapshot((snapshot) => {
+        let tempData = []
+        tempData = snapshot.docs.map((doc) => (
+          {
+            id: doc.id,
+            product: doc.data()
+          }
+        )).filter(shoe => shoe.product.name.includes(searchInput))
+        setSearchList(tempData);
+      })
+    }
+    else setSearchList([]);
+  }, [searchInput])
   return (
     <div>
       <Router>
         <nav>
           <ul>
+            <img src="https://images.template.net/wp-content/uploads/2016/08/08090604/Soccer-Shoe-Logo.jpg" height="50px" />
             <NavLink to='/shoes-selling/' className='nav__homePage'>Home</NavLink>
             <NavLink to="/Favorite"><li>Favorite</li></NavLink>
 
@@ -93,8 +117,25 @@ function App() {
 
           <div className='search-input'>
             <BsSearch className='search-btn' />
-            <input type='text' placeholder='Search' />
-
+            <input type='text' placeholder='Search'
+              value={searchInput}
+              onChange={(searchInput) => handleSearch(searchInput.target.value)}
+            />
+            {searchList.length > 0 ? (
+              <div className='searchList_container'>
+                <div className='searchList'>
+                  {searchList.map((product) => (
+                    <div className='searchList-item'>
+                      <img src={product.product.img[0]} height="100px" width="80px" />
+                      <p>{product.product.name}</p>
+                    </div>
+                  ))
+                  }
+                </div>
+              </div>
+            )
+              : <div></div>
+            }
           </div>
           <NavLink to='/cart'>
             <div className='nav__cart '>
@@ -103,14 +144,9 @@ function App() {
             </div>
           </NavLink>
         </nav>
-        <div className='favoriteAnnounceContainer'>
-          <Grow in={isFavoriteAnnounce} timeout={{ appear: 500, enter: 500, exit: 1 }}>
-            <div className='favoriteAnnounce'>
-              <p>Add to favorite</p>
-              <AiOutlineCheck />
-            </div>
-          </Grow>
-        </div>
+
+
+
         <Route render={({ location }) => (
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
@@ -133,6 +169,15 @@ function App() {
           </TransitionGroup>
         )} />
       </Router>
+
+      <div className='favoriteAnnounceContainer'>
+        <Grow in={isFavoriteAnnounce} timeout={{ appear: 500, enter: 500, exit: 1 }}>
+          <div className='favoriteAnnounce'>
+            <p>Add to favorite</p>
+            <AiOutlineCheck />
+          </div>
+        </Grow>
+      </div>
     </div >
   );
 
