@@ -1,7 +1,5 @@
-
 import './App.css';
-import React, { useState, useEffect } from 'react'
-import { BsSearch } from 'react-icons/bs';
+import React, { useState } from 'react'
 import ProductPage from './productPage'
 import CartPage from './Cart'
 import Favorite from './Favorite';
@@ -11,7 +9,7 @@ import { IoCartOutline } from 'react-icons/io5'
 import { AiOutlineCheck } from 'react-icons/ai'
 import Grow from '@material-ui/core/Grow'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { db } from './firebase'
+import SearchingProduct from './Searching-Product/SearchingProduct';
 
 function App() {
   const _ = require('lodash');
@@ -20,8 +18,6 @@ function App() {
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
   const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
-  const [searchInput, setSearchInput] = useState("");
-  const [searchList, setSearchList] = useState([]);
   let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
   // functionality for cart
@@ -84,26 +80,6 @@ function App() {
     updateFavorite = updateFavorite.filter(item => item.id != product.id)
     setFavorite(updateFavorite)
   }
-  //functionality for search
-  const handleSearch = (searchInput) => {
-    setSearchInput(searchInput);
-  }
-  //search product every time searchInput changes  
-  useEffect(() => {
-    if (searchInput != "") {
-      db.collection('products').onSnapshot((snapshot) => {
-        let tempData = []
-        tempData = snapshot.docs.map((doc) => (
-          {
-            id: doc.id,
-            product: doc.data()
-          }
-        )).filter(shoe => shoe.product.name.includes(searchInput))
-        setSearchList(tempData);
-      })
-    }
-    else setSearchList([]);
-  }, [searchInput])
   return (
     <div>
       <Router>
@@ -115,28 +91,8 @@ function App() {
 
           </ul>
 
-          <div className='search-input'>
-            <BsSearch className='search-btn' />
-            <input type='text' placeholder='Search'
-              value={searchInput}
-              onChange={(searchInput) => handleSearch(searchInput.target.value)}
-            />
-            {searchList.length > 0 ? (
-              <div className='searchList_container'>
-                <div className='searchList'>
-                  {searchList.map((product) => (
-                    <div className='searchList-item'>
-                      <img src={product.product.img[0]} height="100px" width="80px" />
-                      <p>{product.product.name}</p>
-                    </div>
-                  ))
-                  }
-                </div>
-              </div>
-            )
-              : <div></div>
-            }
-          </div>
+          <SearchingProduct changeDetailProduct={changeDetailProduct} />
+
           <NavLink to='/cart'>
             <div className='nav__cart '>
               <IoCartOutline className='cart_icon' />
