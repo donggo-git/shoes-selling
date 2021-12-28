@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'

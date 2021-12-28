@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import ProductPage from './productPage'
 import CartPage from './Cart'
 import Favorite from './Favorite';
-import DetailPage from './DetailPage';
+import DetailPage from './DetailPage/DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'
-import { AiOutlineCheck } from 'react-icons/ai'
-import Grow from '@material-ui/core/Grow'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import SearchingProduct from './Searching-Product/SearchingProduct';
 import { db } from './firebase'
@@ -17,7 +15,6 @@ function App() {
   const [cart, setCart] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
-  const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
   let cartLength = cart.reduce((sum, item) => sum + item.product.quantity, 0)
 
   // functionality for cart
@@ -64,6 +61,7 @@ function App() {
   }
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
+    console.log(detailProduct)
   }
   //functionality for favorite
   const addToFavorite = (e, product) => {
@@ -85,7 +83,10 @@ function App() {
     e.preventDefault();
   }
   const removeFromFavorite = (id) => {
+
+    console.log(id);
     db.collection("favorite").doc(id).delete();
+
   }
   return (
     <div>
@@ -117,13 +118,15 @@ function App() {
                 <Route path='/shoes-selling/' component={() => <ProductPage
                   addToCart={addToCart} changeDetailProduct={changeDetailProduct}
                   setDetailProduct={setDetailProduct} addToFavorite={addToFavorite}
-                  removeFromFavorite={removeFromFavorite} />} />
+                  removeFromFavorite={removeFromFavorite}
+                />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
                   addQuantity={addQuantity} minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
                 <Route path='/product' component={() => <DetailPage
                   products={detailProduct} addToCart={addToCart}
-                  minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
+                  minusQuantity={minusQuantity} addToFavorite={addToFavorite}
+                  removeFromFavorite={removeFromFavorite} />} />
                 <Route path="/Favorite" component={() => <Favorite
                   setDetailProduct={setDetailProduct}
                   removeFromFavorite={removeFromFavorite}

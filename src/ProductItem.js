@@ -8,6 +8,7 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
     const handleHover = (imgSrc) => {
         setImgOrder(product.product.img.indexOf(imgSrc))
     }
+
     useEffect(() => {
         db.collection('favorite').onSnapshot((snapshot) => {
             let tempData = []
