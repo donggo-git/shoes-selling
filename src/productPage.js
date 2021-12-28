@@ -56,6 +56,7 @@ function ProductPage(props) {
                     addToFavorite={props.addToFavorite}
                     closeFilter={closeFilter}
                     filterStyle={filterStyle}
+                    removeFromFavorite={props.removeFromFavorite}
                 />
             </div>
         </div>

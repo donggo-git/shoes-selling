@@ -1,17 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Favorite.css"
 import Button from '@material-ui/core/Button'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
+import { db } from './firebase';
 
-function Favorite({ favorite, removeFavorite, setDetailProduct }) {
+function Favorite({ setDetailProduct, removeFromFavorite }) {
+    const [favoriteList, setFavoriteList] = useState([]);
+    //get favorite list
+    useEffect(() => {
+        db.collection('favorite').onSnapshot((snapshot) => {
+            let tempData = []
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+            ))
+            setFavoriteList(tempData);
+        })
+    }, [])
+
     return (
         <div className='favorite_page'>
             <div className="favorite_container">
-                <h2>Your favorite list ({favorite.length})</h2>
+                <h2>Your favorite list ({favoriteList.length})</h2>
 
                 <div className='favorite_list'>
-                    {favorite.map(item => (
+                    {favoriteList.map(item => (
                         <Fade
                             in={item.id}
                             timeout={600}
@@ -32,7 +48,7 @@ function Favorite({ favorite, removeFavorite, setDetailProduct }) {
                                         variant="outlined"
                                         size='small'
                                         className='favoriteDelete'
-                                        onClick={() => removeFavorite(item)}>
+                                        onClick={() => removeFromFavorite(item.id)}>
                                         Remove
                                     </Button>
                                 </div>

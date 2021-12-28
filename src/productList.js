@@ -7,7 +7,7 @@ import './detailPage.css'
 import { db } from './firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyle, closeFilter }) {
+function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyle, closeFilter, removeFromFavorite }) {
     // filter product by the filter form 
 
     // list of product after filter
@@ -160,6 +160,7 @@ function ProductList({ changeDetailProduct, addToCart, addToFavorite, filterStyl
                                 addToCart={addToCart}
                                 key={product.id}
                                 addToFavorite={addToFavorite}
+                                removeFromFavorite={removeFromFavorite}
                             />
                         ))}
                     </div>

@@ -10,11 +10,11 @@ import { AiOutlineCheck } from 'react-icons/ai'
 import Grow from '@material-ui/core/Grow'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import SearchingProduct from './Searching-Product/SearchingProduct';
+import { db } from './firebase'
 
 function App() {
   const _ = require('lodash');
   const [cart, setCart] = useState([])
-  const [favorite, setFavorite] = useState([])
   const [detailProduct, setDetailProduct] = useState()
   const [img, setImg] = useState("")
   const [isFavoriteAnnounce, setIsFavoriteAnnounce] = useState(false)
@@ -66,19 +66,26 @@ function App() {
     setDetailProduct(detailProduct)
   }
   //functionality for favorite
-  const addToFavorite = (product) => {
-    let updateFavorite = [...favorite]
-    if (favorite.every(item => item?.id !== product?.id)) {
-      updateFavorite.push(product)
-      setFavorite(updateFavorite)
-    }
-    setIsFavoriteAnnounce(true)
-    setTimeout(() => setIsFavoriteAnnounce(false), 800)
+  const addToFavorite = (e, product) => {
+    const favoriteList = db.collection("favorite").doc(product.id);
+    favoriteList.get()
+      .then(doc => {
+        if (!doc.exists) {
+          db.collection("favorite").doc(product.id).set({
+            name: product.product.name,
+            description: product.product.description,
+            gender: product.product.gender,
+            category: product.product.category,
+            img: product.product.img,
+            price: product.product.price
+          })
+        }
+        else return;
+      })
+    e.preventDefault();
   }
-  const removeFavorite = (product) => {
-    let updateFavorite = [...favorite]
-    updateFavorite = updateFavorite.filter(item => item.id != product.id)
-    setFavorite(updateFavorite)
+  const removeFromFavorite = (id) => {
+    db.collection("favorite").doc(id).delete();
   }
   return (
     <div>
@@ -109,7 +116,8 @@ function App() {
               <Switch >
                 <Route path='/shoes-selling/' component={() => <ProductPage
                   addToCart={addToCart} changeDetailProduct={changeDetailProduct}
-                  setDetailProduct={setDetailProduct} addToFavorite={addToFavorite} />} />
+                  setDetailProduct={setDetailProduct} addToFavorite={addToFavorite}
+                  removeFromFavorite={removeFromFavorite} />} />
                 <Route path='/cart' component={() => <CartPage
                   cart={cart} removeItem={removeItem} img={img} changeDetailProduct={changeDetailProduct}
                   addQuantity={addQuantity} minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
@@ -117,8 +125,8 @@ function App() {
                   products={detailProduct} addToCart={addToCart}
                   minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
                 <Route path="/Favorite" component={() => <Favorite
-                  favorite={favorite} removeFavorite={removeFavorite}
                   setDetailProduct={setDetailProduct}
+                  removeFromFavorite={removeFromFavorite}
                 />} />
               </Switch>
             </CSSTransition>
@@ -126,14 +134,6 @@ function App() {
         )} />
       </Router>
 
-      <div className='favoriteAnnounceContainer'>
-        <Grow in={isFavoriteAnnounce} timeout={{ appear: 500, enter: 500, exit: 1 }}>
-          <div className='favoriteAnnounce'>
-            <p>Add to favorite</p>
-            <AiOutlineCheck />
-          </div>
-        </Grow>
-      </div>
     </div >
   );
 

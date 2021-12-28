@@ -1,11 +1,32 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
-function ProductItem({ product, changeDetailProduct, addToFavorite }) {
+import { db } from './firebase'
+function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFavorite }) {
     const [imgOrder, setImgOrder] = useState(0)
+    const [FavoriteID, setFavoriteID] = useState([]);
     const handleHover = (imgSrc) => {
         setImgOrder(product.product.img.indexOf(imgSrc))
+    }
+    useEffect(() => {
+        db.collection('favorite').onSnapshot((snapshot) => {
+            let tempData = []
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+            ))
+            setFavoriteID(tempData.map(product => product.id));
+        })
+    }, [])
+
+    const checkFavoriteList = (product) => {
+        return FavoriteID.includes(product.id);
+    }
+    const favoriteCheckStyle = {
+        backgroundColor: "#fff",
+        color: "#333"
     }
     return (
         <div className='ProductItem' >
@@ -29,7 +50,15 @@ function ProductItem({ product, changeDetailProduct, addToFavorite }) {
                     }
                 </div>
                 <div className="ProductDetail_imgList_btn">
-                    <button className="like" onClick={() => addToFavorite(product)}>Like</button>
+                    <button
+                        className="like"
+                        onClick={(e) => checkFavoriteList(product) ?
+                            removeFromFavorite(product.id) : addToFavorite(e, product)
+                        }
+                        style={checkFavoriteList(product) ? favoriteCheckStyle : {}}
+                    >
+                        Like
+                    </button>
                     <NavLink to="/product">
                         <button onClick={() => changeDetailProduct(product)}>
                             Detail
