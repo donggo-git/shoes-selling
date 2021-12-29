@@ -1,27 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Summary from './Summary'
+import { db } from 'C:/project/shoes_selling/src/firebase'
 function Cart(props) {
-    let subtotal = props.cart.length > 0 ? props.cart.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0) : 0;
+    const [cartList, setCartList] = useState([])
+    useEffect(() => {
+        db.collection('cart').onSnapshot((snapshot) => {
+            let tempData = []
+            tempData = snapshot.docs.map((doc) => (
+                {
+                    id: doc.id,
+                    product: doc.data()
+                }
+            ))
+            setCartList(tempData);
+        })
+    }, [])
+    let subtotal = cartList.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0);
     const handleProductCallBack = (item) => {
         let updateItem = { ...item }
-        updateItem.id = updateItem.id.slice(0, updateItem.id.length - 1)
+        updateItem.id = updateItem.id.split("_")[0]
         props.changeDetailProduct(updateItem)
     }
-    props.cart.map(item => console.log(item.id))
     return (
         <div className='cart-page'>
 
             <div className='cart'>
-                {props.cart.map((item) => (
+                {cartList.map((item) => (
                     <Fade
                         in={item.id}
                         timeout={500}
                     >
                         <div className='cart-item'>
-                            <img src={item?.product?.img[item.id.slice(-1)]} />
+                            <img src={item?.product?.img[item.id.split("_")[1]]} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
                                     <NavLink to="/product">
@@ -44,12 +57,12 @@ function Cart(props) {
                                         <input
                                             type="text" for="quantity" value={item.product.quantity}
                                             onChange={(input) => props.handleQuantity(input)} />
-                                        <button onClick={() => props.addQuantity(item)}>+</button>
+                                        <button onClick={(e) => props.addQuantity(item, e)}>+</button>
                                     </div>
                                     <p className='price'>${item.product.price}</p>
                                 </div>
-                                <button onClick={() => props.addToFavorite(item)}>Move to Favorite</button>
-                                <button onClick={() => props.removeItem(item.id)}>Remove</button>
+                                <button onClick={(e) => props.addToFavorite(e, item)}>Move to Favorite</button>
+                                <button onClick={() => props.removeItem(item.id, item)}>Remove</button>
                             </div>
                         </div>
                     </Fade>

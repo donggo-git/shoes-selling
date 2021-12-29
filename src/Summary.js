@@ -3,10 +3,10 @@ import Collapse from '@material-ui/core/Collapse';
 import './Summary.css'
 function Summary(props) {
     let tax = Math.round(props.subtotal * 10.1) / 100;
-    let [total, setTotal] = useState(Math.round((props.subtotal + tax + 8) * 100) / 100);
-    let [codeEnter, setCodeEnter] = useState('');
-    let [discountAmount, setDiscountAmount] = useState(0)
-    let [discountStyle, setDiscountStyle] = useState({ display: 'none' })
+    const [total, setTotal] = useState(Math.round((props.subtotal + tax + 8) * 100) / 100);
+    const [codeEnter, setCodeEnter] = useState('');
+    const [discountAmount, setDiscountAmount] = useState(0)
+    const [discountStyle, setDiscountStyle] = useState({ display: 'none' })
     const [isCodeShow, setIsCodeShow] = useState(false)
     const handleEnterCode = (e) => {
         setCodeEnter(e);
