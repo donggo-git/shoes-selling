@@ -45,7 +45,7 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
                 <div className='img-list'>
                     {
                         product.product.img.map(imgSrc => (
-                            <img src={imgSrc} key={imgSrc} onMouseEnter={(imgSrc) => handleHover(imgSrc.target.src)}
+                            <img src={imgSrc} key={imgSrc} onMouseEnter={() => handleHover(imgSrc)}
                             />
                         ))
                     }

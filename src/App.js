@@ -34,6 +34,7 @@ function App() {
     e.preventDefault()
 
     const cartList = db.collection("cart").doc(product.id + "_" + img)
+    console.log(product.id + "_" + img);
     cartList.get()
       .then(doc => {
         if (!doc.exists) {
@@ -67,8 +68,6 @@ function App() {
           quantity: doc.data().quantity + 1
         })
       })
-
-    //old way
   }
   const minusQuantity = (product) => {
     const updateProduct = db.collection("cart").doc(product.id)

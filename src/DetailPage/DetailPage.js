@@ -53,7 +53,7 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite }) 
                             products?.product?.img.map(singleImg => (
                                 <img
                                     key={products.product.img.indexOf(singleImg)}
-                                    src={singleImg} height="100%" onClick={(e) => changeMainImg(e.target.src)}
+                                    src={singleImg} height="100%" onClick={(e) => changeMainImg(singleImg)}
                                     style={products?.product.img.indexOf(singleImg) == mainImg ? styleImgList : {}} />
                             ))
                         }
