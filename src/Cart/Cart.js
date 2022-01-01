@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
-import Summary from './Summary'
+import Summary from '../Summary'
 import { db } from 'C:/project/shoes_selling/src/firebase'
 function Cart(props) {
     const [cartList, setCartList] = useState([])

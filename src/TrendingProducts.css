@@ -41,6 +41,7 @@
 }
 .Trending_slide_product{
     height: 25rem;
+    width: 15rem;
     margin-right:12px;
     cursor: pointer;
     transition: box-shadow 0.4s;

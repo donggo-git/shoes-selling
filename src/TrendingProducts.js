@@ -32,13 +32,13 @@ function TrendingProducts({ changeDetailProduct }) {
     }
     const handleScrollTrending = (button) => {
         if (button == "next") {
-            if (translateProgress > -32) {
-                setTranslateProgress((pre) => pre -= 16)
+            if (translateProgress > -109) {
+                setTranslateProgress((pre) => pre -= 15.7)
             }
         }
         else {
             if (translateProgress)
-                setTranslateProgress((pre) => pre += 16)
+                setTranslateProgress((pre) => pre += 15.7)
         }
     }
     return (
@@ -64,7 +64,7 @@ function TrendingProducts({ changeDetailProduct }) {
                             .map(product => (
                                 <NavLink to="/product" key={product.id}>
                                     <div className="Trending_slide_product" onClick={() => changeDetailProduct(product)}>
-                                        <img src={product.product.img[0]} height='100%' width='100%' />
+                                        <img src={product.product.img[0]} />
                                         <p>{product.product.name}</p>
                                         <p>$ {product.product.price}</p>
                                     </div>
