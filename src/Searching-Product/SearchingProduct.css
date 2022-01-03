@@ -60,3 +60,15 @@
 .searchList-item>p{
   margin-left: 10px;
 }
+@media screen and (max-width: 1000px)  {
+  .search-input{
+    width: 20rem;
+  }
+  .search-input input{
+    font-size: 1.6rem;
+  }
+  .searchList_container{
+    width: 20rem;
+    transform: translateX(-1rem);
+  }
+}
