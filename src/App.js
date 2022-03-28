@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import ProductPage from './productPage'
 import CartPage from './Cart/Cart'
-import Favorite from './Favorite';
+import Favorite from './FavoritePage/Favorite';
 import DetailPage from './DetailPage/DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5'

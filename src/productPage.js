@@ -32,7 +32,7 @@ function ProductPage(props) {
         setIsFilterAnimate(false)
     }
     return (
-        <div>
+        <div className='page'>
             <ProductHeader />
             <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
             <h2 className="title product-title">Product</h2>

@@ -13,6 +13,7 @@ body{
 *{
   scroll-behavior: smooth;
   margin: 0;
+  padding: 0;
 }
 input,button:focus{
 outline: none;
@@ -50,10 +51,6 @@ nav li,.nav__homePage{
 .nav__homePage:focus{
   outline: none;
 }
-@media screen and (max-width: 1000px) {
-
-}
-
 .nav__cart{
   margin-top: 0.2rem;
   margin-left: 1rem;
@@ -89,7 +86,7 @@ nav li,.nav__homePage{
 }
 .page{
   position: absolute;
-  top: 100px;
+  top: 80px;
   left: 0;
   right: 0;
 } 
