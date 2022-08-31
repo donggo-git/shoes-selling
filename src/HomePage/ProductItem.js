@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
-import { db } from './firebase'
+import { db } from '../firebase'
 function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFavorite }) {
     const [imgOrder, setImgOrder] = useState(0)
     const [FavoriteID, setFavoriteID] = useState([]);

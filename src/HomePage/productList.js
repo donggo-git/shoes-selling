@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Fade from '@material-ui/core/Fade'
-import { takeAllCheckBoxTrue } from './takeAllCheckBoxTrue'
 import './productList.css'
-import './DetailPage/detailPage.css'
-import { db } from './firebase'
+import '../DetailPage/detailPage.css'
+import { db } from '../firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
 
-import product from './product'
-import filter from './filter'
+import product from '../product'
+import filter from '../filter'
 
 function ProductList({ changeDetailProduct,
     addToCart, addToFavorite, filterStyle,

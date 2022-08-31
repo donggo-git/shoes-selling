@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import ProductPage from './productPage'
+import ProductPage from './HomePage/productPage'
 import CartPage from './Cart/Cart'
 import Favorite from './FavoritePage/Favorite';
 import DetailPage from './DetailPage/DetailPage';
