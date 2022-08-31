@@ -29,15 +29,28 @@ class product {
         this._filterByPrice(priceList)
         this._filterByCategories(category)
     }
-
-    removeProduct(productID) {
-        this._currentProduct = this._currentProduct.filter(item => item.id != productID)
-    }
-    changeQuantity(productID) {
+    increaseQuantity(productID) {
         let product = this._currentProduct.find(item => item.id == productID)
         if (!product.quantity) product.quantity = 1;
         product.quantity++;
     }
+    decreaseQuantity(productID) {
+        let product = this._currentProduct.find(item => item.id == productID)
+        if (product.quantity === 1) this.removeProduct(productID);
+        product.quantity--;
+    }
+    addProduct(product) {
+        if (
+            this._product.map(item => item.product.name).indexOf(product.product.name) >= 0
+        )
+            //increaseQuantity(product.id)
+
+            this._product.push(product)
+    }
+    removeProduct(productID) {
+        this._currentProduct = this._currentProduct.filter(item => item.id != productID)
+    }
+
 }
 
 export default product

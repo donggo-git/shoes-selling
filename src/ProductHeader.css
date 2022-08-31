@@ -55,20 +55,7 @@ button {
     border: none;
 }
 
-.slide-item {
-    margin: 0 auto;
-    display: block;
-    height: 28rem;
-    width: 100%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 0 0 rgba(0, 0, 0, 0.5);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #ffffff;
-    position: relative;
-
-}
-
-.item-slide1-content {
+.header__slide1__content {
     position: absolute;
     bottom: 8rem;
     left: 5rem;
@@ -78,7 +65,7 @@ button {
     color: #e6e6e6;
 }
 
-.item-slide1-content button {
+.header__slide1__content button {
     font-size: 1.1rem;
     font-weight: 200;
     padding: 10px 20px;
@@ -88,13 +75,13 @@ button {
     margin-top: 10px;
 }
 
-.item-slide1-content button:hover {
+.header__slide1__content button:hover {
     transform: translateY(-3px);
     opacity: 0.9;
 
 }
 
-.line1 {
+.header__slide1__title {
     position: relative;
     height: 2.8rem;
     overflow-y: hidden;
@@ -103,58 +90,39 @@ button {
     align-items: center;
 }
 
-.line1>p,
-.line1>h2 {
+.header__slide1__title>p,
+.header__slide1__title>h2 {
     display: block;
     position: absolute;
-    transform: translateY(-2.8rem);
-    animation: animation2 0.6s ease-out forwards;
 }
 
-.item-slide1-content button {
+.header__slide1__content button {
     background-color: rgb(230, 230, 230);
 }
 
-@keyframes animation2 {
-    100% {
-        transform: translate(0%);
-    }
-}
-
-.item-slide2-content {
-    transform: translateY(-0.1rem);
+.header__slide2__content {
     font-size: 1rem;
     background-color: rgba(51, 51, 51, 0.9);
     height: 100%;
     width: 20rem;
     font-weight: bold;
-    color: rgba(51, 51, 51, 0.9);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 3rem;
     transition: all 0.6s;
-    animation: item2Animation 0.8s ease-in forwards;
-    transform: translateX(-100%);
 }
 
-@keyframes item2Animation {
-    90% {
-        color: #e6e6e6;
-    }
-
-    100% {
-        color: #e6e6e6;
-        transform: translateX(0);
-    }
+.header__slide2__title>p {
+    padding: 10px 0;
 }
 
-.item-slide2-content h2 {
+.header__slide2__content h2 {
     font-weight: bolder;
-    margin-bottom: 20px;
 }
 
-.item-slide2-content button {
+.header__slide2__content button {
     margin-top: 8px;
     font-size: 1rem;
     width: 8rem;
@@ -163,50 +131,34 @@ button {
     background-color: #e4e3e3;
 }
 
-.item-slide2-content button:hover {
+.header__slide2__content button:hover {
     background-color: #bbbbbb;
 }
 
-.item-slide3-content {
+.header__slide3__content {
     position: absolute;
     top: 50%;
     right: 5rem;
     line-height: 0.8;
     font-size: 1rem;
     font-weight: bold;
-
     text-align: right;
     transform: translateY(-50%);
 
 }
 
-.item-slide3-content h2 {
+.header__slide3__content h2 {
     height: auto;
     background: linear-gradient(to right, #ffffff, #ffbf00);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
-.item-slide3-content h2,
-.item-slide3-content p,
-.item-slide3-content button {
-    opacity: 0;
-    transform: translateX(-50%);
-    animation: animation3 0.8s ease forwards;
-}
-
-.line3 {
+.header__slide3__content p {
     margin: 15px 0;
 }
 
-@keyframes animation3 {
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.item-slide3-content button {
+.header__slide3__content button {
     font-size: 1.1rem;
     border: none;
     font-weight: 200;
@@ -220,30 +172,9 @@ button {
 
 }
 
-.item-slide3-content button:hover {
+.header__slide3__content button:hover {
     background: #ffffff;
     color: #ffbf00;
-}
-
-.slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.3);
-    z-index: 2;
-    height: 4rem;
-    width: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.6rem;
-    transition: all 0.4s;
-    cursor: pointer;
-
-}
-
-.slide-btn:hover {
-    background-color: rgba(255, 255, 255, 0.8);
 }
 
 @media screen and (max-width:1000px) {
@@ -251,20 +182,26 @@ button {
         width: 100%;
     }
 
-    .slide-item {
+    .header__slideContainer {
+        height: 20vh;
+    }
+
+    .header__slide {
+        background-position: left;
         width: 100%;
         margin: 0 auto;
     }
 
-    .slide-item h2 {
+    .header__slide h2 {
         font-size: 2rem;
     }
 
-    .slide-item p {
+    .header__slide p {
         font-size: 1.5rem;
     }
 
-    .line2 {
-        height: 7rem;
+    .header__slide1__content {
+        bottom: 50%;
+        transform: translateY(50%);
     }
 }

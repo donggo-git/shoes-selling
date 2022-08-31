@@ -48,11 +48,11 @@ function ProductSlide() {
                                     backgroundSize: 'cover'
                                 }}
                             >
-                                <div className={`item-slide${slideIndex + 1}-content`}>
-                                    <div className={`line${slideIndex + 1}`}>
+                                <div className={`header__slide${slideIndex + 1}__content`}>
+                                    <div className={`header__slide${slideIndex + 1}__title`}>
                                         <h2>{slide.title}</h2>
                                     </div>
-                                    <div className={`line${slideIndex + 1}`}>
+                                    <div className={`header__slide${slideIndex + 1}__title`}>
                                         <p>{slide.quote}</p>
                                     </div>
                                     <button>Check out</button>
@@ -81,6 +81,21 @@ function ProductSlide() {
                         ))
                     }
                 </div>
+
+                {/****************************************************** */}
+                {/*
+                <div style={headerBackground} className={`slide-item item-slide${3}`}>
+                    <div className={`item-slide${random + 1}-content`}>
+                        <div className={`line${random + 1}`}>
+                            <h2>{headerContent[random].title}</h2>
+                        </div>
+                        <div className={`line${random + 1}`}>
+                            <p>{headerContent[random].quote}</p>
+                        </div>
+                        <button>Check out</button>
+                    </div>
+                </div>
+                */}
             </header>
         </div >
     )
