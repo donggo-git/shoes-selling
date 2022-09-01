@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Favorite.css"
-import Button from '@material-ui/core/Button'
+
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import { db } from '../firebase';
@@ -43,14 +43,14 @@ function Favorite({ setDetailProduct, removeFromFavorite }) {
                                     <NavLink to="./product">
                                         <h2 onClick={() => setDetailProduct(item)}>{item.product.name}</h2>
                                     </NavLink>
-                                    <Button
+                                    <button
                                         color="secondary"
                                         variant="outlined"
                                         size='small'
                                         className='favoriteDelete'
                                         onClick={() => removeFromFavorite(item.id)}>
                                         Remove
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         </Fade>

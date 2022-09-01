@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import Fade from '@material-ui/core/Fade'
 import './productList.css'
 import '../DetailPage/detailPage.css'
 import { db } from '../firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
 
-import product from '../product'
+import * as product from '../helper/product'
 import filter from '../filter'
 
 function ProductList({ changeDetailProduct,
@@ -17,9 +16,8 @@ function ProductList({ changeDetailProduct,
 
     // list of product after filter
     const [products, setProducts] = useState([]);
-    const [animateProduct, setAnimateProduct] = useState(true)
+    const [filterProduct, setFilterProduct] = useState([])
 
-    let Product
     //get product from firebase
     const getProduct = () => {
 
@@ -33,34 +31,24 @@ function ProductList({ changeDetailProduct,
 
             ));
             setProducts(tempData)
+            setFilterProduct(tempData)
         })
     }
     useEffect(() => {
         getProduct();
     }, [])
     //handle the filter form
-    db.collection('products').onSnapshot((snapshot) => {
-        let tempData = [];
-        tempData = snapshot.docs.map((doc) => (
-            {
-                id: doc.id,
-                product: doc.data()
-            }
-
-        ));
-        Product = new product(tempData)
-    })
 
     const filterHandler = (filterEvent) => {
-        let targetName = filterEvent.target.name;
-        let targetValue = filterEvent.target.value;
-        setAnimateProduct(false)
-        setTimeout(() => {
-            filter.handlerFilterFormChange(targetName, targetValue)
-            Product.filterProduct(filter.gender, filter.brand, filter.price, filter.category)
-            setProducts(Product._currentProduct)
-            setAnimateProduct(true)
-        }, 400)
+        const targetName = filterEvent.target.name;
+        const targetValue = filterEvent.target.value;
+
+        filter.handlerFilterFormChange(targetName, targetValue)
+
+        const newProduct = product.filterProduct(products, filter.gender, filter.brand, filter.price, filter.category)
+        //console.log(product.filterProduct(products, filter.gender, filter.brand, filter.price, filter.category))
+        //console.log(newProduct)
+        setFilterProduct(newProduct)
     }
 
     return (
@@ -72,21 +60,18 @@ function ProductList({ changeDetailProduct,
                     closeFilter={closeFilter}
                 />
 
-                <Fade in={animateProduct} timeout={800}>
-                    <div className='product-list'>
-                        {products.map((product) => (
-                            <ProductItem
-                                product={product}
-                                changeDetailProduct={changeDetailProduct}
-                                addToCart={addToCart}
-                                key={product.id}
-                                addToFavorite={addToFavorite}
-                                removeFromFavorite={removeFromFavorite}
-                            />
-                        ))}
-                    </div>
-                </Fade>
-
+                <div className='product-list'>
+                    {filterProduct?.map((product) => (
+                        <ProductItem
+                            product={product}
+                            changeDetailProduct={changeDetailProduct}
+                            addToCart={addToCart}
+                            key={product.id}
+                            addToFavorite={addToFavorite}
+                            removeFromFavorite={removeFromFavorite}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )

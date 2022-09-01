@@ -16,9 +16,18 @@ class filter {
                     this.brand.splice(this.brand.indexOf(filterValue), 1)
                 break;
             case 'price':
-                this.price.indexOf(filterValue) < 0 ?
-                    this.price.push(filterValue) :
-                    this.price.splice(this.price.indexOf(filterValue), 1)
+                const priceArr = filterValue.split(',').map(price => +price)
+                console.log(this.price.some(priceList => JSON.stringify(priceList) === JSON.stringify(priceArr)))
+                console.log(this.price.map(price => JSON.stringify(price)))
+
+                this.price.some(priceList => JSON.stringify(priceList) === JSON.stringify(priceArr)) ?
+                    this.price = this.price.filter(price => JSON.stringify(price) !== JSON.stringify(priceArr)) :
+                    this.price.push(priceArr)
+                /*console.log(this.price.map(price => JSON.stringify(price)))
+                console.log(this.price.some(priceList => JSON.stringify(priceList) === JSON.stringify(priceArr)))
+                this.price.some(priceList => JSON.stringify(priceList) !== JSON.stringify(priceArr)) ?
+                    this.price.push(priceArr) :
+                    this.price.filter(price => JSON.stringify(price) !== JSON.stringify(priceArr))*/
                 break;
             case 'categories':
                 this.category === filterValue ?
