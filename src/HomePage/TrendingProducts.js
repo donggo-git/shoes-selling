@@ -42,7 +42,7 @@ function TrendingProducts({ changeDetailProduct }) {
     }
     const handleScrollTrending = (button) => {
         if (button == "next") {
-            if (translateProgress < 75) {
+            if (translateProgress > -75) {
                 setTranslateProgress((pre) => pre -= 25)
             }
             return
@@ -78,7 +78,7 @@ function TrendingProducts({ changeDetailProduct }) {
                                         <NavLink to="/product" key={product.id}>
                                             <div className="Trending_slide_product" onClick={() => changeDetailProduct(product)}>
                                                 <img src={product.product.img[0]} />
-                                                <p>{product.product.name}</p>
+                                                <p className='Trending_slide_product--title'>{product.product.name}</p>
                                                 <p>$ {product.product.price}</p>
                                             </div>
                                         </NavLink>

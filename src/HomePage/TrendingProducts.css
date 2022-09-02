@@ -10,7 +10,7 @@
 .Trending_slide_container {
     width: 50rem;
     height: auto;
-    overflow-x: scroll;
+    overflow-x: hidden;
     margin: 0 auto;
     scrollbar-width: none;
     position: relative;
@@ -27,6 +27,7 @@
     transition: all 0.5s;
     width: 400%;
     justify-content: space-between;
+    padding: 10px 0;
 }
 
 .Trending_slide {
@@ -48,6 +49,11 @@
     z-index: 2;
     border: 1px solid #027DEF;
     color: #027DEF;
+    transition: all 0.2s;
+}
+
+.Trending_btn:hover {
+    background-color: rgba(2, 124, 237, 0.2);
 }
 
 .previousBtn_container {
@@ -59,15 +65,22 @@
 }
 
 .Trending_slide_product {
-    height: 25rem;
-    width: 15rem;
+    height: 22rem;
+    width: 13rem;
     margin-right: 12px;
     cursor: pointer;
-    transition: box-shadow 0.4s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s;
+    position: relative;
 }
 
 .Trending_slide_product:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.Trending_slide_product--title {
+    font-weight: bold;
 }
 
 .Trending_slide_product>p {
@@ -76,12 +89,12 @@
 
 .Trending_slide_product>img {
     height: 70%;
-    width: 15rem;
+    width: 13rem;
 }
 
 @media screen and (max-width: 1000px) {
     .Trending_slide_container {
-        width: 95%;
+        width: 70%;
     }
 
     .Trending_slide_product {
@@ -90,6 +103,14 @@
     }
 
     .Trending_btn {
-        display: none;
+        display: block;
+    }
+
+    .previousBtn_container {
+        left: 50px;
+    }
+
+    .nextBtn_container {
+        right: 50px;
     }
 }
