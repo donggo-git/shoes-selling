@@ -1,4 +1,4 @@
-.filter{
+.filter {
     top: 0;
     margin-left: 3rem;
     width: 11rem;
@@ -8,54 +8,65 @@
     overflow-y: scroll;
     height: calc(100vh - 80px);
 }
+
 .filter::-webkit-scrollbar {
     width: 5px;
-  }
-  .filter::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  .filter::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-.filter__line{
+}
+
+.filter::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.filter::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.filter__line {
     display: flex;
     flex-direction: column;
 }
-.filter__line>p{
+
+.filter__line>p {
     font-weight: bolder;
     margin: 0.8rem 0;
 }
-.filter__line>div{
+
+.filter__line>div {
     height: 30px;
 }
-.category{
+
+.category {
     width: 10rem;
     margin-top: 0.8rem;
     flex-direction: column;
     font-weight: bold;
 }
-.category>div{
+
+.category>div {
     display: inline-block;
     padding: 5px;
     cursor: pointer;
     text-align: left;
 }
-.checkbox{
+
+.checkbox {
     height: 20px;
 }
-.close-btn{
+
+.close-btn {
     display: none;
 }
-.filter_fixed{
+
+.filter_fixed {
     height: calc(100vh - 75px);
     top: 68px;
     position: fixed;
-    
+
 }
-@media screen and (max-width: 1000px)  {
-    .filter{
+
+@media screen and (max-width: 1000px) {
+    .filter {
         width: 100%;
         font-size: 1.5rem;
         position: fixed;
@@ -70,26 +81,31 @@
         flex-direction: column;
         overflow: scroll;
     }
-    .first__filter__line{
+
+    .first__filter__line {
         margin-top: 100px;
     }
-    .filter__line{
+
+    .filter__line {
         margin-left: 50px;
         border-bottom: 1px solid rgb(219, 219, 219);
         padding-bottom: 20px;
         width: calc(100% - 100px);
         font-size: 2rem;
-        
+
     }
-    .filter__line input{
+
+    .filter__line input {
         height: 2rem;
         width: 2rem;
-        
+
     }
-    .filter__line>div{
+
+    .filter__line>div {
         padding-bottom: 20px;
     }
-    .close-btn{
+
+    .close-btn {
         display: block;
         position: absolute;
         top: 30px;

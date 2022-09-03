@@ -55,7 +55,7 @@ function FilterForm(props) {
         //return () => window.removeEventListener("scroll")
     }, [])
     return (
-        <div className={`filter ${isPositionFixed & window.screen.width > 790 ? 'filter_fixed' : ''}`}
+        <div className={`filter`}
             style={window.screen.width < 1000 ? props.filterStyle : {}}
         >
             <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />

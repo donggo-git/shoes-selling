@@ -15,7 +15,6 @@ function ProductList({ changeDetailProduct,
     const [products, setProducts] = useState([]);
     const [filterProduct, setFilterProduct] = useState([])
     const [isFilter, setIsFilter] = useState(true)
-
     //get product from firebase
     const getProduct = () => {
 
@@ -34,6 +33,25 @@ function ProductList({ changeDetailProduct,
     }
     useEffect(() => {
         getProduct();
+        //get filter form sticky when scrolling
+        const TrendingProducts = document.querySelector('.Trending_container')
+        const filter = document.querySelector('.filter')
+        const stickyFilterForm = function (entries) {
+            const [entry] = entries
+            console.log(entry.isIntersecting)
+            //if passing out the trending products filter will sticky
+            if (!entry.isIntersecting) filter.classList.add('filter_fixed')
+            //if not, not sticky
+            else filter.classList.remove('filter_fixed')
+        }
+
+        const filterObserver = new IntersectionObserver(stickyFilterForm, {
+            root: null,
+            threshold: 0,
+            rootMargin: '22px'
+        })
+
+        filterObserver.observe(TrendingProducts)
     }, [])
     //handle the filter form
 
