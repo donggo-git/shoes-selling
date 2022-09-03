@@ -23,11 +23,6 @@ class filter {
                 this.price.some(priceList => JSON.stringify(priceList) === JSON.stringify(priceArr)) ?
                     this.price = this.price.filter(price => JSON.stringify(price) !== JSON.stringify(priceArr)) :
                     this.price.push(priceArr)
-                /*console.log(this.price.map(price => JSON.stringify(price)))
-                console.log(this.price.some(priceList => JSON.stringify(priceList) === JSON.stringify(priceArr)))
-                this.price.some(priceList => JSON.stringify(priceList) !== JSON.stringify(priceArr)) ?
-                    this.price.push(priceArr) :
-                    this.price.filter(price => JSON.stringify(price) !== JSON.stringify(priceArr))*/
                 break;
             case 'categories':
                 this.category === filterValue ?

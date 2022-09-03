@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { AiOutlineClose } from 'react-icons/ai'
 import "./FilterForm.css"
 function FilterForm(props) {
+    const filterForm = {
+        Gender: ['Men', 'Women', 'Unisex'],
+        Brand: ['Nike', 'Puma', 'Adidas', 'Rebook'],
+        Price: ['0-25', '25-50', '50-100', '100-150', '150-10000'],
+        Categories: ['Soccer', 'Training', 'Basketball', 'Running', 'Football']
+    }
     const [categories, setCategories] = useState({
         Soccer: false,
         Training: false,
@@ -54,109 +61,58 @@ function FilterForm(props) {
             <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />
             <div className='filter__line first__filter__line'>
                 <p>Gender</p>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Men'
-                        name='gender' className="checkbox"
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Men</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Women'
-                        name='gender' className="checkbox"
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Women</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Unisex'
-                        name='gender'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Unisex</label>
-                </div>
+                {
+                    filterForm.Gender.map(value => (
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    size={window.screen.width > 1000 ? "big" : "medium"}
+                                    color="primary"
+                                    type='checkbox' value={value}
+                                    name='gender' className="checkbox"
+                                    onChange={(e) => props.filterHandle(e)}
+                                />
+                            }
+                            label={value}
+                        />
+                    ))
+                }
             </div>
             <div className='filter__line'>
                 <p>Brand</p>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Nike'
-                        name='brand'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Nike</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Puma'
-                        name='brand'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Puma</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Adidas'
-                        name='brand'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Adidas</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value='Rebook'
-                        name='brand'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label>Rebook</label>
-                </div>
+                {
+                    filterForm.Brand.map(value => (
+                        <FormControlLabel
+                            control={
+                                <Checkbox
+                                    size={window.screen.width > 1000 ? "big" : "medium"}
+                                    color="primary"
+                                    type='checkbox' value={value}
+                                    name='brand' className="checkbox"
+                                    onChange={(e) => props.filterHandle(e)}
+                                />
+                            }
+                            label={value}
+                        />
+                    ))
+                }
             </div>
             <div className='filter__line'>
                 <p>Shop by Price</p>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value={[0, 25]}
-                        name='price'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label for='0-25'>$0-$25</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value={[25, 50]}
-                        name='price'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label for='25-50'>$25-$50</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value={[50, 100]}
-                        name='price'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label for='50-100'>$50-$100</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox' value={[100, 150]}
-                        name='price'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label for='100-150'>$100-$150</label>
-                </div>
-                <div>
-                    <Checkbox
-                        size={window.screen.width > 1000 ? "small" : "medium"}
-                        type='checkbox'
-                        value={[150, 10000]}
-                        name='price'
-                        onChange={(e) => props.filterHandle(e)} />
-                    <label for='150-10000'>Over $150</label>
-                </div>
+                {filterForm.Price.map(value => (
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                size={window.screen.width > 1000 ? "big" : "medium"}
+                                color="primary"
+                                type='checkbox' value={value.split('-')}
+                                name='price' className="checkbox"
+                                onChange={(e) => props.filterHandle(e)}
+                            />
+                        }
+                        label={value.split('-').map(price => '$' + price).join('-')}
+                    />
+                ))}
             </div>
             <div className='filter__line category'>
                 {Object.keys(categories).map((category) => (

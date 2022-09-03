@@ -4,19 +4,17 @@ import '../DetailPage/detailPage.css'
 import { db } from '../firebase'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
-
+import Fade from '@material-ui/core/Fade';
 import * as product from '../helper/product'
-import filter from '../filter'
+import filter from '../helper/filter'
 
 function ProductList({ changeDetailProduct,
     addToCart, addToFavorite, filterStyle,
     closeFilter, removeFromFavorite
 }) {
-    // filter product by the filter form 
-
-    // list of product after filter
     const [products, setProducts] = useState([]);
     const [filterProduct, setFilterProduct] = useState([])
+    const [isFilter, setIsFilter] = useState(true)
 
     //get product from firebase
     const getProduct = () => {
@@ -42,13 +40,15 @@ function ProductList({ changeDetailProduct,
     const filterHandler = (filterEvent) => {
         const targetName = filterEvent.target.name;
         const targetValue = filterEvent.target.value;
-
+        setIsFilter(false)
         filter.handlerFilterFormChange(targetName, targetValue)
+        document.querySelector('.product-list-component').scrollIntoView()
+        setTimeout(() => {
+            const newProduct = product.filterProduct(products, filter.gender, filter.brand, filter.price, filter.category)
+            setFilterProduct(newProduct)
+            setIsFilter(true)
+        }, 100)
 
-        const newProduct = product.filterProduct(products, filter.gender, filter.brand, filter.price, filter.category)
-        //console.log(product.filterProduct(products, filter.gender, filter.brand, filter.price, filter.category))
-        //console.log(newProduct)
-        setFilterProduct(newProduct)
     }
 
     return (
@@ -59,19 +59,22 @@ function ProductList({ changeDetailProduct,
                     filterStyle={filterStyle}
                     closeFilter={closeFilter}
                 />
+                <Fade in={isFilter}>
+                    <div className='product-list'>
 
-                <div className='product-list'>
-                    {filterProduct?.map((product) => (
-                        <ProductItem
-                            product={product}
-                            changeDetailProduct={changeDetailProduct}
-                            addToCart={addToCart}
-                            key={product.id}
-                            addToFavorite={addToFavorite}
-                            removeFromFavorite={removeFromFavorite}
-                        />
-                    ))}
-                </div>
+                        {filterProduct?.map((product) => (
+                            <ProductItem
+                                product={product}
+                                changeDetailProduct={changeDetailProduct}
+                                addToCart={addToCart}
+                                key={product.id}
+                                addToFavorite={addToFavorite}
+                                removeFromFavorite={removeFromFavorite}
+                            />
+                        ))}
+
+                    </div>
+                </Fade>
             </div>
         </div>
     )
