@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import UIButton from '../UI/Button'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
 import { db } from '../firebase'
@@ -8,6 +9,10 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
     const handleHover = (imgSrc) => {
         setImgOrder(product.product.img.indexOf(imgSrc))
     }
+    //////
+
+
+    /////////
 
     useEffect(() => {
         db.collection('favorite').onSnapshot((snapshot) => {
@@ -25,10 +30,7 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
     const checkFavoriteList = (product) => {
         return FavoriteID.includes(product.id);
     }
-    const favoriteCheckStyle = {
-        backgroundColor: "#fff",
-        color: "#333"
-    }
+
     return (
         <div className='ProductItem' >
             <NavLink to="/product">
@@ -51,19 +53,20 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
                     }
                 </div>
                 <div className="ProductDetail_imgList_btn">
-                    <button
+                    <UIButton
                         className="like"
                         onClick={(e) => checkFavoriteList(product) ?
                             removeFromFavorite(product.id) : addToFavorite(e, product)
                         }
-                        style={checkFavoriteList(product) ? favoriteCheckStyle : {}}
                     >
                         Like
-                    </button>
+                    </UIButton>
                     <NavLink to="/product">
-                        <button onClick={() => changeDetailProduct(product)}>
+                        <UIButton
+                            onClick={() => changeDetailProduct(product)}
+                        >
                             Detail
-                        </button>
+                        </UIButton>
                     </NavLink>
                 </div>
             </div>

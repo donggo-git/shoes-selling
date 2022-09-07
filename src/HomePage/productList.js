@@ -31,8 +31,10 @@ function ProductList({ changeDetailProduct,
             setFilterProduct(tempData)
         })
     }
+
     useEffect(() => {
         getProduct();
+
         //get filter form sticky when scrolling
         const TrendingProducts = document.querySelector('.Trending_container')
         const filter = document.querySelector('.filter')

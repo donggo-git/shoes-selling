@@ -17,7 +17,6 @@ function FilterForm(props) {
         Running: false,
         Football: false
     })
-    const [isPositionFixed, setIsPositionFixed] = useState(false)
     const CategoryStyle = {
         color: 'rgb(114, 114, 114)'
     }
@@ -47,13 +46,8 @@ function FilterForm(props) {
         setCategories(newCategories)
 
     }
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 1000) setIsPositionFixed(true)
-            else setIsPositionFixed(false)
-        });
-        //return () => window.removeEventListener("scroll")
-    }, [])
+
+
     return (
         <div className={`filter`}
             style={window.screen.width < 1000 ? props.filterStyle : {}}
