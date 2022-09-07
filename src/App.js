@@ -30,32 +30,7 @@ function App() {
       setCartLength(cartQuantity);
     })
   }, [])
-  const addToCart = (product, img, e) => {
-    e.preventDefault()
 
-    const cartList = db.collection("cart").doc(product.id + "_" + img)
-    console.log(product.id + "_" + img);
-    cartList.get()
-      .then(doc => {
-        if (!doc.exists) {
-          cartList.set({
-            name: product.product.name,
-            description: product.product.description,
-            gender: product.product.gender,
-            category: product.product.category,
-            img: product.product.img,
-            price: product.product.price,
-            quantity: 1
-          })
-        }
-        else {
-          cartList.update({
-            quantity: doc.data().quantity + 1
-          })
-        }
-      })
-    //old way
-  }
   const removeItem = (productID) => {
     db.collection("cart").doc(productID).delete();
   }
@@ -87,26 +62,6 @@ function App() {
   }
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
-    console.log(detailProduct)
-  }
-  //functionality for favorite
-  const addToFavorite = (e, product) => {
-    const favoriteList = db.collection("favorite").doc(product.id);
-    favoriteList.get()
-      .then(doc => {
-        if (!doc.exists) {
-          db.collection("favorite").doc(product.id).set({
-            name: product.product.name,
-            description: product.product.description,
-            gender: product.product.gender,
-            category: product.product.category,
-            img: product.product.img,
-            price: product.product.price
-          })
-        }
-        else return;
-      })
-    e.preventDefault();
   }
   const removeFromFavorite = (id) => {
 
@@ -114,6 +69,37 @@ function App() {
     db.collection("favorite").doc(id).delete();
 
   }
+
+  ///////
+  const addProduct = function (product, img = '', collection) {
+    //if collection is cart this method will add product to cart
+    //if collection is favorite this method will add product to favorite
+    const productList = db.collection(`${collection}`).doc(`${img != '' ? product.id + "_" + img : product.id}`)
+    console.log(product.id + "_" + img);
+    console.log(product.product.img[img])
+    productList.get()
+      .then(doc => {
+        if (!doc.exists) {
+          productList.set({
+            name: product.product.name,
+            description: product.product.description,
+            gender: product.product.gender,
+            category: product.product.category,
+            //for cart there only one img per product
+            //for favorite there are multiple img per product
+            img: img !== '' ? product.product.img[img] : product.product.img,
+            price: product.product.price,
+            quantity: 1
+          })
+        }
+        else {
+          productList.update({
+            quantity: doc.data().quantity + 1
+          })
+        }
+      })
+  }
+
   return (
     <div>
       <Router>
@@ -142,17 +128,21 @@ function App() {
             <CSSTransition timeout={150} classNames='fade' key={location.key}>
               <Switch >
                 <Route path='/shoes-selling/' component={() => <ProductPage
-                  addToCart={addToCart} changeDetailProduct={changeDetailProduct}
-                  setDetailProduct={setDetailProduct} addToFavorite={addToFavorite}
+                  changeDetailProduct={changeDetailProduct}
+                  setDetailProduct={setDetailProduct}
                   removeFromFavorite={removeFromFavorite}
+                  addProduct={addProduct}
                 />} />
                 <Route path='/cart' component={() => <CartPage
                   removeItem={removeItem} changeDetailProduct={changeDetailProduct}
-                  addQuantity={addQuantity} minusQuantity={minusQuantity} addToFavorite={addToFavorite} />} />
+                  addQuantity={addQuantity} minusQuantity={minusQuantity}
+                  addProduct={addProduct} />} />
                 <Route path='/product' component={() => <DetailPage
-                  products={detailProduct} addToCart={addToCart}
-                  minusQuantity={minusQuantity} addToFavorite={addToFavorite}
-                  removeFromFavorite={removeFromFavorite} />} />
+                  products={detailProduct}
+                  minusQuantity={minusQuantity}
+                  removeFromFavorite={removeFromFavorite}
+                  addProduct={addProduct}
+                />} />
                 <Route path="/Favorite" component={() => <Favorite
                   setDetailProduct={setDetailProduct}
                   removeFromFavorite={removeFromFavorite}

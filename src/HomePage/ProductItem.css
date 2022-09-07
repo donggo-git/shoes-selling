@@ -73,11 +73,16 @@
     font-size: 15px;
 }
 
-.like {
+.like-btn {
     background-color: #03a9f4 !important;
     color: white !important;
-    height: 100%;
-    border: 1.5px #03a9f4 solid !important;
+    transition: all 0.2s;
+    width: 50%;
+}
+
+.detail-btn {
+    background-color: rgb(229, 229, 229) !important;
+    width: 50%;
     transition: all 0.2s;
 }
 

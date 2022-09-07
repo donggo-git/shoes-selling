@@ -3,7 +3,7 @@ import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
 import { db } from 'C:/project/shoes_selling/src/firebase'
 
-function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite }) {
+function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, addProduct }) {
     const [mainImg, setMainImg] = useState(0)
     const [isSlide, setIsSlide] = useState(true)
     const [FavoriteID, setFavoriteID] = useState([]);
@@ -59,10 +59,10 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite }) 
                         }
                     </div>
                     <p className='product_detail_description'>{products?.product?.description}</p>
-                    <button onClick={(e) => addToCart(products, mainImg, e)} className="AddToCart">Add to cart</button>
+                    <button onClick={(e) => addProduct(products, mainImg, 'cart')} className="AddToCart">Add to cart</button>
                     <button
                         onClick={(e) => checkFavoriteList(products) ?
-                            removeFromFavorite(products.id) : addToFavorite(e, products)
+                            removeFromFavorite(products.id) : addProduct(products, '', 'favorite')
                         }
                         style={checkFavoriteList(products) ? favoriteCheckStyle : {}}
                         className="like">

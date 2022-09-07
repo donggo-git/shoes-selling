@@ -34,7 +34,7 @@ function Cart(props) {
                         timeout={500}
                     >
                         <div className='cart-item'>
-                            <img src={item?.product?.img[item.id.split("_")[1]]} />
+                            <img src={item?.product?.img} />
                             <div className='cart-item-detail-container'>
                                 <div className='cart-item-detail'>
                                     <NavLink to="/product">
@@ -61,7 +61,7 @@ function Cart(props) {
                                     </div>
                                     <p className='price'>${item.product.price}</p>
                                 </div>
-                                <button onClick={(e) => props.addToFavorite(e, item)}>Move to Favorite</button>
+                                <button onClick={(e) => props.addProduct(item, '', 'favorite')}>Move to Favorite</button>
                                 <button onClick={() => props.removeItem(item.id, item)}>Remove</button>
                             </div>
                         </div>

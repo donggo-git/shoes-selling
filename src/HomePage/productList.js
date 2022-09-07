@@ -10,7 +10,8 @@ import filter from '../helper/filter'
 
 function ProductList({ changeDetailProduct,
     addToCart, addToFavorite, filterStyle,
-    closeFilter, removeFromFavorite
+    closeFilter, removeFromFavorite,
+    addProduct
 }) {
     const [products, setProducts] = useState([]);
     const [filterProduct, setFilterProduct] = useState([])
@@ -40,7 +41,6 @@ function ProductList({ changeDetailProduct,
         const filter = document.querySelector('.filter')
         const stickyFilterForm = function (entries) {
             const [entry] = entries
-            console.log(entry.isIntersecting)
             //if passing out the trending products filter will sticky
             if (!entry.isIntersecting) filter.classList.add('filter_fixed')
             //if not, not sticky
@@ -90,6 +90,7 @@ function ProductList({ changeDetailProduct,
                                 key={product.id}
                                 addToFavorite={addToFavorite}
                                 removeFromFavorite={removeFromFavorite}
+                                addProduct={addProduct}
                             />
                         ))}
 

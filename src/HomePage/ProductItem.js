@@ -3,7 +3,7 @@ import UIButton from '../UI/Button'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
 import { db } from '../firebase'
-function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFavorite }) {
+function ProductItem({ product, changeDetailProduct, removeFromFavorite, addProduct }) {
     const [imgOrder, setImgOrder] = useState(0)
     const [FavoriteID, setFavoriteID] = useState([]);
     const handleHover = (imgSrc) => {
@@ -52,25 +52,27 @@ function ProductItem({ product, changeDetailProduct, addToFavorite, removeFromFa
                         ))
                     }
                 </div>
-                <div className="ProductDetail_imgList_btn">
+                <React.Fragment>
                     <UIButton
-                        className="like"
-                        onClick={(e) => checkFavoriteList(product) ?
-                            removeFromFavorite(product.id) : addToFavorite(e, product)
+                        className="like-btn"
+                        onClickHandler={() => checkFavoriteList(product) ?
+                            removeFromFavorite(product.id) : addProduct(product, '', 'favorite')
                         }
+
                     >
                         Like
                     </UIButton>
                     <NavLink to="/product">
                         <UIButton
-                            onClick={() => changeDetailProduct(product)}
+                            className='detail-btn'
+                            onClickHandler={() => changeDetailProduct(product)}
                         >
                             Detail
                         </UIButton>
                     </NavLink>
-                </div>
+                </React.Fragment>
             </div>
-        </div>
+        </div >
     )
 }
 
