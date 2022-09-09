@@ -9,14 +9,14 @@ import * as product from '../helper/product'
 import filter from '../helper/filter'
 
 function ProductList({ changeDetailProduct,
-    addToCart, addToFavorite, filterStyle,
+    addToFavorite, filterStyle,
     closeFilter, removeFromFavorite,
-    addProduct
+    addProduct, products
 }) {
-    const [products, setProducts] = useState([]);
-    const [filterProduct, setFilterProduct] = useState([])
+    const [filterProduct, setFilterProduct] = useState([...products])
     const [isFilter, setIsFilter] = useState(true)
     //get product from firebase
+    /*
     const getProduct = () => {
 
         db.collection('products').onSnapshot((snapshot) => {
@@ -32,9 +32,9 @@ function ProductList({ changeDetailProduct,
             setFilterProduct(tempData)
         })
     }
-
+*/
     useEffect(() => {
-        getProduct();
+        //getProduct();
 
         //get filter form sticky when scrolling
         const TrendingProducts = document.querySelector('.Trending_container')
@@ -86,7 +86,6 @@ function ProductList({ changeDetailProduct,
                             <ProductItem
                                 product={product}
                                 changeDetailProduct={changeDetailProduct}
-                                addToCart={addToCart}
                                 key={product.id}
                                 addToFavorite={addToFavorite}
                                 removeFromFavorite={removeFromFavorite}

@@ -14,21 +14,24 @@ function App() {
   const _ = require('lodash');
   const [detailProduct, setDetailProduct] = useState()
   const [cartLength, setCartLength] = useState(0);
+  const [favoriteLength, setFavoriteLength] = useState(0)
+  const [cart, setCart] = useState([])
+  const [products, setProducts] = useState([])
+  const [favorite, setFavorite] = useState([])
 
   // functionality for cart
   //get cart length
   useEffect(() => {
-    db.collection('cart').onSnapshot((snapshot) => {
-      let tempData = []
-      tempData = snapshot.docs.map((doc) => (
-        {
-          id: doc.id,
-          product: doc.data()
-        }
-      ))
-      let cartQuantity = tempData.reduce((acc, product) => acc += product.product.quantity, 0);
-      setCartLength(cartQuantity);
-    })
+    //get all of products
+    getProduct('products')
+    //get all products in cart
+    getProduct('cart')
+    //get all products in favorite
+    getProduct('favorite')
+    //get total quantity of all items in cart
+    setCartLength(getTotalProductsQuantity(cart))
+    //get total quantity of all items in favorite
+    setFavoriteLength(getTotalProductsQuantity(favorite))
   }, [])
 
   const removeItem = (productID) => {
@@ -75,8 +78,6 @@ function App() {
     //if collection is cart this method will add product to cart
     //if collection is favorite this method will add product to favorite
     const productList = db.collection(`${collection}`).doc(`${img != '' ? product.id + "_" + img : product.id}`)
-    console.log(product.id + "_" + img);
-    console.log(product.product.img[img])
     productList.get()
       .then(doc => {
         if (!doc.exists) {
@@ -98,6 +99,30 @@ function App() {
           })
         }
       })
+  }
+  ///
+  const getProduct = (collection) => {
+    db.collection(collection).onSnapshot((snapshot) => {
+      let tempData = []
+      tempData = snapshot.docs.map((doc) => (
+        {
+          id: doc.id,
+          product: doc.data()
+        }
+      ))
+      switch (collection) {
+        case "products":
+          setProducts(tempData);
+          break;
+        case "cart":
+          setCart(tempData);
+        case "favorite":
+          setFavorite(tempData)
+      }
+    })
+  }
+  const getTotalProductsQuantity = (collectionName) => {
+    return collectionName.reduce((acc, product) => acc += product.product.quantity, 0)
   }
 
   return (
@@ -132,6 +157,7 @@ function App() {
                   setDetailProduct={setDetailProduct}
                   removeFromFavorite={removeFromFavorite}
                   addProduct={addProduct}
+                  products={products}
                 />} />
                 <Route path='/cart' component={() => <CartPage
                   removeItem={removeItem} changeDetailProduct={changeDetailProduct}

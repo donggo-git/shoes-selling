@@ -59,6 +59,7 @@ function ProductPage(props) {
                     removeFromFavorite={props.removeFromFavorite}
                     Products={props.Products}
                     addProduct={props.addProduct}
+
                 />
             </div>
         </div>
