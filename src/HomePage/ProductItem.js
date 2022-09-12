@@ -3,15 +3,15 @@ import UIButton from '../UI/Button'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
 import { db } from '../firebase'
-function ProductItem({ product, changeDetailProduct, removeFromFavorite, addProduct }) {
+import { addProduct } from '../helper/controller'
+
+function ProductItem({ product, changeDetailProduct, removeFromFavorite }) {
     const [imgOrder, setImgOrder] = useState(0)
     const [FavoriteID, setFavoriteID] = useState([]);
     const handleHover = (imgSrc) => {
         setImgOrder(product.product.img.indexOf(imgSrc))
     }
     //////
-
-
     /////////
 
     useEffect(() => {
@@ -29,6 +29,10 @@ function ProductItem({ product, changeDetailProduct, removeFromFavorite, addProd
 
     const checkFavoriteList = (product) => {
         return FavoriteID.includes(product.id);
+    }
+
+    const onClickHandler = () => {
+        addProduct(product, '', 'favorite')
     }
 
     return (
@@ -55,9 +59,7 @@ function ProductItem({ product, changeDetailProduct, removeFromFavorite, addProd
                 <React.Fragment>
                     <UIButton
                         className="like-btn"
-                        onClickHandler={() => checkFavoriteList(product) ?
-                            removeFromFavorite(product.id) : addProduct(product, '', 'favorite')
-                        }
+                        onClickHandler={onClickHandler}
 
                     >
                         Like

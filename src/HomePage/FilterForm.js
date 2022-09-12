@@ -58,6 +58,7 @@ function FilterForm(props) {
                 {
                     filterForm.Gender.map(value => (
                         <FormControlLabel
+                            key={value}
                             control={
                                 <Checkbox
                                     size={window.screen.width > 1000 ? "big" : "medium"}
@@ -87,6 +88,7 @@ function FilterForm(props) {
                                 />
                             }
                             label={value}
+                            key={value}
                         />
                     ))
                 }
@@ -105,6 +107,7 @@ function FilterForm(props) {
                             />
                         }
                         label={value.split('-').map(price => '$' + price).join('-')}
+                        key={value}
                     />
                 ))}
             </div>

@@ -4,22 +4,21 @@ import "./Favorite.css"
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import { db } from '../firebase';
+import * as controller from '../helper/controller'
+
 
 function Favorite({ setDetailProduct, removeFromFavorite }) {
     const [favoriteList, setFavoriteList] = useState([]);
     //get favorite list
     useEffect(() => {
-        db.collection('favorite').onSnapshot((snapshot) => {
-            let tempData = []
-            tempData = snapshot.docs.map((doc) => (
-                {
-                    id: doc.id,
-                    product: doc.data()
-                }
-            ))
-            setFavoriteList(tempData);
-        })
+        setFavoriteList(controller.getFavoriteList())
     }, [])
+
+    const removeHandler = (product) => {
+        controller.removeProduct(product, 'favorite')
+        const newFavorite = controller.getFavoriteList()
+        setFavoriteList([...newFavorite])
+    }
 
     return (
         <div className='favorite_page'>
@@ -27,7 +26,7 @@ function Favorite({ setDetailProduct, removeFromFavorite }) {
                 <h2>Your favorite list ({favoriteList.length})</h2>
 
                 <div className='favorite_list'>
-                    {favoriteList.map(item => (
+                    {controller.getFavoriteList().map(item => (
                         <Fade
                             in={item.id}
                             timeout={600}
@@ -48,7 +47,7 @@ function Favorite({ setDetailProduct, removeFromFavorite }) {
                                         variant="outlined"
                                         size='small'
                                         className='favoriteDelete'
-                                        onClick={() => removeFromFavorite(item.id)}>
+                                        onClick={() => removeHandler(item)}>
                                         Remove
                                     </button>
                                 </div>

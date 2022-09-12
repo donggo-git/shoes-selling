@@ -1,3 +1,7 @@
+import cart from "./cart";
+import favorite from "./favorite";
+import { db } from "../firebase";
+
 
 const _filterByGender = function (product, genderList) {
     if (genderList.length == 0) return product;
@@ -31,4 +35,35 @@ export const filterProduct = function (product, genderList, brandList, priceList
     newProduct = _filterByCategories(newProduct, category)
 
     return newProduct
+}
+
+export const getProduct = (collection, handler) => {
+
+    db.collection(collection).onSnapshot((snapshot) => {
+        let tempData = []
+        tempData = snapshot.docs.map((doc) => (
+            {
+                id: doc.id,
+                product: doc.data()
+            }
+        ))
+        handler([...tempData])
+    })
+}
+
+export const addProduct = (product, img = '', collection) => {
+    if (collection === 'cart')
+        cart.addToList(product, img)
+    if (collection === 'favorite')
+        favorite.addToList(product, img)
+}
+export const removeProduct = (product, collection) => {
+    if (collection === 'cart')
+        cart.removeFromList(product)
+    if (collection === 'favorite')
+        favorite.removeFromList(product)
+}
+
+export const getFavoriteList = () => {
+    return favorite._list
 }

@@ -23,6 +23,7 @@ function App() {
   //get cart length
   useEffect(() => {
     //get all of products
+    /*
     getProduct('products')
     //get all products in cart
     getProduct('cart')
@@ -31,7 +32,7 @@ function App() {
     //get total quantity of all items in cart
     setCartLength(getTotalProductsQuantity(cart))
     //get total quantity of all items in favorite
-    setFavoriteLength(getTotalProductsQuantity(favorite))
+    setFavoriteLength(getTotalProductsQuantity(favorite))*/
   }, [])
 
   const removeItem = (productID) => {
@@ -67,8 +68,6 @@ function App() {
     setDetailProduct(detailProduct)
   }
   const removeFromFavorite = (id) => {
-
-    console.log(id);
     db.collection("favorite").doc(id).delete();
 
   }
@@ -99,6 +98,12 @@ function App() {
           })
         }
       })
+    if (collection == 'cart') {
+      setCartLength(getTotalProductsQuantity(cart))
+    }
+    if (collection == 'favorite') {
+      setFavoriteLength(getTotalProductsQuantity(favorite))
+    }
   }
   ///
   const getProduct = (collection) => {
@@ -132,7 +137,7 @@ function App() {
           <ul>
             <img src="https://images.template.net/wp-content/uploads/2016/08/08090604/Soccer-Shoe-Logo.jpg" height="50px" />
             <NavLink to='/shoes-selling/' className='nav__homePage'>Home</NavLink>
-            <NavLink to="/Favorite"><li>Favorite</li></NavLink>
+            <NavLink to="/Favorite"><li>Favorite ({favoriteLength})</li></NavLink>
 
           </ul>
 

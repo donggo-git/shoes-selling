@@ -71,8 +71,8 @@ function TrendingProducts({ changeDetailProduct }) {
                 <div className="Trending_slides"
                     style={styledTrending}>
                     {
-                        TrendingProduct.map(slicePack => (
-                            <div className='Trending_slide'>
+                        TrendingProduct.map((slicePack, slideIndex) => (
+                            <div className='Trending_slide' key={slideIndex}>
                                 {
                                     slicePack.map(product => (
                                         <NavLink to="/product" key={product.id}>
