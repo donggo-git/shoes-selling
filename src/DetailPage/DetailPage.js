@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Button from '../UI/Button'
 import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
 import { db } from 'C:/project/shoes_selling/src/firebase'
@@ -13,7 +14,7 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, ad
         setTimeout(() => setIsSlide(true), 200)
     }
     const styleImgList = {
-        border: '1px solid black'
+        border: '1px solid #03a9f4'
     }
     //get Favorite list ID
     useEffect(() => {
@@ -32,10 +33,7 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, ad
     const checkFavoriteList = (products) => {
         return FavoriteID.includes(products?.id);
     }
-    const favoriteCheckStyle = {
-        backgroundColor: "#fff",
-        color: "#333"
-    }
+
     return (
         <div className="detailPage">
             <div className="mainImg_container">
@@ -59,15 +57,14 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, ad
                         }
                     </div>
                     <p className='product_detail_description'>{products?.product?.description}</p>
-                    <button onClick={(e) => addProduct(products, mainImg, 'cart')} className="AddToCart">Add to cart</button>
-                    <button
-                        onClick={(e) => checkFavoriteList(products) ?
+                    <Button onClickHandler={(e) => addProduct(products, mainImg, 'cart')} className="Detail__btn--addToCart">Add to cart</Button>
+                    <Button
+                        onClickHandler={() => checkFavoriteList(products) ?
                             removeFromFavorite(products.id) : addProduct(products, '', 'favorite')
                         }
-                        style={checkFavoriteList(products) ? favoriteCheckStyle : {}}
-                        className="like">
+                        className="Detail__btn--like">
                         Like
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>
