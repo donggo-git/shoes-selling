@@ -67,3 +67,4 @@ export const removeProduct = (product, collection) => {
 export const getFavoriteList = () => {
     return favorite._list
 }
+export { cart, favorite }

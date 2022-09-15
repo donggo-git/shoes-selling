@@ -16,7 +16,7 @@ class list {
         }
         else {
             this._list.push({
-                id: product.id + "_" + img,
+                id: img ? product.id + "_" + img : product.id,
                 product: {
                     name: product.product.name,
                     description: product.product.description,

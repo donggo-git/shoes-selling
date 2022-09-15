@@ -7,8 +7,38 @@ import Button from '../UI/Button'
 import * as controller from '../helper/controller'
 
 
-function Favorite({ setDetailProduct, removeFromFavorite }) {
+function Favorite({ setDetailProduct, discountCode }) {
     const [favoriteList, setFavoriteList] = useState([]);
+    const modalContent = function () {
+        switch (discountCode) {
+            case 0:
+                return (
+                    <React.Fragment>
+                        <h1>
+                            <span></span>
+                            Oops, unfortunately you're not qualify for any discount code right now
+                        </h1>
+                        <p>
+                            Sorry there isn't any discount code for you. Better luck next time!
+                        </p>
+                    </React.Fragment>
+                )
+            case 1:
+            case 2: return (
+                <React.Fragment>
+                    <h1>
+                        <span></span>
+                        Congrats, you're qualify to one of our discount code
+                    </h1>
+                    <p>
+                        Your discount code is: discount{discountCode * 10}.
+                        To use it please enter the code to your cart before check out
+                    </p>
+                </React.Fragment>)
+        }
+    }
+
+
     //get favorite list
     useEffect(() => {
         setFavoriteList(controller.getFavoriteList())
