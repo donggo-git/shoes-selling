@@ -3,22 +3,35 @@ import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Summary from '../Summary'
-import { db } from 'C:/project/shoes_selling/src/firebase'
+import * as controller from '../helper/controller'
+
 function Cart(props) {
     const [cartList, setCartList] = useState([])
     useEffect(() => {
-        db.collection('cart').onSnapshot((snapshot) => {
-            let tempData = []
-            tempData = snapshot.docs.map((doc) => (
-                {
-                    id: doc.id,
-                    product: doc.data()
-                }
-            ))
-            setCartList(tempData);
-        })
+        setCartList([...controller.getCartList()])
     }, [])
-    let subtotal = cartList.reduce((sum, item) => sum + item.product.price * item.product.quantity, 0);
+    let subtotal = controller.cart.getTotal(cartList)
+
+
+    const handlerOnClick = (item, methodName) => {
+        switch (methodName) {
+            case 'add to favorite':
+                controller.addProduct(item, '', 'favorite');
+                break;
+            case 'remove from cart':
+                controller.removeProduct(item, 'cart');
+                break;
+            case 'increase quantity':
+                controller.increaseQuantity(item, 'cart')
+                break;
+            case 'decrease quantity':
+                controller.decreaseQuantity(item, 'cart')
+                break;
+            default: return;
+        }
+        setCartList([...controller.getCartList()])
+    }
+
     const handleProductCallBack = (item) => {
         let updateItem = { ...item }
         updateItem.id = updateItem.id.split("_")[0]
@@ -53,16 +66,16 @@ function Cart(props) {
                                     </select>
                                     <div className="quantity-container">
                                         <p>quantity</p>
-                                        <button className="reduce-quantity" onClick={() => props.minusQuantity(item)}>-</button>
+                                        <button className="reduce-quantity" onClick={() => handlerOnClick(item, 'decrease quantity')}>-</button>
                                         <input
                                             type="text" for="quantity" value={item.product.quantity}
                                             onChange={(input) => props.handleQuantity(input)} />
-                                        <button onClick={(e) => props.addQuantity(item, e)}>+</button>
+                                        <button onClick={() => handlerOnClick(item, 'increase quantity')}>+</button>
                                     </div>
                                     <p className='price'>${item.product.price}</p>
                                 </div>
-                                <button onClick={(e) => props.addProduct(item, '', 'favorite')}>Move to Favorite</button>
-                                <button onClick={() => props.removeItem(item.id, item)}>Remove</button>
+                                <button onClick={() => handlerOnClick(item, 'add to favorite')}>Move to Favorite</button>
+                                <button onClick={() => handlerOnClick(item, 'remove from cart')}>Remove</button>
                             </div>
                         </div>
                     </Fade>

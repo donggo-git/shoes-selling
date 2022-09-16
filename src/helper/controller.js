@@ -67,4 +67,21 @@ export const removeProduct = (product, collection) => {
 export const getFavoriteList = () => {
     return favorite._list
 }
+
+export const getCartList = () => {
+    return cart._list;
+}
+
+export const increaseQuantity = (product, collection) => {
+    if (collection === 'cart')
+        cart.increaseQuantity(product)
+    if (collection === 'favorite')
+        favorite.increaseQuantity(product)
+}
+export const decreaseQuantity = (product, collection) => {
+    if (collection === 'cart')
+        cart.decreaseQuantity(product)
+    if (collection === 'favorite')
+        favorite.decreaseQuantity(product)
+}
 export { cart, favorite }

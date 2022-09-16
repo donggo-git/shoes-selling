@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Button from '../UI/Button'
 import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
-import { db } from 'C:/project/shoes_selling/src/firebase'
+import * as controller from '../helper/controller'
 
-function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, addProduct }) {
+function DetailPage({ products }) {
     const [mainImg, setMainImg] = useState(0)
     const [isSlide, setIsSlide] = useState(true)
-    const [FavoriteID, setFavoriteID] = useState([]);
     const changeMainImg = (srcImg) => {
         setIsSlide(false)
         setMainImg(products.product.img.indexOf(srcImg))
@@ -17,23 +16,6 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, ad
         border: '1px solid #03a9f4'
     }
     //get Favorite list ID
-    useEffect(() => {
-        db.collection('favorite').onSnapshot((snapshot) => {
-            let tempData = []
-            tempData = snapshot.docs.map((doc) => (
-                {
-                    id: doc.id,
-                    product: doc.data()
-                }
-            ))
-            setFavoriteID(tempData.map(product => product.id));
-        })
-    }, [])
-
-    const checkFavoriteList = (products) => {
-        return FavoriteID.includes(products?.id);
-    }
-
     return (
         <div className="detailPage">
             <div className="mainImg_container">
@@ -57,12 +39,16 @@ function DetailPage({ products, addToCart, addToFavorite, removeFromFavorite, ad
                         }
                     </div>
                     <p className='product_detail_description'>{products?.product?.description}</p>
-                    <Button onClickHandler={(e) => addProduct(products, mainImg, 'cart')} className="Detail__btn--addToCart">Add to cart</Button>
                     <Button
-                        onClickHandler={() => checkFavoriteList(products) ?
-                            removeFromFavorite(products.id) : addProduct(products, '', 'favorite')
-                        }
-                        className="Detail__btn--like">
+                        onClickHandler={(e) => controller.addProduct(products, mainImg, 'cart')}
+                        className="Detail__btn--addToCart"
+                    >
+                        Add to cart
+                    </Button>
+                    <Button
+                        onClickHandler={() => controller.addProduct(products, '', 'favorite')}
+                        className="Detail__btn--like"
+                    >
                         Like
                     </Button>
                 </div>

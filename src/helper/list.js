@@ -42,7 +42,7 @@ class list {
     decreaseQuantity = function (product) {
         const item = this._list[this.findItemIndex(product)]
         //if quantity of product is decreased to zero remove product from list
-        if (item.product.quantity > 0)
+        if (item.product.quantity > 1)
             item.product.quantity -= 1
         else
             this.removeFromList(product)

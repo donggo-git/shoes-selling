@@ -11,7 +11,5 @@ class cart extends list {
     discount20 = function (products) {
         return Math.round(this.getTotal(products) * 20 / 100, 2)
     }
-
-
 }
 export default new cart()
