@@ -1,19 +1,22 @@
 import React from 'react'
-import './modal.css'
+import './Modal.css'
 import { AiOutlineClose } from 'react-icons/ai'
+import Button from './Button'
 
-function FavoriteModal(props) {
+function Modal(props) {
     return (
         <React.Fragment>
             <div className='modal__content'>
                 {/**close btn */}
-                <AiOutlineClose />
+                <Button className='modal__button' onClickHandler={props.closeModal}>
+                    <AiOutlineClose />
+                </Button>
                 {/*title */}
-
+                {props.children}
             </div>
-            <div className='modal'></div>
-        </React.Fragment>
+            <div className='modal' onClick={props.closeModal}></div>
+        </React.Fragment >
     )
 }
 
-export default FavoriteModal
+export default Modal

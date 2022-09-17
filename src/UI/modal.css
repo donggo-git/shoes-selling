@@ -5,12 +5,52 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    animation: modalAppear 0.4s ease-in forwards;
 }
 
 .modal__content {
     position: fixed;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
-    width: 80%;
+    width: 50%;
+    padding: 20px;
+    z-index: 10;
+    border-radius: 10px;
+    animation: modalAppear 0.4s ease-in forwards;
+}
+
+.modal__content>h1 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.modal__content>h1 span {
+    color: #027DEF;
+}
+
+.modal__content>p {
+    font-size: 18px;
+    margin: 30px 0;
+}
+
+.modal__content>p>span {
+    border-bottom: 1px solid black;
+}
+
+.modal__button:hover {
+    background-color: white !important;
+}
+
+@keyframes modalAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
