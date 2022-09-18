@@ -47,6 +47,9 @@ class list {
         else
             this.removeFromList(product)
     }
+    listLength = function () {
+        return this._list.length;
+    }
 }
 
 export default list

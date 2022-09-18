@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ProductList from './productList'
 import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
+import Nav from '../UI/Nav'
 import { BsFilterLeft } from 'react-icons/bs'
 import Fade from '@material-ui/core/Fade'
 import './ProductPage.css'
@@ -32,37 +33,40 @@ function ProductPage(props) {
         setIsFilterAnimate(false)
     }
     return (
-        <div className='page'>
-            <ProductHeader />
-            <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
-            <h2 className="title product-title">Product</h2>
-            <div className="product">
-                <div
-                    style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
-                    onClick={() => openFilter()}
-                    className={`filter_responsive_btn 
+        <React.Fragment>
+            <Nav cartLength={0} favoriteLength={0} changeDetailProduct={props.changeDetailProduct} />
+            <div className='page'>
+                <ProductHeader />
+                <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
+                <h2 className="title product-title">Product</h2>
+                <div className="product">
+                    <div
+                        style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
+                        onClick={() => openFilter()}
+                        className={`filter_responsive_btn 
                 ${isFixed & window.screen.width < 1000 ? 'filter_responsive_btn_fixed' : ''}`}
-                >
-                    <p>Filter </p>
-                    <BsFilterLeft />
-                </div>
-                <Fade in={isFilterAnimate} timeout={300}>
-                    <div className="modal"></div>
-                </Fade>
-                <ProductList
-                    products={props.products}
-                    addToCart={props.addToCart}
-                    changeDetailProduct={props.changeDetailProduct}
-                    addToFavorite={props.addToFavorite}
-                    closeFilter={closeFilter}
-                    filterStyle={filterStyle}
-                    removeFromFavorite={props.removeFromFavorite}
-                    Products={props.Products}
-                    addProduct={props.addProduct}
+                    >
+                        <p>Filter </p>
+                        <BsFilterLeft />
+                    </div>
+                    <Fade in={isFilterAnimate} timeout={300}>
+                        <div className="modal"></div>
+                    </Fade>
+                    <ProductList
+                        products={props.products}
+                        addToCart={props.addToCart}
+                        changeDetailProduct={props.changeDetailProduct}
+                        addToFavorite={props.addToFavorite}
+                        closeFilter={closeFilter}
+                        filterStyle={filterStyle}
+                        removeFromFavorite={props.removeFromFavorite}
+                        Products={props.Products}
+                        addProduct={props.addProduct}
 
-                />
+                    />
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 

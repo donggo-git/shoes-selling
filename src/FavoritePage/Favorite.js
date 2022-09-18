@@ -5,10 +5,11 @@ import Fade from '@material-ui/core/Fade'
 import Button from '../UI/Button'
 import * as controller from '../helper/controller'
 import Modal from '../UI/Modal'
+import Nav from '../UI/Nav'
 import { AiFillGift } from 'react-icons/ai'
 import { FcCancel } from 'react-icons/fc'
 
-function Favorite({ setDetailProduct, discountCode }) {
+function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     const [favoriteList, setFavoriteList] = useState([]);
     const [isModalShow, setIsModalShow] = useState(true)
     const modalContent = function () {
@@ -55,48 +56,51 @@ function Favorite({ setDetailProduct, discountCode }) {
     }
 
     return (
-        <div className='favorite_page'>
-            <div className="favorite_container">
-                <h2>Your favorite list ({favoriteList.length})</h2>
+        <React.Fragment>
+            <Nav cartLength={0} favoriteLength={0} changeDetailProduct={changeDetailProduct} />
+            <div className='favorite_page'>
+                <div className="favorite_container">
+                    <h2>Your favorite list ({favoriteList.length})</h2>
 
-                <div className='favorite_list'>
-                    {controller.getFavoriteList().map(item => (
-                        <Fade
-                            in={item.id}
-                            timeout={600}
-                        >
-                            <div className='favorite_item'>
-                                <div className="favorite_img_container">
-                                    <NavLink to="./product">
-                                        <img src={item.product.img[0]} height="100%" width="100%"
-                                            onClick={() => setDetailProduct(item)} />
-                                    </NavLink>
+                    <div className='favorite_list'>
+                        {controller.getFavoriteList().map(item => (
+                            <Fade
+                                in={item.id}
+                                timeout={600}
+                            >
+                                <div className='favorite_item'>
+                                    <div className="favorite_img_container">
+                                        <NavLink to="./product">
+                                            <img src={item.product.img[0]} height="100%" width="100%"
+                                                onClick={() => setDetailProduct(item)} />
+                                        </NavLink>
+                                    </div>
+                                    <div className="favorite_item_content">
+                                        <NavLink to="./product">
+                                            <h2 onClick={() => setDetailProduct(item)}>{item.product.name}</h2>
+                                        </NavLink>
+
+                                        <Button
+                                            color="secondary"
+                                            variant="outlined"
+                                            size='small'
+                                            className='favoriteDelete'
+                                            onClickHandler={() => removeHandler(item)}>
+                                            Remove
+                                        </Button>
+
+                                    </div>
                                 </div>
-                                <div className="favorite_item_content">
-                                    <NavLink to="./product">
-                                        <h2 onClick={() => setDetailProduct(item)}>{item.product.name}</h2>
-                                    </NavLink>
-
-                                    <Button
-                                        color="secondary"
-                                        variant="outlined"
-                                        size='small'
-                                        className='favoriteDelete'
-                                        onClickHandler={() => removeHandler(item)}>
-                                        Remove
-                                    </Button>
-
-                                </div>
-                            </div>
-                        </Fade>
-                    ))}
+                            </Fade>
+                        ))}
+                    </div>
                 </div>
-            </div>
-            {
-                isModalShow &&
-                <Modal closeModal={handlerModal}>{modalContent()}</Modal>
-            }
-        </div >
+                {
+                    isModalShow &&
+                    <Modal closeModal={handlerModal}>{modalContent()}</Modal>
+                }
+            </div >
+        </React.Fragment>
     )
 }
 

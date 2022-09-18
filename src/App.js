@@ -5,7 +5,6 @@ import CartPage from './Cart/Cart'
 import Favorite from './FavoritePage/Favorite';
 import DetailPage from './DetailPage/DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import { IoCartOutline } from 'react-icons/io5'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import SearchingProduct from './Searching-Product/SearchingProduct';
 
@@ -37,23 +36,6 @@ function App() {
   return (
     <div>
       <Router>
-        <nav>
-          <ul>
-            <img src="https://images.template.net/wp-content/uploads/2016/08/08090604/Soccer-Shoe-Logo.jpg" height="50px" />
-            <NavLink to='/shoes-selling/' className='nav__homePage'>Home</NavLink>
-            <NavLink to="/Favorite"><li>Favorite ({favoriteLength})</li></NavLink>
-
-          </ul>
-
-          <SearchingProduct changeDetailProduct={changeDetailProduct} />
-
-          <NavLink to='/cart'>
-            <div className='nav__cart '>
-              <IoCartOutline className='cart_icon' />
-              <div className='nav__cart__amount'>{cartLength}</div>
-            </div>
-          </NavLink>
-        </nav>
 
 
 
@@ -70,9 +52,11 @@ function App() {
                 />} />
                 <Route path='/product' component={() => <DetailPage
                   products={detailProduct}
+                  changeDetailProduct={changeDetailProduct}
                 />} />
                 <Route path="/Favorite" component={() => <Favorite
                   setDetailProduct={setDetailProduct}
+                  changeDetailProduct={changeDetailProduct}
                   discountCode={discountCode}
                 />} />
               </Switch>

@@ -84,4 +84,11 @@ export const decreaseQuantity = (product, collection) => {
     if (collection === 'favorite')
         favorite.decreaseQuantity(product)
 }
+
+export const getListLength = (collection) => {
+    if (collection === 'cart')
+        return cart.listLength();
+    if (collection === 'favorite')
+        return favorite.listLength();
+}
 export { cart, favorite }
