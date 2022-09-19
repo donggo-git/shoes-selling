@@ -6,10 +6,14 @@ import Nav from '../UI/Nav'
 import { BsFilterLeft } from 'react-icons/bs'
 import Fade from '@material-ui/core/Fade'
 import './ProductPage.css'
+import * as controller from '../helper/controller'
 
 function ProductPage(props) {
     const [isFilterAnimate, setIsFilterAnimate] = useState(false)
     const [isFixed, setIsFixed] = useState(false)
+    const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
+    const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 1008) setIsFixed(true)
@@ -32,9 +36,13 @@ function ProductPage(props) {
         })
         setIsFilterAnimate(false)
     }
+    const addToFavoriteHandler = (product) => {
+        controller.addProduct(product, '', 'favorite')
+        setFavoriteLength(controller.getListLength('favorite'))
+    }
     return (
         <React.Fragment>
-            <Nav cartLength={0} favoriteLength={0} changeDetailProduct={props.changeDetailProduct} />
+            <Nav cartLength={cartLength} favoriteLength={favoriteLength} changeDetailProduct={props.changeDetailProduct} />
             <div className='page'>
                 <ProductHeader />
                 <TrendingProducts changeDetailProduct={props.changeDetailProduct} />
@@ -53,16 +61,11 @@ function ProductPage(props) {
                         <div className="modal"></div>
                     </Fade>
                     <ProductList
-                        products={props.products}
-                        addToCart={props.addToCart}
                         changeDetailProduct={props.changeDetailProduct}
-                        addToFavorite={props.addToFavorite}
                         closeFilter={closeFilter}
                         filterStyle={filterStyle}
-                        removeFromFavorite={props.removeFromFavorite}
-                        Products={props.Products}
+                        addToFavoriteHandler={addToFavoriteHandler}
                         addProduct={props.addProduct}
-
                     />
                 </div>
             </div>

@@ -20,6 +20,7 @@ function Cart(props) {
         switch (methodName) {
             case 'add to favorite':
                 controller.addProduct(item, '', 'favorite');
+                console.log(item)
                 break;
             case 'remove from cart':
                 controller.removeProduct(item, 'cart');

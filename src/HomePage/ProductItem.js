@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { db } from '../firebase'
 import { addProduct } from '../helper/controller'
 
-function ProductItem({ product, changeDetailProduct, removeFromFavorite }) {
+function ProductItem({ product, changeDetailProduct, addToFavoriteHandler }) {
     const [imgOrder, setImgOrder] = useState(0)
     const [FavoriteID, setFavoriteID] = useState([]);
     const handleHover = (imgSrc) => {
@@ -59,8 +59,7 @@ function ProductItem({ product, changeDetailProduct, removeFromFavorite }) {
                 <React.Fragment>
                     <UIButton
                         className="like-btn"
-                        onClickHandler={onClickHandler}
-
+                        onClickHandler={() => addToFavoriteHandler(product)}
                     >
                         Like
                     </UIButton>

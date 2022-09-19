@@ -12,6 +12,9 @@ import { FcCancel } from 'react-icons/fc'
 function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     const [favoriteList, setFavoriteList] = useState([]);
     const [isModalShow, setIsModalShow] = useState(true)
+    const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
+    const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
+
     const modalContent = function () {
         switch (discountCode) {
             case 0:
@@ -53,11 +56,12 @@ function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
         controller.removeProduct(product, 'favorite')
         const newFavorite = controller.getFavoriteList()
         setFavoriteList([...newFavorite])
+        setFavoriteLength(controller.getListLength('favorite'))
     }
 
     return (
         <React.Fragment>
-            <Nav cartLength={0} favoriteLength={0} changeDetailProduct={changeDetailProduct} />
+            <Nav cartLength={cartLength} favoriteLength={favoriteLength} changeDetailProduct={changeDetailProduct} />
             <div className='favorite_page'>
                 <div className="favorite_container">
                     <h2>Your favorite list ({favoriteList.length})</h2>
@@ -71,7 +75,7 @@ function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
                                 <div className='favorite_item'>
                                     <div className="favorite_img_container">
                                         <NavLink to="./product">
-                                            <img src={item.product.img[0]} height="100%" width="100%"
+                                            <img src={Array.isArray(item.product.img) ? item.product.img[0] : item.product.img} height="100%" width="100%"
                                                 onClick={() => setDetailProduct(item)} />
                                         </NavLink>
                                     </div>

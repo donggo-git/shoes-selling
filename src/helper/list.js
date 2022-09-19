@@ -10,7 +10,7 @@ class list {
     }
 
 
-    addToList = function (product, img = '') {
+    addToList = function (product, img = 0) {
         if (this._list.some(item => item.id == product.id)) {
             this.increaseQuantity(product)
         }
@@ -29,6 +29,7 @@ class list {
                     quantity: 1
                 }
             })
+            console.log(this._list[this._list.length - 1])
         }
     }
 

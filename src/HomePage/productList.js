@@ -8,9 +8,10 @@ import * as product from '../helper/controller'
 import filter from '../helper/filter'
 
 function ProductList({ changeDetailProduct,
-    addToFavorite, filterStyle,
-    closeFilter, removeFromFavorite,
-    addProduct
+    filterStyle,
+    closeFilter,
+    addProduct,
+    addToFavoriteHandler
 }) {
     const [products, setProduct] = useState([])
     const [filterProduct, setFilterProduct] = useState([])
@@ -72,9 +73,8 @@ function ProductList({ changeDetailProduct,
                                 product={product}
                                 changeDetailProduct={changeDetailProduct}
                                 key={product.id}
-                                addToFavorite={addToFavorite}
-                                removeFromFavorite={removeFromFavorite}
                                 addProduct={addProduct}
+                                addToFavoriteHandler={addToFavoriteHandler}
                             />
                         ))}
 

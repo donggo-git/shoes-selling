@@ -52,13 +52,13 @@ function DetailPage({ products, changeDetailProduct }) {
                         </div>
                         <p className='product_detail_description'>{products?.product?.description}</p>
                         <Button
-                            onClickHandler={() => controller.addProduct(products, mainImg, 'cart')}
+                            onClickHandler={() => clickHandler(mainImg, 'cart')}
                             className="Detail__btn--addToCart"
                         >
                             Add to cart
                         </Button>
                         <Button
-                            onClickHandler={() => controller.addProduct(products, '', 'favorite')}
+                            onClickHandler={() => clickHandler('', 'favorite')}
                             className="Detail__btn--like"
                         >
                             Like

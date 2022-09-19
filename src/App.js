@@ -12,10 +12,7 @@ import SearchingProduct from './Searching-Product/SearchingProduct';
 function App() {
   const _ = require('lodash');
   const [detailProduct, setDetailProduct] = useState()
-  const [cartLength, setCartLength] = useState(0);
-  const [favoriteLength, setFavoriteLength] = useState(0)
   const [discountCode, setDiscountCode] = useState()
-
 
   // functionality for cart
   //get cart length
@@ -23,10 +20,6 @@ function App() {
     //generate random number for discount code
     setDiscountCode(Math.floor(Math.random() * 3))
   }, [])
-
-
-
-
 
   const changeDetailProduct = (detailProduct) => {
     setDetailProduct(detailProduct)
