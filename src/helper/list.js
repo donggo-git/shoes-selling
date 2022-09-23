@@ -29,7 +29,6 @@ class list {
                     quantity: 1
                 }
             })
-            console.log(this._list[this._list.length - 1])
         }
     }
 

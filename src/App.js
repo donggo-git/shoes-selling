@@ -6,11 +6,9 @@ import Favorite from './FavoritePage/Favorite';
 import DetailPage from './DetailPage/DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import SearchingProduct from './Searching-Product/SearchingProduct';
 
 
 function App() {
-  const _ = require('lodash');
   const [detailProduct, setDetailProduct] = useState()
   const [discountCode, setDiscountCode] = useState()
 
@@ -29,9 +27,6 @@ function App() {
   return (
     <div>
       <Router>
-
-
-
         <Route render={({ location }) => (
           <TransitionGroup>
             <CSSTransition timeout={150} classNames='fade' key={location.key}>

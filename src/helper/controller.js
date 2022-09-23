@@ -52,11 +52,15 @@ export const getProduct = (collection, handler) => {
 }
 
 export const addProduct = (product, img = '', collection) => {
-    if (collection === 'cart')
-        cart.addToList(product, img)
+    if (collection === 'cart') {
+        let newProduct = { ...product }
+        newProduct.id = product.id + "_" + img;
+        cart.addToList(newProduct, img)
+    }
     if (collection === 'favorite')
         favorite.addToList(product, img)
 }
+
 export const removeProduct = (product, collection) => {
     if (collection === 'cart')
         cart.removeFromList(product)

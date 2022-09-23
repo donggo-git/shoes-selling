@@ -10,16 +10,18 @@ function Cart(props) {
     const [cartList, setCartList] = useState([])
     const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
     const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
+    const [productList, setProductList] = useState([])
+    const subtotal = controller.cart.getTotal(cartList)
+
     useEffect(() => {
         setCartList([...controller.getCartList()])
+        controller.getProduct('products', setProductList)
     }, [])
-    let subtotal = controller.cart.getTotal(cartList)
-
 
     const handlerOnClick = (item, methodName) => {
         switch (methodName) {
             case 'add to favorite':
-                controller.addProduct(item, '', 'favorite');
+                controller.addProduct(handleProductCallBack(item), '', 'favorite');
                 console.log(item)
                 break;
             case 'remove from cart':
@@ -41,7 +43,9 @@ function Cart(props) {
     const handleProductCallBack = (item) => {
         let updateItem = { ...item }
         updateItem.id = updateItem.id.split("_")[0]
-        props.changeDetailProduct(updateItem)
+        const foundProduct = productList.find(product => product.id == updateItem.id)
+        props.changeDetailProduct(foundProduct)
+        return foundProduct;
     }
     return (
         <React.Fragment>
