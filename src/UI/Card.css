@@ -1,0 +1,102 @@
+.ProductItem {
+    margin: 1rem;
+    height: 25rem;
+    width: 15rem;
+    transition: all 0.4s;
+    cursor: pointer;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.ProductItem img {
+    height: 18rem;
+}
+
+.ProductDetail {
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.ProductDetail h3,
+.ProductDetail p {
+    margin: 0.5rem 0;
+}
+
+.brand {
+    font-size: 0.9rem;
+    color: rgb(105, 105, 105);
+}
+
+.img-list {
+    display: flex;
+}
+
+.img-list img {
+    height: 50px;
+    margin-right: 3px;
+}
+
+.ProductItem:hover .ProductDetail_imgList {
+    opacity: 1;
+}
+
+.ProductDetail_imgList {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7rem;
+    background-color: #fff;
+    transition: opacity 0.4s;
+}
+
+.ProductDetail_imgList_btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.ProductDetail_imgList_btn>a {
+    flex: 0.49;
+}
+
+.ProductDetail_imgList_btn a,
+.like {
+
+    flex: 1;
+}
+
+.ProductDetail_imgList_btn button {
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+}
+
+.like-btn {
+    background-color: #03a9f4 !important;
+    color: white !important;
+    transition: all 0.2s;
+    width: 50%;
+}
+
+.detail-btn {
+    background-color: rgb(229, 229, 229) !important;
+    width: 50%;
+    transition: all 0.2s;
+}
+
+@media screen and (max-width: 1000px) {
+    .ProductItem {
+        height: 35rem;
+        width: 20rem;
+    }
+
+    .ProductItem img {
+        height: 25rem;
+    }
+
+    .ProductDetail_imgList {
+        display: none;
+    }
+}

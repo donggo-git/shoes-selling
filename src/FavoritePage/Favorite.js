@@ -8,6 +8,7 @@ import Modal from '../UI/Modal'
 import Nav from '../UI/Nav'
 import { AiFillGift } from 'react-icons/ai'
 import { FcCancel } from 'react-icons/fc'
+import Card from '../UI/Card'
 
 function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     const [favoriteList, setFavoriteList] = useState([]);
@@ -73,27 +74,13 @@ function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
                                 timeout={600}
                             >
                                 <div className='favorite_item'>
-                                    <div className="favorite_img_container">
-                                        <NavLink to="./product">
-                                            <img src={Array.isArray(item.product.img) ? item.product.img[0] : item.product.img} height="100%" width="100%"
-                                                onClick={() => setDetailProduct(item)} />
-                                        </NavLink>
-                                    </div>
-                                    <div className="favorite_item_content">
-                                        <NavLink to="./product">
-                                            <h2 onClick={() => setDetailProduct(item)}>{item.product.name}</h2>
-                                        </NavLink>
-
-                                        <Button
-                                            color="secondary"
-                                            variant="outlined"
-                                            size='small'
-                                            className='favoriteDelete'
-                                            onClickHandler={() => removeHandler(item)}>
-                                            Remove
-                                        </Button>
-
-                                    </div>
+                                    <Card
+                                        product={item}
+                                        btn1={"Remove"}
+                                        btn1Method={removeHandler}
+                                        btn2={"Detail"}
+                                        btn2Method={setDetailProduct}
+                                    />
                                 </div>
                             </Fade>
                         ))}

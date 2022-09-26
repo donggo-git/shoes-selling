@@ -6,6 +6,7 @@ import ProductItem from './ProductItem'
 import Fade from '@material-ui/core/Fade';
 import * as product from '../helper/controller'
 import filter from '../helper/filter'
+import Card from '../UI/Card'
 
 function ProductList({ changeDetailProduct,
     filterStyle,
@@ -69,12 +70,13 @@ function ProductList({ changeDetailProduct,
                     <div className='product-list'>
 
                         {filterProduct?.map((product) => (
-                            <ProductItem
+                            <Card
                                 product={product}
-                                changeDetailProduct={changeDetailProduct}
                                 key={product.id}
-                                addProduct={addProduct}
-                                addToFavoriteHandler={addToFavoriteHandler}
+                                btn1={"Like"}
+                                btn2={"Detail"}
+                                btn1Method={addToFavoriteHandler}
+                                btn2Method={changeDetailProduct}
                             />
                         ))}
 

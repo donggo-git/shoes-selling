@@ -4,6 +4,7 @@ import { AiOutlineRight } from 'react-icons/ai'
 import { AiOutlineLeft } from 'react-icons/ai'
 import { db } from '../firebase'
 import { NavLink } from 'react-router-dom'
+import Card from '../UI/Card'
 
 function TrendingProducts({ changeDetailProduct }) {
     const [TrendingProduct, setTrendingProduct] = useState([]);
@@ -76,11 +77,10 @@ function TrendingProducts({ changeDetailProduct }) {
                                 {
                                     slicePack.map(product => (
                                         <NavLink to="/product" key={product.id}>
-                                            <div className="Trending_slide_product" onClick={() => changeDetailProduct(product)}>
-                                                <img src={product.product.img[0]} />
-                                                <p className='Trending_slide_product--title'>{product.product.name}</p>
-                                                <p>$ {product.product.price}</p>
-                                            </div>
+                                            <Card
+                                                product={product}
+                                                btn2Method={changeDetailProduct}
+                                            />
                                         </NavLink>
                                     ))
                                 }
