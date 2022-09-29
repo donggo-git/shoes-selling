@@ -1,0 +1,21 @@
+.Button--like {
+    background-color: #03a9f4 !important;
+    color: white !important;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.Button--detail {
+    background-color: rgb(147, 147, 147) !important;
+    color: white !important;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.Button--remove {
+    width: 100%;
+    align-self: flex-end;
+    border: 1px solid rgb(255, 41, 41) !important;
+    color: rgb(255, 41, 41) !important;
+    margin: 20px 0;
+}

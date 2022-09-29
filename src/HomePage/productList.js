@@ -77,6 +77,7 @@ function ProductList({ changeDetailProduct,
                                 btn2={"Detail"}
                                 btn1Method={addToFavoriteHandler}
                                 btn2Method={changeDetailProduct}
+                                collection="product"
                             />
                         ))}
 
