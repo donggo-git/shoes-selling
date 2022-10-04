@@ -1,76 +1,35 @@
-.favorite_page {
-    min-height: 100vh;
-    background-color: rgb(56, 56, 56);
-}
-
-.favorite_container {
+.Favorite_container {
     margin: 0 auto;
-    width: 70%;
-    background-color: #fff;
-    min-height: 100vh;
     padding: 0 50px;
 }
 
-.favorite_container>h2 {
-    padding-top: 100px;
-
+.Favorite_title {
+    padding-top: 90px;
+    display: flex;
+    font-size: 18px;
 }
 
-.favorite_list {
+.Favorite_title>h2 {
+    margin-right: 10px;
+}
+
+.Favorite_list {
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: center;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
 }
 
 /*******************************************/
-.favorite__item {
+.Favorite__item {
     height: auto;
-    width: 12rem;
+    width: 10rem;
     justify-content: space-between;
     margin-right: 25px;
 }
 
-.favorite__item_img {
-    height: 18rem;
-}
-
-.favorite__item__content {
-    display: flex;
-    flex-direction: column;
-    height: 5rem;
-    align-items: stretch;
-}
-
-.favorite__item__content h3 {
-    font-size: 1rem;
-}
-
-.favorite__item__content p {}
-
-.favorite__item__content--hidden {}
-
-.favorite__item__content--hidden__imgList {}
-
-.favorite__item__content--hidden__buttons {
-    display: flex;
-}
-
-.favorite__item__content--hidden--remove {
-    width: 100%;
-    align-self: flex-end;
-    border: 1px solid rgb(255, 41, 41) !important;
-    color: rgb(255, 41, 41) !important;
-    margin: 20px 0;
-}
-
-.favorite__item__content--hidden--detail {}
-
-
-
-
 /********************************************************/
-.favorite_img_container {
+.Favorite_img_container {
     height: 18rem;
 }
 
@@ -79,27 +38,27 @@
     height: 100%;
 }
 
-.favorite_item_content {
+.Favorite_item_content {
     display: flex;
     flex-direction: column;
     height: 5rem;
     align-items: stretch;
 }
 
-.favorite_item_content>a {
+.Favorite_item_content>a {
     margin: auto;
 
 }
 
-.favorite_item_content>a>h2 {
+.Favorite_item_content>a>h2 {
     font-size: 1rem;
 }
 
-.favorite__buttons {
+.Favorite__buttons {
     display: flex;
 }
 
-.favoriteDelete {
+.FavoriteDelete {
     width: 100%;
     align-self: flex-end;
     border: 1px solid rgb(255, 41, 41) !important;
@@ -109,7 +68,7 @@
 }
 
 @media screen and (max-width:1000px) {
-    .favorite_list {
+    .Favorite_list {
         grid-template-columns: auto auto;
     }
 }

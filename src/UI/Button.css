@@ -19,3 +19,14 @@
     color: rgb(255, 41, 41) !important;
     margin: 20px 0;
 }
+
+.Button--discount {
+    align-self: flex-end;
+    background-color: rgb(255, 41, 41) !important;
+    color: white !important;
+    margin: 20px 0;
+}
+
+.Button--discount:hover {
+    background-color: rgb(209, 34, 34) !important;
+}

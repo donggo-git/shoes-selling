@@ -12,9 +12,9 @@ import Card from '../UI/Card'
 
 function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     const [favoriteList, setFavoriteList] = useState([]);
-    const [isModalShow, setIsModalShow] = useState(true)
-    const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
+    const [isModalShow, setIsModalShow] = useState(false)
     const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
+    const cartLength = controller.getListLength('cart')
 
     const modalContent = function () {
         switch (discountCode) {
@@ -63,17 +63,25 @@ function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     return (
         <React.Fragment>
             <Nav cartLength={cartLength} favoriteLength={favoriteLength} changeDetailProduct={changeDetailProduct} />
-            <div className='favorite_page'>
-                <div className="favorite_container">
-                    <h2>Your favorite list ({favoriteList.length})</h2>
+            <div className='Favorite_page'>
+                <div className="Favorite_container">
+                    <div className='Favorite_title'>
+                        <h2>
+                            Your favorite list ({favoriteList.length})
 
-                    <div className='favorite_list'>
+                        </h2>
+                        <Button
+                            className="Button--discount"
+                            onClickHandler={handlerModal}
+                        > Discount code</Button>
+                    </div>
+                    <div className='Favorite_list'>
                         {controller.getFavoriteList().map(item => (
                             <Fade
                                 in={item.id}
                                 timeout={600}
                             >
-                                <div className='favorite_item'>
+                                <div className='Favorite_item'>
                                     <Card
                                         product={item}
                                         btn1={"Remove"}
@@ -91,7 +99,7 @@ function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
                     <Modal closeModal={handlerModal}>{modalContent()}</Modal>
                 }
             </div >
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 
