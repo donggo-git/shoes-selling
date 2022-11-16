@@ -1,39 +1,50 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Collapse from '@material-ui/core/Collapse';
 import './Summary.css'
-function Summary(props) {
-    let tax = Math.round(props.subtotal * 10.1) / 100;
-    const [total, setTotal] = useState(Math.round((props.subtotal + tax + 8) * 100) / 100);
+function Summary({ subtotal }) {
+    let tax = Math.round(subtotal * 10.1) / 100;
+
     const [codeEnter, setCodeEnter] = useState('');
+    const [submittedCode, setSubmittedCode] = useState('')
     const [discountAmount, setDiscountAmount] = useState(0)
     const [discountStyle, setDiscountStyle] = useState({ display: 'none' })
     const [isCodeShow, setIsCodeShow] = useState(false)
+    const total = Math.round((subtotal + tax + 8 - discountAmount) * 100) / 100
+
     const handleEnterCode = (e) => {
-        setCodeEnter(e);
+        setCodeEnter(e.target.value);
     }
-    const handleSubmitCode = () => {
-        switch (codeEnter) {
+
+    const handleDiscountAmount = () => {
+        switch (submittedCode) {
             case '':
                 setDiscountStyle({ display: 'none' })
+                setDiscountAmount(0);
                 break;
             case 'discount10':
+                console.log('Hello')
                 setDiscountAmount(Math.round(total * 10) / 100);
                 setDiscountStyle({ display: 'flex' })
-                setTotal(total - discountAmount)
                 break;
             case 'discount20':
                 setDiscountAmount(Math.round(total * 20) / 100);
                 setDiscountStyle({ display: 'flex' })
-                setTotal(total - discountAmount);
                 break;
             default:
-                alert('You enter the wrong code')
+                alert('Invalid code, please enter again')
                 setDiscountStyle({ display: 'none' })
                 break;
         }
-        setCodeEnter('')
-
     }
+
+    const handleSubmitCode = () => {
+        setSubmittedCode(codeEnter)
+        handleDiscountAmount()
+        setCodeEnter('')
+    }
+
+    useEffect(handleDiscountAmount, [subtotal])
+
     const animateDiscountCode = () => {
         setIsCodeShow(pre => !pre)
     }
@@ -44,7 +55,7 @@ function Summary(props) {
                 <p className="discount_input" onClick={animateDiscountCode}>Do you have  discount code?</p>
                 <div className='summary__discountCode__enterCode'>
                     <Collapse in={isCodeShow} timeout={300}>
-                        <input type='text' onChange={(e) => handleEnterCode(e.target.value)} value={codeEnter} />
+                        <input type='text' onChange={handleEnterCode} value={codeEnter} />
                         <button onClick={handleSubmitCode}>Apply</button>
                     </Collapse>
                 </div>
@@ -54,7 +65,7 @@ function Summary(props) {
 
             <div className='summary__textLine'>
                 <p>Subtotal</p>
-                <p>${props.subtotal}</p>
+                <p>${subtotal}</p>
             </div>
             <div className='summary__textLine'>
                 <p>Estimated Shipping & Handling</p>

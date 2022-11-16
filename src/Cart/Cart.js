@@ -2,22 +2,27 @@ import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
-import Summary from '../Summary'
+import Summary from './Summary'
 import Nav from '../UI/Nav'
 import * as controller from '../helper/controller'
+import cart from '../helper/cart'
 
 function Cart(props) {
     const [cartList, setCartList] = useState([])
     const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
     const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
     const [productList, setProductList] = useState([])
-    const subtotal = controller.cart.getTotal(cartList)
+    const [subtotal, setSubTotal] = useState(cart.getTotal(cartList))
 
     useEffect(() => {
         setCartList([...controller.getCartList()])
+        setSubTotal(cart.getTotal(cartList))
         controller.getProduct('products', setProductList)
     }, [])
 
+    useEffect(() => {
+        setSubTotal(cart.getTotal(cartList))
+    }, [cartList])
     const handlerOnClick = (item, methodName) => {
         switch (methodName) {
             case 'add to favorite':
@@ -54,6 +59,7 @@ function Cart(props) {
                 <div className='cart'>
                     {cartList.map((item) => (
                         <Fade
+                            key={item.id}
                             in={item.id}
                             timeout={500}
                         >
