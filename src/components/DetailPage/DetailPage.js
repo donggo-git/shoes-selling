@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import Button from '../UI/Button'
+import Button from '../../UI/Button'
 import Slide from '@material-ui/core/Slide'
 import './detailPage.css'
-import * as controller from '../helper/controller'
-import Nav from '../UI/Nav'
+import * as controller from '../../helper/controller'
+import Nav from '../../UI/Nav'
 
 function DetailPage({ products, changeDetailProduct }) {
     const [mainImg, setMainImg] = useState(0)
     const [isSlide, setIsSlide] = useState(true)
     const [cartLength, setCartLength] = useState(controller.getListLength('cart'))
     const [favoriteLength, setFavoriteLength] = useState(controller.getListLength('favorite'))
+    const [isDescriptionShorten, setIsDescriptionShorten] = useState(true)
+    let description = isDescriptionShorten ?
+        products?.product?.description.slice(0, 280) :
+        products?.product?.description
 
     const changeMainImg = (srcImg) => {
         setIsSlide(false)
@@ -50,7 +54,7 @@ function DetailPage({ products, changeDetailProduct }) {
                                 ))
                             }
                         </div>
-                        <p className='product_detail_description'>{products?.product?.description}</p>
+                        <p className='product_detail_description'>{description}</p>
                         <Button
                             onClickHandler={() => clickHandler(mainImg, 'cart')}
                             className="Detail__btn--addToCart"

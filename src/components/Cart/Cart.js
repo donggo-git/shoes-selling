@@ -3,9 +3,9 @@ import './Cart.css'
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
 import Summary from './Summary'
-import Nav from '../UI/Nav'
-import * as controller from '../helper/controller'
-import cart from '../helper/cart'
+import Nav from '../../UI/Nav'
+import * as controller from '../../helper/controller'
+import cart from '../../helper/cart'
 
 function Cart(props) {
     const [cartList, setCartList] = useState([])
@@ -55,7 +55,7 @@ function Cart(props) {
     return (
         <React.Fragment>
             <Nav cartLength={cartLength} favoriteLength={favoriteLength} changeDetailProduct={props.changeDetailProduct} />
-            <div className='cart-page'>
+            <div className='cart__container'>
                 <div className='cart'>
                     {cartList.map((item) => (
                         <Fade
@@ -63,10 +63,10 @@ function Cart(props) {
                             in={item.id}
                             timeout={500}
                         >
-                            <div className='cart-item'>
+                            <div className='cart__item'>
                                 <img src={item?.product?.img} />
-                                <div className='cart-item-detail-container'>
-                                    <div className='cart-item-detail'>
+                                <div className='cart__item__detail__container'>
+                                    <div className='cart__item__detail'>
                                         <NavLink to="/product">
                                             <h4
                                                 onClick={() => handleProductCallBack(item)}

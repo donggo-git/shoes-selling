@@ -2,7 +2,7 @@ import React from 'react'
 import './Nav.css'
 import { IoCartOutline } from 'react-icons/io5'
 import { NavLink } from 'react-router-dom'
-import SearchingProduct from '../Searching-Product/SearchingProduct'
+import SearchingProduct from '../components/Searching-Product/SearchingProduct'
 
 function Nav({ favoriteLength, cartLength, changeDetailProduct }) {
     return (

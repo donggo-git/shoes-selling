@@ -2,7 +2,7 @@
     margin-top: 0;
     display: flex;
     flex-direction: row;
-    height: auto;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@
 
 .imgList_container {
     height: 80px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .imgList_container img {

@@ -4,9 +4,9 @@ import '../DetailPage/detailPage.css'
 import FilterForm from './FilterForm'
 import ProductItem from './ProductItem'
 import Fade from '@material-ui/core/Fade';
-import * as product from '../helper/controller'
-import filter from '../helper/filter'
-import Card from '../UI/Card'
+import * as product from '../../helper/controller'
+import filter from '../../helper/filter'
+import Card from '../../UI/Card'
 
 function ProductList({ changeDetailProduct,
     filterStyle,

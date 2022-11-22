@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import ProductList from './productList'
 import ProductHeader from './ProductHeader'
 import TrendingProducts from './TrendingProducts'
-import Nav from '../UI/Nav'
+import Nav from '../../UI/Nav'
 import { BsFilterLeft } from 'react-icons/bs'
 import Fade from '@material-ui/core/Fade'
 import './ProductPage.css'
-import * as controller from '../helper/controller'
+import * as controller from '../../helper/controller'
 
 function ProductPage(props) {
     const [isFilterAnimate, setIsFilterAnimate] = useState(false)

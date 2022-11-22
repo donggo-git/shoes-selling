@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import UIButton from '../UI/Button'
+import UIButton from '../../UI/Button'
 import "./ProductItem.css"
 import { NavLink } from 'react-router-dom'
-import { db } from '../firebase'
-import { addProduct } from '../helper/controller'
+import { db } from '../../firebase'
+import { addProduct } from '../../helper/controller'
 
 function ProductItem({ product, changeDetailProduct, addToFavoriteHandler }) {
     const [imgOrder, setImgOrder] = useState(0)

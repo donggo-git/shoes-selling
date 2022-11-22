@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import ProductPage from './HomePage/productPage'
-import CartPage from './Cart/Cart'
-import Favorite from './FavoritePage/Favorite';
-import DetailPage from './DetailPage/DetailPage';
+import ProductPage from './components/HomePage/productPage'
+import CartPage from './components/Cart/Cart'
+import Favorite from './components/FavoritePage/Favorite';
+import DetailPage from './components/DetailPage/DetailPage';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import "./TrendingProducts.css"
 import { AiOutlineRight } from 'react-icons/ai'
 import { AiOutlineLeft } from 'react-icons/ai'
-import { db } from '../firebase'
+import { db } from '../../firebase'
 import { NavLink } from 'react-router-dom'
-import Card from '../UI/Card'
+import Card from '../../UI/Card'
 
 function TrendingProducts({ changeDetailProduct }) {
     const [TrendingProduct, setTrendingProduct] = useState([]);

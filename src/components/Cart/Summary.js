@@ -16,6 +16,11 @@ function Summary({ subtotal }) {
     }
 
     const handleDiscountAmount = () => {
+        if (subtotal == 0) {
+            setDiscountAmount(0)
+            return;
+        }
+
         switch (submittedCode) {
             case '':
                 setDiscountStyle({ display: 'none' })
@@ -39,11 +44,10 @@ function Summary({ subtotal }) {
 
     const handleSubmitCode = () => {
         setSubmittedCode(codeEnter)
-        handleDiscountAmount()
         setCodeEnter('')
     }
 
-    useEffect(handleDiscountAmount, [subtotal])
+    useEffect(handleDiscountAmount, [subtotal, submittedCode])
 
     const animateDiscountCode = () => {
         setIsCodeShow(pre => !pre)

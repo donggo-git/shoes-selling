@@ -50,6 +50,7 @@
     border: 1px solid #027DEF;
     color: #027DEF;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .Trending_btn:hover {

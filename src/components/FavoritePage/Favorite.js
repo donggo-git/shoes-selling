@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./Favorite.css"
 import { NavLink } from 'react-router-dom'
 import Fade from '@material-ui/core/Fade'
-import Button from '../UI/Button'
-import * as controller from '../helper/controller'
-import Modal from '../UI/Modal'
-import Nav from '../UI/Nav'
+import Button from '../../UI/Button'
+import * as controller from '../../helper/controller'
+import Modal from '../../UI/Modal'
+import Nav from '../../UI/Nav'
 import { AiFillGift } from 'react-icons/ai'
 import { FcCancel } from 'react-icons/fc'
-import Card from '../UI/Card'
+import Card from '../../UI/Card'
 
 function Favorite({ setDetailProduct, discountCode, changeDetailProduct }) {
     const [favoriteList, setFavoriteList] = useState([]);

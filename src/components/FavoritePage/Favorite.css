@@ -17,12 +17,12 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: center;
-    margin-top: 1rem;
+
 }
 
 /*******************************************/
 .Favorite__item {
-    height: auto;
+    height: fit-content;
     width: 10rem;
     justify-content: space-between;
     margin-right: 25px;
@@ -30,7 +30,7 @@
 
 /********************************************************/
 .Favorite_img_container {
-    height: 18rem;
+    height: 10rem;
 }
 
 .Favorite_item img {
