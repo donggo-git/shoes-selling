@@ -224,4 +224,8 @@
     .cardDetail_imgList {
         display: none;
     }
+
+    .card__item__content--hidden__imgList {
+        display: none;
+    }
 }

@@ -99,4 +99,8 @@
     .ProductDetail_imgList {
         display: none;
     }
+
+    .ProductDetail_imgList img {
+        display: none;
+    }
 }

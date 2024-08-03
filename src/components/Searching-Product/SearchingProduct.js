@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { BsSearch } from 'react-icons/bs';
-import { db } from 'C:/project/shoes_selling/src/firebase'
 import './SearchingProduct.css'
 import { NavLink } from 'react-router-dom'
+import { db } from '../../firebase'
 
 function SearchingProduct({ changeDetailProduct }) {
 

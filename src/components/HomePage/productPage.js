@@ -22,19 +22,23 @@ function ProductPage(props) {
         //return () => window.removeEventListener("scroll")
     }, [])
     const [filterStyle, setFilterStyle] = useState({
-        transform: 'translateY(150%)'
+        transform: 'translateY(100vh)'
     })
     const openFilter = () => {
-        setFilterStyle({
-            transform: 'translateY(0%)'
-        })
-        setIsFilterAnimate(true)
+        if (filterStyle.transform === 'translateY(100vh)') {
+            setFilterStyle({
+                transform: 'translateY(0%)'
+            })
+            setIsFilterAnimate(true)
+        }
     }
     const closeFilter = () => {
-        setFilterStyle({
-            transform: 'translateY(150%)'
-        })
-        setIsFilterAnimate(false)
+        if (filterStyle.transform == 'translateY(0%)') {
+            setFilterStyle({
+                transform: 'translateY(100vh)'
+            })
+            setIsFilterAnimate(false)
+        }
     }
     const addToFavoriteHandler = (product) => {
         controller.addProduct(product, '', 'favorite')

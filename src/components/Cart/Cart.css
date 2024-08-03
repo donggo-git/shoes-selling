@@ -1,6 +1,7 @@
 .cart__container {
     margin-top: 6rem;
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
@@ -133,6 +134,10 @@
         font-size: 1.85rem;
     }
 
+    .cart__container {
+        flex-direction: column;
+    }
+
     .cart-page input,
     .cart-page button {
         font-size: 1.5rem;
@@ -144,4 +149,7 @@
         margin: 0 auto;
     }
 
+    .summary-cart {
+        flex: initial;
+    }
 }

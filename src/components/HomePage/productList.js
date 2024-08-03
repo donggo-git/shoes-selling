@@ -23,7 +23,7 @@ function ProductList({ changeDetailProduct,
         product.getProduct('products', setProduct)
         product.getProduct('products', setFilterProduct)
         //get filter form sticky when scrolling
-        const TrendingProducts = document.querySelector('.Trending_container')
+        /*const TrendingProducts = document.querySelector('.Trending_container')
         const filter = document.querySelector('.filter')
         const stickyFilterForm = function (entries) {
             const [entry] = entries
@@ -39,7 +39,7 @@ function ProductList({ changeDetailProduct,
             rootMargin: '22px'
         })
 
-        filterObserver.observe(TrendingProducts)
+        filterObserver.observe(TrendingProducts)*/
     }, [])
     //handle the filter form
 
