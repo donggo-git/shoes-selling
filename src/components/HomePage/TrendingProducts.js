@@ -43,14 +43,14 @@ function TrendingProducts({ changeDetailProduct }) {
     }
     const handleScrollTrending = (button) => {
         if (button == "next") {
-            if (translateProgress > -75) {
-                setTranslateProgress((pre) => pre -= 25)
+            if (translateProgress > -100 / 12 * 10) {
+                setTranslateProgress((pre) => pre -= (100 / 12))
             }
             return
         }
         else {
-            if (translateProgress)
-                setTranslateProgress((pre) => pre += 25)
+            if (translateProgress < 0)
+                setTranslateProgress((pre) => pre += (100 / 12))
             return;
         }
     }

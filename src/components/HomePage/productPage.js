@@ -25,20 +25,19 @@ function ProductPage(props) {
         transform: 'translateY(100vh)'
     })
     const openFilter = () => {
-        if (filterStyle.transform === 'translateY(100vh)') {
-            setFilterStyle({
-                transform: 'translateY(0%)'
-            })
-            setIsFilterAnimate(true)
-        }
+
+        setFilterStyle({
+            transform: 'translateY(0%)'
+        })
+        setIsFilterAnimate(true)
     }
     const closeFilter = () => {
-        if (filterStyle.transform == 'translateY(0%)') {
-            setFilterStyle({
-                transform: 'translateY(100vh)'
-            })
-            setIsFilterAnimate(false)
-        }
+
+        setFilterStyle({
+            transform: 'translateY(100vh)'
+        })
+        setIsFilterAnimate(false)
+
     }
     const addToFavoriteHandler = (product) => {
         controller.addProduct(product, '', 'favorite')
@@ -53,7 +52,7 @@ function ProductPage(props) {
                 <h2 className="title product-title">Product</h2>
                 <div className="product">
                     <div
-                        style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
+                        //style={window.screen.width <= 1000 ? { display: 'inline' } : { display: 'none' }}
                         onClick={() => openFilter()}
                         className={`filter_responsive_btn 
                 ${isFixed & window.screen.width < 1000 ? 'filter_responsive_btn_fixed' : ''}`}

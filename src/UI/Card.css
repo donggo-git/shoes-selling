@@ -94,7 +94,7 @@
     width: 15rem;
     transition: all 0.4s;
     cursor: pointer;
-    padding-bottom: 1rem;
+    padding-bottom: 10px;
     position: relative;
 }
 
@@ -213,19 +213,35 @@
 
 @media screen and (max-width: 1000px) {
     .card__item {
-        height: 35rem;
-        width: 20rem;
+        height: 50vh;
+        width: 30vw;
+        padding-bottom: 30px;
+        margin: 10px;
     }
 
     .card__item img {
-        height: 25rem;
+        height: 100%;
     }
 
     .cardDetail_imgList {
         display: none;
     }
 
-    .card__item__content--hidden__imgList {
+    .card__item__content {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .card__item__content--hidden {
         display: none;
+    }
+
+    .card__item__content h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .card__item__content p {
+        font-size: 16px;
     }
 }

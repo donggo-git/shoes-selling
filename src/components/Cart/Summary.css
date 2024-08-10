@@ -1,4 +1,4 @@
-.Summary{
+.Summary {
     color: black;
     font-weight: bold;
     font-size: 0.9rem;
@@ -6,26 +6,31 @@
     flex-direction: column;
     width: 80%;
 }
-.Summary h2{
+
+.Summary h2 {
     margin: 0;
     margin-bottom: 20px;
 }
-.summary__discountCode>p{
+
+.summary__discountCode>p {
     position: relative;
     background-color: white;
 }
-.discount_input{
+
+.discount_input {
     border-bottom: 1px solid #333;
     width: 13.3rem;
     cursor: pointer;
 }
-.summary__discountCode__enterCode{
+
+.summary__discountCode__enterCode {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 
 }
-.summary__discountCode__enterCode input{
+
+.summary__discountCode__enterCode input {
     border: 1px solid rgb(146, 145, 145);
     border-radius: 10px;
     font-size: 1rem;
@@ -33,7 +38,8 @@
     padding: 8px 16px;
     color: rgb(122, 122, 122);
 }
-.summary__discountCode__enterCode button{
+
+.summary__discountCode__enterCode button {
     padding: 8px 16px;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -42,63 +48,75 @@
     transition: all 0.5s;
     cursor: pointer;
 }
-.summary__discountCode__enterCode button:hover{
+
+.summary__discountCode__enterCode button:hover {
     background-color: rgb(194, 192, 192);
 }
-.summary__textLine{
+
+.summary__textLine {
     display: flex;
     justify-content: space-between;
-    
+
     padding: 15px 0;
 }
-.total{
+
+.total {
     border-top: 1px solid rgb(146, 145, 145);
     border-bottom: 1px solid rgb(146, 145, 145);
     margin-bottom: 1rem;
 }
-.Summary>button{
+
+.Summary>button {
     font-size: 1rem;
     padding: 1rem 0;
     margin: 5px 0;
     border-radius: 0;
-    
+
     cursor: pointer;
 }
-.Checkout-btn{
+
+.Checkout-btn {
     color: #fff;
-    background-color:rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     border: none;
 }
-.Checkout-btn:hover{
+
+.Checkout-btn:hover {
     background-color: rgb(63, 63, 63);
 }
 
 @media screen and (max-width: 1000px) {
-    .Summary{
+    .Summary {
         width: 80%;
-        font-size: 1.8rem;
+        font-size: 18px;
         margin: 0 auto;
     }
-    .summary__discountCode p{
+
+    .summary__discountCode p {
         width: 55%;
     }
-    .summary__discountCode__enterCode{
+
+    .summary__discountCode__enterCode {
         width: 100%;
         margin-top: 20px;
     }
-    .summary__discountCode__enterCode>div>div>div{
+
+    .summary__discountCode__enterCode>div>div>div {
         display: flex;
         width: 100%;
     }
-    .summary__discountCode__enterCode input{
+
+    .summary__discountCode__enterCode input {
         width: 400px;
         font-size: 1.5rem;
     }
-    .summary__discountCode__enterCode button{
+
+    .summary__discountCode__enterCode button {
         font-size: 1.5rem;
     }
-    .Checkout-btn{
+
+    .Checkout-btn {
         height: 100px;
-        font-size: 1.8rem!important;
+        font-size: 1.8rem !important;
     }
 }

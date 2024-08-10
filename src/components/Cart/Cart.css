@@ -51,7 +51,7 @@
 }
 
 .cart__item__detail {
-    width: 35rem;
+    width: 35vw;
     position: relative;
 }
 
@@ -145,11 +145,16 @@
 
     .cart {
         margin-left: 0;
-        width: 80%;
-        margin: 0 auto;
+        width: auto;
+        margin: 0;
+        overflow-x: hidden;
     }
 
     .summary-cart {
         flex: initial;
+    }
+
+    .cart__item__detail {
+        width: 100%;
     }
 }

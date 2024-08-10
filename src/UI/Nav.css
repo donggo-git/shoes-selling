@@ -74,3 +74,15 @@ nav li,
     font-weight: lighter;
     transform: translateY(-50%);
 }
+
+@media screen and (max-width: 1000px) {
+
+    nav>ul>img {
+        display: none;
+    }
+
+    nav li,
+    .nav__homePage {
+        margin: 0 10px;
+    }
+}

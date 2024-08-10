@@ -50,7 +50,7 @@ function FilterForm(props) {
 
     return (
         <div className={`filter`}
-            style={window.screen.width < 1000 ? props.filterStyle : {}}
+            style={props.filterStyle}
         >
             <AiOutlineClose className='close-btn' onClick={() => props.closeFilter()} />
             <div className='filter__line first__filter__line'>
